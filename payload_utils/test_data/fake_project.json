@@ -574,7 +574,7 @@
         },
         "firmware-signing": {
           "key-id": "KEYD",
-          "signature-id": "project-wl"
+          "signature-id": "project-wl-loema"
         },
         "identity": {
           "platform-name": "FAKE_PROGRAM",
@@ -665,7 +665,7 @@
         },
         "firmware-signing": {
           "key-id": "KEYE",
-          "signature-id": "project-wl"
+          "signature-id": "project-wl-loemb"
         },
         "identity": {
           "platform-name": "FAKE_PROGRAM",
@@ -756,7 +756,7 @@
         },
         "firmware-signing": {
           "key-id": "KEYF",
-          "signature-id": "project-wl"
+          "signature-id": "project-wl-loemc"
         },
         "identity": {
           "platform-name": "FAKE_PROGRAM",
