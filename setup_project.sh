@@ -19,10 +19,16 @@ function prompt_continue() {
 }
 
 function usage() {
+<<<<<<< HEAD   (580839 cl_factory launcher: Extract out csv_param method.)
   echo "Usage: $0 <program> [<project>]" >&2
   echo "  for setups with a single repo for the program with" >&2
   echo "  projects in subdirectories, only the program argument" >&2
   echo "  is provided." >&2
+=======
+  echo "Usage: $0 <program> <project> [<branch>]" >&2
+  echo "  optionally pass branch to sync the project" >&2
+  echo "  from the local manifest at the given branch." >&2
+>>>>>>> CHANGE (c14e20 setup_project.sh: Add optional branch argument.)
   exit 1
 }
 
@@ -40,6 +46,7 @@ cd "$(dirname "$0")"
 readonly program="${1}"
 # Will be empty if this is a single program repository project.
 readonly project="${2}"
+readonly branch="${3}"
 
 readonly local_manifests_dir="../../.repo/local_manifests"
 
@@ -76,7 +83,12 @@ fi
 # a confusing error message from being shown to the user. The
 # --force-sync below actually causes it to not be a problem, but we'd
 # rather avoid the user having to interpret the error.
-git clone "${clone_url}" "${clone_src}"
+if [[ -z "${branch}" ]]; then
+  git clone "${clone_url}" "${clone_src}"
+else
+  git clone "${clone_url}" "${clone_src}" --branch "${branch}"
+fi
+
 find "${clone_src}" -mindepth 1 ! -name local_manifest.xml -exec rm -rf {} +
 
 if [[ ! -d  "${local_manifests_dir}" ]]; then
