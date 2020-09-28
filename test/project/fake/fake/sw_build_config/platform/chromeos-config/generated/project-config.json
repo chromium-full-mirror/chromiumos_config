@@ -54,6 +54,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }
@@ -211,11 +218,25 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": true
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             },
             {
               "facing": "back",
+              "flags": {
+                "support-1080p": true,
+                "support-autofocus": true
+              },
+              "ids": [
+                "mipi-cam"
+              ],
               "interface": "mipi",
               "orientation": 180
             }
@@ -402,6 +423,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }
@@ -552,6 +580,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }
@@ -696,6 +731,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }
@@ -844,6 +886,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }
@@ -992,6 +1041,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }
@@ -1140,6 +1196,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }
@@ -1280,6 +1343,13 @@
           "devices": [
             {
               "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
               "interface": "usb",
               "orientation": 0
             }

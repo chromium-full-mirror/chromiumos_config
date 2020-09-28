@@ -160,6 +160,9 @@
               "devices": [
                 {
                   "facing": 1,
+                  "ids": [
+                    "0123:abcd"
+                  ],
                   "interface": 1,
                   "orientation": 1
                 }
@@ -312,6 +315,9 @@
                   "devices": [
                     {
                       "facing": 1,
+                      "ids": [
+                        "0123:abcd"
+                      ],
                       "interface": 1,
                       "orientation": 1
                     }
@@ -557,11 +563,19 @@
               "devices": [
                 {
                   "facing": 1,
+                  "flags": 2,
+                  "ids": [
+                    "0123:abcd"
+                  ],
                   "interface": 1,
                   "orientation": 1
                 },
                 {
                   "facing": 2,
+                  "flags": 3,
+                  "ids": [
+                    "mipi-cam"
+                  ],
                   "interface": 2,
                   "orientation": 3
                 }
@@ -683,11 +697,19 @@
                   "devices": [
                     {
                       "facing": 1,
+                      "flags": 2,
+                      "ids": [
+                        "0123:abcd"
+                      ],
                       "interface": 1,
                       "orientation": 1
                     },
                     {
                       "facing": 2,
+                      "flags": 3,
+                      "ids": [
+                        "mipi-cam"
+                      ],
                       "interface": 2,
                       "orientation": 3
                     }
@@ -953,6 +975,9 @@
               "devices": [
                 {
                   "facing": 1,
+                  "ids": [
+                    "0123:abcd"
+                  ],
                   "interface": 1,
                   "orientation": 1
                 }
@@ -1093,6 +1118,9 @@
                   "devices": [
                     {
                       "facing": 1,
+                      "ids": [
+                        "0123:abcd"
+                      ],
                       "interface": 1,
                       "orientation": 1
                     }
@@ -1361,6 +1389,9 @@
               "devices": [
                 {
                   "facing": 1,
+                  "ids": [
+                    "0123:abcd"
+                  ],
                   "interface": 1,
                   "orientation": 1
                 }
@@ -1500,6 +1531,9 @@
                   "devices": [
                     {
                       "facing": 1,
+                      "ids": [
+                        "0123:abcd"
+                      ],
                       "interface": 1,
                       "orientation": 1
                     }
@@ -1755,6 +1789,9 @@
               "devices": [
                 {
                   "facing": 1,
+                  "ids": [
+                    "0123:abcd"
+                  ],
                   "interface": 1,
                   "orientation": 1
                 }
@@ -1894,6 +1931,9 @@
                   "devices": [
                     {
                       "facing": 1,
+                      "ids": [
+                        "0123:abcd"
+                      ],
                       "interface": 1,
                       "orientation": 1
                     }
@@ -2140,6 +2180,9 @@
               "devices": [
                 {
                   "facing": 1,
+                  "ids": [
+                    "0123:abcd"
+                  ],
                   "interface": 1,
                   "orientation": 1
                 }
@@ -2258,6 +2301,9 @@
                   "devices": [
                     {
                       "facing": 1,
+                      "ids": [
+                        "0123:abcd"
+                      ],
                       "interface": 1,
                       "orientation": 1
                     }
@@ -2492,6 +2538,9 @@
               "devices": [
                 {
                   "facing": 1,
+                  "ids": [
+                    "0123:abcd"
+                  ],
                   "interface": 1,
                   "orientation": 1
                 }
@@ -2610,6 +2659,9 @@
                   "devices": [
                     {
                       "facing": 1,
+                      "ids": [
+                        "0123:abcd"
+                      ],
                       "interface": 1,
                       "orientation": 1
                     }
