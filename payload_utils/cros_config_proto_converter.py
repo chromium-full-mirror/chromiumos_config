@@ -438,10 +438,18 @@ def _build_camera(hw_topology):
             camera_pb.ORIENTATION_180: 180,
             camera_pb.ORIENTATION_270: 270,
         }[device.orientation]
+        flags = {
+            'support-1080p':
+                bool(device.flags & camera_pb.FLAGS_SUPPORT_1080P),
+            'support-autofocus':
+                bool(device.flags & camera_pb.FLAGS_SUPPORT_AUTOFOCUS),
+        }
         result['devices'].append({
             'interface': interface,
             'facing': facing,
             'orientation': orientation,
+            'flags': flags,
+            'ids': list(device.ids),
         })
     return result
 
@@ -727,6 +735,54 @@ def _write_arc_hardware_feature_file(output_dir, file_name, config_content):
 
   with open(output, 'wb') as f:
     f.write(file_content)
+
+
+def _get_arc_camera_features(camera):
+  """Gets camera related features for ARC hardware_features.xml from camera
+  topology. Check
+  https://developer.android.com/reference/android/content/pm/PackageManager#FEATURE_CAMERA
+  and CTS android.app.cts.SystemFeaturesTest#testCameraFeatures for the correct
+  settings.
+
+  Args:
+    camera: A HardwareFeatures.Camera proto message.
+  Returns:
+    list of camera related ARC features as XML elements.
+  """
+  camera_pb = topology_pb2.HardwareFeatures.Camera
+
+  if len(camera.devices) > 0:
+    count = len(camera.devices)
+    has_front_camera = any(
+        (d.facing == camera_pb.FACING_FRONT for d in camera.devices))
+    has_back_camera = any(
+        (d.facing == camera_pb.FACING_BACK for d in camera.devices))
+    has_autofocus_back_camera = any((d.facing == camera_pb.FACING_BACK and
+                                     d.flags & camera_pb.FLAGS_SUPPORT_AUTOFOCUS
+                                     for d in camera.devices))
+    # Assumes MIPI cameras support FULL-level.
+    # TODO(kamesan): Setting this in project configs when there's an exception.
+    has_level_full_camera = any(
+        (d.interface == camera_pb.INTERFACE_MIPI for d in camera.devices))
+  else:
+    # Fallback to use the old proto definition.
+    count = camera.count.value
+    has_front_camera = count > 0
+    has_back_camera = count > 1
+    has_autofocus_back_camera = has_back_camera
+    has_level_full_camera = False
+
+  return [
+      _feature('android.hardware.camera', has_back_camera),
+      _feature('android.hardware.camera.any', count > 0),
+      _feature('android.hardware.camera.autofocus', has_autofocus_back_camera),
+      _feature('android.hardware.camera.capability.manual_post_processing',
+               has_level_full_camera),
+      _feature('android.hardware.camera.capability.manual_sensor',
+               has_level_full_camera),
+      _feature('android.hardware.camera.front', has_front_camera),
+      _feature('android.hardware.camera.level.full', has_level_full_camera),
+  ]
 
 
 def _write_arc_hardware_feature_files(config, output_dir, build_root_dir):
