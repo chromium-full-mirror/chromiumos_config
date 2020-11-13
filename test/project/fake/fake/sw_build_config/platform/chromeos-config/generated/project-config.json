@@ -94,7 +94,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 2147483647,
           "smbios-name-match": "FAKE_REF_DESIGN"
         },
@@ -266,7 +266,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 0,
           "smbios-name-match": "FAKE_REF_DESIGN"
         },
@@ -458,7 +458,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 32,
           "smbios-name-match": "PROJECT_A"
         },
@@ -617,7 +617,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 33,
           "smbios-name-match": "PROJECT_B"
         },
@@ -764,7 +764,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 34,
           "smbios-name-match": "PROJECT_C"
         },
@@ -915,7 +915,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 64,
           "smbios-name-match": "PROJECT_WL"
         },
@@ -1066,7 +1066,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 64,
           "smbios-name-match": "PROJECT_WL",
           "whitelabel-tag": "loema"
@@ -1218,7 +1218,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 64,
           "smbios-name-match": "PROJECT_WL",
           "whitelabel-tag": "loemb"
@@ -1370,7 +1370,7 @@
           "psu-type": "battery"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 64,
           "smbios-name-match": "PROJECT_WL",
           "whitelabel-tag": "loemc"
@@ -1499,7 +1499,7 @@
           "psu-type": "AC_only"
         },
         "identity": {
-          "platform-name": "FAKE_PROGRAM",
+          "platform-name": "fake",
           "sku-id": 128,
           "smbios-name-match": "PROJECT_BOX"
         },
