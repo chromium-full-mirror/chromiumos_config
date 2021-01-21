@@ -210,7 +210,7 @@
             },
             "powerButton": {
               "edge": 1,
-              "position": 0.8999999761581421,
+              "position": 0.9,
               "region": 1
             },
             "screen": {
@@ -455,7 +455,7 @@
               "hardwareFeature": {
                 "powerButton": {
                   "edge": 1,
-                  "position": 0.8999999761581421,
+                  "position": 0.9,
                   "region": 1
                 }
               },
@@ -625,7 +625,7 @@
             },
             "powerButton": {
               "edge": 1,
-              "position": 0.8999999761581421,
+              "position": 0.9,
               "region": 1
             },
             "screen": {
@@ -844,7 +844,7 @@
               "hardwareFeature": {
                 "powerButton": {
                   "edge": 1,
-                  "position": 0.8999999761581421,
+                  "position": 0.9,
                   "region": 1
                 }
               },
@@ -1031,7 +1031,7 @@
             },
             "powerButton": {
               "edge": 1,
-              "position": 0.8999999761581421,
+              "position": 0.9,
               "region": 1
             },
             "screen": {
@@ -1261,7 +1261,7 @@
               "hardwareFeature": {
                 "powerButton": {
                   "edge": 1,
-                  "position": 0.8999999761581421,
+                  "position": 0.9,
                   "region": 1
                 }
               },
@@ -1447,7 +1447,7 @@
             },
             "powerButton": {
               "edge": 1,
-              "position": 0.8999999761581421,
+              "position": 0.9,
               "region": 1
             },
             "screen": {
@@ -1664,7 +1664,7 @@
               "hardwareFeature": {
                 "powerButton": {
                   "edge": 1,
-                  "position": 0.8999999761581421,
+                  "position": 0.9,
                   "region": 1
                 }
               },
@@ -1850,7 +1850,7 @@
             },
             "powerButton": {
               "edge": 1,
-              "position": 0.8999999761581421,
+              "position": 0.9,
               "region": 1
             },
             "screen": {
@@ -2067,7 +2067,7 @@
               "hardwareFeature": {
                 "powerButton": {
                   "edge": 1,
-                  "position": 0.8999999761581421,
+                  "position": 0.9,
                   "region": 1
                 }
               },
@@ -2244,7 +2244,7 @@
             },
             "powerButton": {
               "edge": 1,
-              "position": 0.8999999761581421,
+              "position": 0.9,
               "region": 1
             },
             "screen": {
@@ -2440,7 +2440,7 @@
               "hardwareFeature": {
                 "powerButton": {
                   "edge": 1,
-                  "position": 0.8999999761581421,
+                  "position": 0.9,
                   "region": 1
                 }
               },
@@ -2605,7 +2605,7 @@
             },
             "powerButton": {
               "edge": 1,
-              "position": 0.8999999761581421,
+              "position": 0.9,
               "region": 1
             },
             "screen": {
@@ -2801,7 +2801,7 @@
               "hardwareFeature": {
                 "powerButton": {
                   "edge": 1,
-                  "position": 0.8999999761581421,
+                  "position": 0.9,
                   "region": 1
                 }
               },
