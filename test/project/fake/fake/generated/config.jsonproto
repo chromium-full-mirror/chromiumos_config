@@ -196,6 +196,7 @@
             "keyboard": {
               "backlight": 1,
               "keyboardType": 3,
+              "numericPad": 1,
               "powerButton": 2
             },
             "lightSensor": {
@@ -401,6 +402,7 @@
                 "keyboard": {
                   "backlight": 1,
                   "keyboardType": 3,
+                  "numericPad": 1,
                   "powerButton": 2
                 }
               },
@@ -612,6 +614,7 @@
             "keyboard": {
               "backlight": 1,
               "keyboardType": 3,
+              "numericPad": 1,
               "powerButton": 2
             },
             "lte": {
@@ -788,6 +791,7 @@
                 "keyboard": {
                   "backlight": 1,
                   "keyboardType": 3,
+                  "numericPad": 1,
                   "powerButton": 2
                 }
               },
@@ -1016,6 +1020,7 @@
             "keyboard": {
               "backlight": 1,
               "keyboardType": 3,
+              "numericPad": 1,
               "powerButton": 2
             },
             "lte": {
@@ -1203,6 +1208,7 @@
                 "keyboard": {
                   "backlight": 1,
                   "keyboardType": 3,
+                  "numericPad": 1,
                   "powerButton": 2
                 }
               },
@@ -1430,6 +1436,7 @@
             "keyboard": {
               "backlight": 1,
               "keyboardType": 3,
+              "numericPad": 1,
               "powerButton": 2
             },
             "lte": {
@@ -1616,6 +1623,7 @@
                 "keyboard": {
                   "backlight": 1,
                   "keyboardType": 3,
+                  "numericPad": 1,
                   "powerButton": 2
                 }
               },
@@ -1831,6 +1839,7 @@
             "keyboard": {
               "backlight": 1,
               "keyboardType": 3,
+              "numericPad": 1,
               "powerButton": 2
             },
             "lte": {
@@ -2017,6 +2026,7 @@
                 "keyboard": {
                   "backlight": 1,
                   "keyboardType": 3,
+                  "numericPad": 1,
                   "powerButton": 2
                 }
               },
@@ -2223,6 +2233,7 @@
             "keyboard": {
               "backlight": 1,
               "keyboardType": 3,
+              "numericPad": 1,
               "powerButton": 2
             },
             "lte": {
@@ -2388,6 +2399,7 @@
                 "keyboard": {
                   "backlight": 1,
                   "keyboardType": 3,
+                  "numericPad": 1,
                   "powerButton": 2
                 }
               },
@@ -2582,6 +2594,7 @@
             "keyboard": {
               "backlight": 1,
               "keyboardType": 3,
+              "numericPad": 1,
               "powerButton": 2
             },
             "lte": {
@@ -2747,6 +2760,7 @@
                 "keyboard": {
                   "backlight": 1,
                   "keyboardType": 3,
+                  "numericPad": 1,
                   "powerButton": 2
                 }
               },
