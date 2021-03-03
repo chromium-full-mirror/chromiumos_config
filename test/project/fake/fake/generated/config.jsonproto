@@ -3045,7 +3045,9 @@
           "firmwareImageName": "Fake",
           "type": 1,
           "version": {
-            "major": 11111
+            "major": 11111,
+            "minor": 2,
+            "patch": 3
           }
         },
         "pdRoPayload": {
@@ -3135,7 +3137,9 @@
           "firmwareImageName": "Fake",
           "type": 1,
           "version": {
-            "major": 11111
+            "major": 11111,
+            "minor": 2,
+            "patch": 3
           }
         },
         "pdRoPayload": {
@@ -3247,7 +3251,9 @@
           "firmwareImageName": "Fake",
           "type": 1,
           "version": {
-            "major": 11111
+            "major": 11111,
+            "minor": 2,
+            "patch": 3
           }
         },
         "pdRoPayload": {
@@ -3392,7 +3398,9 @@
           "firmwareImageName": "Fake",
           "type": 1,
           "version": {
-            "major": 11111
+            "major": 11111,
+            "minor": 2,
+            "patch": 3
           }
         },
         "pdRoPayload": {
@@ -3471,7 +3479,9 @@
           "firmwareImageName": "Fake",
           "type": 1,
           "version": {
-            "major": 11111
+            "major": 11111,
+            "minor": 2,
+            "patch": 3
           }
         },
         "pdRoPayload": {
@@ -3553,7 +3563,9 @@
           "firmwareImageName": "Fake",
           "type": 1,
           "version": {
-            "major": 11111
+            "major": 11111,
+            "minor": 2,
+            "patch": 3
           }
         },
         "pdRoPayload": {
@@ -3630,7 +3642,9 @@
           "firmwareImageName": "Fake",
           "type": 1,
           "version": {
-            "major": 11111
+            "major": 11111,
+            "minor": 2,
+            "patch": 3
           }
         },
         "pdRoPayload": {
