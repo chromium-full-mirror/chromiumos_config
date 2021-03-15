@@ -11,6 +11,7 @@ import "chromiumos/config/api/partner_id.proto";
 
 option go_package = "go.chromium.org/chromiumos/config/go/api";
 
+// next field: 24
 message Component {
   // Globally unique component identifier.
   ComponentId id = 1;
@@ -36,10 +37,16 @@ message Component {
     Storage storage = 17;
     Tpm tpm = 18;
     Interface.Usb usb_host = 19;
+    Stylus stylus = 23;
   }
 
   // Defines common component version identifiers based on interface standards.
   message Interface {
+    message I2C {
+        string product = 1;
+        string vendor = 2;
+    }
+
     message Usb {
       // 4-digit hex
       string vendor_id = 1;
@@ -242,5 +249,12 @@ message Component {
   message Tpm {
     string manufacturer_info = 1;
     string version = 2;
+  }
+
+  message Stylus {
+    oneof interface {
+        Interface.Usb usb = 1;
+        Interface.I2C i2c = 2;
+    }
   }
 }
