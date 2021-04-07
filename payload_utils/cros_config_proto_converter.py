@@ -177,6 +177,15 @@ def _build_ash_flags(config: Config) -> List[str]:
                                                           ).lower(),
     })
 
+  form_factor = hw_features.form_factor.form_factor
+  lid_accel = hw_features.accelerometer.lid_accelerometer
+  if (form_factor == topology_pb2.HardwareFeatures.FormFactor.CHROMEBASE and
+      lid_accel == topology_pb2.HardwareFeatures.PRESENT):
+    flags['supports-clamshell-auto-rotation'] = None
+
+  if config.sw_config.ui_config.extra_web_apps_dir:
+    flags['extra-web-apps-dir'] = config.sw_config.ui_config.extra_web_apps_dir
+
   return sorted([f'--{k}={v}' if v else f'--{k}' for k, v in flags.items()])
 
 

@@ -215,6 +215,7 @@ design.append_configs(
             limit_5g = 4,
         ),
     ),
+    ui = sc.create_ui(extra_web_apps_dir = "apps1"),
 )
 
 design.append_configs(
@@ -272,6 +273,7 @@ design.append_configs(
             offset_5g = 14,
         ),
     ),
+    ui = sc.create_ui(extra_web_apps_dir = "apps2"),
 )
 
 _HW_CONFIGS_A = []

@@ -14,6 +14,10 @@ load(
     bt_pb = "chromiumos.config.api.software",
 )
 load(
+    "@proto//chromiumos/config/api/software/ui_config.proto",
+    ui_pb = "chromiumos.config.api.software",
+)
+load(
     "@proto//chromiumos/config/api/software/firmware_config.proto",
     fw_pb = "chromiumos.config.api.software",
 )
@@ -344,6 +348,9 @@ def _create_intel_wifi(
         ),
     )
 
+def _create_ui(extra_web_apps_dir = None):
+    return ui_pb.UiConfig(extra_web_apps_dir = extra_web_apps_dir)
+
 sw_config = struct(
     create_ath10k = _create_ath10k,
     create_ath10k_power_chain = _create_ath10k_power_chain,
@@ -363,5 +370,6 @@ sw_config = struct(
     create_rtw88 = _create_rtw88,
     create_rtw88_geo_offsets = _create_rtw88_geo_offsets,
     create_rtw88_power_chain = _create_rtw88_power_chain,
+    create_ui = _create_ui,
     fw_type = _FW_TYPE,
 )
