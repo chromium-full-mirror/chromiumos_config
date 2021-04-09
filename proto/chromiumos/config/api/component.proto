@@ -11,6 +11,7 @@ import "chromiumos/config/api/partner_id.proto";
 
 option go_package = "go.chromium.org/chromiumos/config/go/api";
 
+// next field: 25
 message Component {
   // Globally unique component identifier.
   ComponentId id = 1;
@@ -36,6 +37,17 @@ message Component {
     Storage storage = 17;
     Tpm tpm = 18;
     Interface.Usb usb_host = 19;
+    Amplifier amplifier = 24;
+  }
+
+  /////////////////////////////////////
+  // Message Definitions Only
+  /////////////////////////////////////
+
+  // IDs to map into AVL database
+  message AVLId {
+    int32 cid = 1; // component id
+    int32 qid = 2; // qualification id
   }
 
   // Defines common component version identifiers based on interface standards.
@@ -198,6 +210,10 @@ message Component {
     }
     ComponentId component_id = 1;
     Status status = 2;
+  }
+
+  message Amplifier {
+    string name = 1;
   }
 
   message AudioCodec {
