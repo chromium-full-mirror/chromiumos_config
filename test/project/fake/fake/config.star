@@ -54,7 +54,8 @@ _TOUCHSCREEN = hw_topo.create_screen(
     pixels_per_in = 120,
     touch = True,
 )
-_AUDIO = hw_topo.create_audio("AUDIO", "Default audio", speaker_amp = hw_topo.audio_codec.MAX98373, headphone_codec = hw_topo.audio_codec.ALC5682I)
+
+_AUDIO = hw_topo.create_audio("AUDIO", "Default audio", speaker_amp = hw_topo.amplifier.MAX98373, headphone_codec = hw_topo.audio_codec.ALC5682I)
 
 _HDMI = hw_topo.create_hdmi(
     id = "HDMI",
