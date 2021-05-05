@@ -221,6 +221,7 @@ def _create_form_factor(form_factor, fw_configs = [], id = None, description = N
         id = {
             _FF.CLAMSHELL: "CLAMSHELL",
             _FF.CONVERTIBLE: "CONVERTIBLE",
+            _FF.CHROMEBASE: "CHROMEBASE",
             _FF.CHROMEBOX: "CHROMEBOX",
         }[form_factor]
 
@@ -228,6 +229,7 @@ def _create_form_factor(form_factor, fw_configs = [], id = None, description = N
         description = {
             _FF.CLAMSHELL: "Device cannot rotate past 180 degrees",
             _FF.CONVERTIBLE: "Device can rotate 360 degrees",
+            _FF.CHROMEBASE: "Desktop chrome all-in-one.",
             _FF.CHROMEBOX: "Desktop chrome device.",
         }[form_factor]
 
