@@ -227,3 +227,9 @@ Changes that require new topology
 Changes that do not require new topology
 
 * EC capabilities, such as usbpd or keyboard
+
+## HDMI
+
+Changes that require new topology
+
+* HDMI port

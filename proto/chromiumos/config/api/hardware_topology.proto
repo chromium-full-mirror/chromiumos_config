@@ -107,4 +107,8 @@ message HardwareTopology {
   // Specify the EC topology.
   // See ./hardware_topology.md#ec for more information.
   Topology ec = 22;
+
+  // Specify the HDMI topology.
+  // See ./hardware_topology.md#hdmi for more information.
+  Topology hdmi = 23;
 }
