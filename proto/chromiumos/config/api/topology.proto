@@ -157,6 +157,7 @@ message HardwareFeatures {
       RT1015 = 7;
       DA7219 = 8;
       ALC1011 = 9;
+      CS42L42 = 10;
     }
   }
 
