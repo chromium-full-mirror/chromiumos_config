@@ -91,6 +91,9 @@ message Firmware {
     // Firmware builds currently use portage, but this could change over time
     // as pieces become more decoupled.
     Portage.BuildTarget portage_build_target = 6;
+
+    // Build target for chromeos-bmpblk.
+    string bmpblk = 8;
   }
 
   BuildTargets build_targets = 1;
