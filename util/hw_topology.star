@@ -45,6 +45,7 @@ _AUDIO_CODEC = struct(
     DA7219 = topo_pb.HardwareFeatures.Audio.DA7219,
     ALC1011 = topo_pb.HardwareFeatures.Audio.ALC1011,
     CS42L42 = topo_pb.HardwareFeatures.Audio.CS42L42,
+    ALC5682IVS = topo_pb.HardwareFeatures.Audio.ALC5682IVS,
 )
 
 _FP_LOC = struct(

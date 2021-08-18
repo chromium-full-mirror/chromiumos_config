@@ -158,6 +158,7 @@ message HardwareFeatures {
       DA7219 = 8;
       ALC1011 = 9;
       CS42L42 = 10;
+      ALC5682IVS = 11;
     }
   }
 
