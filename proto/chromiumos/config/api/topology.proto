@@ -151,27 +151,20 @@ message HardwareFeatures {
       RT5682 = 1;
       ALC5682I = 2;
       ALC5682 = 3;
-      reserved 4 to 7;  // Not to conflict with existing amplifiers
+      reserved 4 to 7;  // Not to conflict with amplifiers
       DA7219 = 8;
-      reserved 9;  // Not to conflict with existing amplifiers
-      // New audio codecs
-      NAU88L25B = 10;
     }
 
     enum Amplifier {
       AMPLIFIER_UNKNOWN = 0;  // Also used for non-public amplifier
-      reserved 1 to 3;  // Not to conflict with existing audio codecs
+      reserved 1 to 3;  // Not to conflict with audio codecs
       MAX98357 = 4;
       MAX98373 = 5;
       MAX98360 = 6;
       RT1015 = 7;
-      reserved 8;  // Not to conflict with existing audio codecs
+      reserved 8;  // Not to conflict with audio codecs
       ALC1011 = 9;
-      reserved 10;  // Not to conflict with existing audio codecs
-      // New amplifiers
-      RT1015P = 11;
-      ALC1019 = 12;
-      CS42L42 = 13;
+      CS42L42 = 10;
     }
   }
 

@@ -54,15 +54,11 @@ _TOUCHSCREEN = hw_topo.create_screen(
     pixels_per_in = 120,
     touch = True,
 )
-<<<<<<< HEAD   (60244f Separate amplifier and audio codec)
 _AUDIO = hw_topo.create_audio("AUDIO", "Default audio", speaker_amp = hw_topo.audio_codec.MAX98373, headphone_codec = hw_topo.audio_codec.ALC5682I)
 _HDMI = hw_topo.create_hdmi(
     id = "HDMI",
     description = "HDMI port",
 )
-=======
-_AUDIO = hw_topo.create_audio("AUDIO", "Default audio", speaker_amp = hw_topo.amplifier.MAX98373, headphone_codec = hw_topo.audio_codec.ALC5682I)
->>>>>>> CHANGE (9e123f Split AUDIO_CODEC to separate out AMPLIFIER)
 _STYLUS = hw_topo.create_stylus("STYLUS", "Default stylus", stylus_type = hw_topo.stylus.INTERNAL)
 _KEYBOARD = hw_topo.create_keyboard(backlight = True, pwr_btn_present = False, kb_type = hw_topo.kb_type.DETACHABLE)
 _THERMAL = hw_topo.create_thermal("THERMAL", "Default thermal")
