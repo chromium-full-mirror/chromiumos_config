@@ -90,12 +90,6 @@ def CastPresent(value):
   return None
 
 
-def CastAmplifier(value):
-  if value is None:
-    return None
-  return topology_pb2.HardwareFeatures.Audio.Amplifier.Name(value)
-
-
 def CastAudioCodec(value):
   if value is None:
     return None
@@ -162,7 +156,7 @@ def TransformDesignTable(design_config, design_table):
       'component.has_proximity_sensor':
           GetFeatures(topology, 'proximity_sensor'),
       'component.speaker_amp':
-          CastAmplifier(
+          CastAudioCodec(
               GetFeatures(topology, 'audio', ['audio', 'speaker_amp'])),
       'component.headphone_codec':
           CastAudioCodec(
