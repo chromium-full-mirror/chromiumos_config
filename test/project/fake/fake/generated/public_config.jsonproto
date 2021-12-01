@@ -4,9 +4,15 @@
       "configs": [
         {
           "hardwareFeatures": {
+            "audio": {},
             "camera": {}
           },
           "hardwareTopology": {
+            "audio": {
+              "hardwareFeature": {
+                "audio": {}
+              }
+            },
             "camera": {
               "hardwareFeature": {
                 "camera": {}
@@ -19,9 +25,15 @@
         },
         {
           "hardwareFeatures": {
+            "audio": {},
             "camera": {}
           },
           "hardwareTopology": {
+            "audio": {
+              "hardwareFeature": {
+                "audio": {}
+              }
+            },
             "camera": {
               "hardwareFeature": {
                 "camera": {}
@@ -45,9 +57,15 @@
       "configs": [
         {
           "hardwareFeatures": {
+            "audio": {},
             "camera": {}
           },
           "hardwareTopology": {
+            "audio": {
+              "hardwareFeature": {
+                "audio": {}
+              }
+            },
             "camera": {
               "hardwareFeature": {
                 "camera": {}
@@ -71,9 +89,15 @@
       "configs": [
         {
           "hardwareFeatures": {
+            "audio": {},
             "camera": {}
           },
           "hardwareTopology": {
+            "audio": {
+              "hardwareFeature": {
+                "audio": {}
+              }
+            },
             "camera": {
               "hardwareFeature": {
                 "camera": {}
@@ -97,9 +121,15 @@
       "configs": [
         {
           "hardwareFeatures": {
+            "audio": {},
             "camera": {}
           },
           "hardwareTopology": {
+            "audio": {
+              "hardwareFeature": {
+                "audio": {}
+              }
+            },
             "camera": {
               "hardwareFeature": {
                 "camera": {}
@@ -123,9 +153,15 @@
       "configs": [
         {
           "hardwareFeatures": {
+            "audio": {},
             "camera": {}
           },
           "hardwareTopology": {
+            "audio": {
+              "hardwareFeature": {
+                "audio": {}
+              }
+            },
             "camera": {
               "hardwareFeature": {
                 "camera": {}
@@ -148,6 +184,16 @@
     {
       "configs": [
         {
+          "hardwareFeatures": {
+            "audio": {}
+          },
+          "hardwareTopology": {
+            "audio": {
+              "hardwareFeature": {
+                "audio": {}
+              }
+            }
+          },
           "id": {
             "value": "PROJECT_BOX:128"
           }
@@ -164,21 +210,11 @@
   ],
   "softwareConfigs": [
     {
-      "audioConfigs": [
-        {
-          "cardName": "fakeaudiocard"
-        }
-      ],
       "designConfigId": {
         "value": "FAKE_REF_DESIGN:2147483647"
       }
     },
     {
-      "audioConfigs": [
-        {
-          "cardName": "fakeaudiocard"
-        }
-      ],
       "designConfigId": {
         "value": "FAKE_REF_DESIGN:0"
       }
@@ -194,22 +230,12 @@
       }
     },
     {
-      "audioConfigs": [
-        {
-          "cardName": "fakeaudiocard"
-        }
-      ],
       "cameraConfig": {},
       "designConfigId": {
         "value": "PROJECT_B:33"
       }
     },
     {
-      "audioConfigs": [
-        {
-          "cardName": "fakeaudiocard"
-        }
-      ],
       "designConfigId": {
         "value": "PROJECT_C:34"
       }
@@ -228,11 +254,6 @@
       }
     },
     {
-      "audioConfigs": [
-        {
-          "cardName": "fakeaudiocard"
-        }
-      ],
       "designConfigId": {
         "value": "PROJECT_BOX:128"
       }

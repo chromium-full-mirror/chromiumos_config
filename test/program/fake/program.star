@@ -66,6 +66,13 @@ _SIGNER_DESIGN_CONFIGS = program_util.create_signer_configs_by_design(
 
 _SIGNER_CONFIG = _SIGNER_BRAND_CONFIGS + _SIGNER_DESIGN_CONFIGS
 
+_HDMI_AUDIO_CARD = hw_topo.create_audio_card_config(
+    card_name = "HDA ATI HDMI",
+    ucm_config = hw_topo.audio_config_structure.COMMON,
+    cras_config = hw_topo.audio_config_structure.NONE,
+    ucm_suffix = "",
+)
+
 _FAKE = program_util.create(
     name = "FAKE_PROGRAM",
     component_quals = _QUAL_CONSTRAINTS,
@@ -73,6 +80,11 @@ _FAKE = program_util.create(
     firmware_configuration_segments = _FIRMWARE_CONFIGURATION_SEGMENTS,
     device_signer_configs = _SIGNER_CONFIG,
     mosys_platform_name = "fake",
+    audio_config = program_util.create_audio_config(
+        has_module_file = True,
+        default_ucm_suffix = "{speaker_amp}.{headset_codec}.{camera_count}mic.{design}",
+        card_configs = [_HDMI_AUDIO_CARD],
+    ),
 )
 
 program = struct(

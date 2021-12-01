@@ -65,6 +65,38 @@ def _create_signer_config_by_design(design_id, key_id):
 def _create_signer_configs_by_design(configs):
     return [_create_signer_config_by_design(id, key) for id, key in configs.items()]
 
+def _create_audio_config(
+        card_configs = [],
+        has_module_file = False,
+        default_ucm_suffix = "{model}"):
+    """Builds an AudioConfig proto.
+
+    Args:
+        card_configs: A list of CardConfig protos specifying card configs to be
+            installed and used for all designs within this program. Individual
+            projects will not be able to modify card configs set here, so this
+            should only be used for configs needing to be present on all
+            designs such as HDMI/DP audio out consistently provided by the SoC
+            platform.
+        has_module_file: A boolean specifying whether an alsa module file
+        should be installed.
+        default_ucm_suffix: A default format string used to generate the
+            parts of the UCM suffix not referring to audio components. This
+            value is used for any card config not providing a value for
+            ucm_config. The following placeholders may be used:
+                {design}: The design name.
+                {camera_count}: The number of cameras (usually 0, 1 or 2).
+                {headset_codec}: The headset codec name (in lowercase)
+                    specified in the topology containing the card config.
+                {speaker_amp}: The speaker amp name (in lowercase) specified in
+                    the topology containing the card config.
+    """
+    return program_pb.Program.AudioConfig(
+        card_configs = card_configs,
+        has_module_file = has_module_file,
+        default_ucm_suffix = default_ucm_suffix,
+    )
+
 def _create(
         name,
         public_fields = ["name", "id"],
@@ -73,7 +105,8 @@ def _create(
         firmware_configuration_segments = None,
         design_config_id_segments = None,
         device_signer_configs = None,
-        mosys_platform_name = None):
+        mosys_platform_name = None,
+        audio_config = None):
     """Builds a Program proto."""
     program_id = program_id_pb.ProgramId(value = name)
     return program_pb.Program(
@@ -86,10 +119,12 @@ def _create(
         design_config_id_segments = design_config_id_segments,
         device_signer_configs = device_signer_configs,
         mosys_platform_name = mosys_platform_name,
+        audio_config = audio_config,
     )
 
 program = struct(
     create = _create,
+    create_audio_config = _create_audio_config,
     create_firmware_configuration_segment = _create_firmware_configuration_segment,
     create_design_config_id_segment = _create_design_config_id_segment,
     create_signer_config = _create_signer_config,

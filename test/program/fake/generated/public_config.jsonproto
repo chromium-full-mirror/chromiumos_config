@@ -1,6 +1,7 @@
 {
   "programList": [
     {
+      "audioConfig": {},
       "id": {
         "value": "FAKE_PROGRAM"
       },
