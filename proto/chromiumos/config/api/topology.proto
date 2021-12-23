@@ -59,6 +59,7 @@ message Topology {
     BATTERY = 26;
     HDMI = 27;
     SOC = 28;
+    POE = 31;
   }
 
   // Map of human readable descriptions in various languages. Maps language
@@ -586,5 +587,11 @@ message HardwareFeatures {
   DisplayPortConverter dp_converter = 33;
   message DisplayPortConverter {
     repeated Component.DisplayPortConverter converters = 1;
+  };
+
+  PoE poe = 35;
+  message PoE {
+    // If PoE peripheral support is present on system
+    Present present = 1;
   };
 }

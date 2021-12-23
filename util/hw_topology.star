@@ -475,6 +475,21 @@ def _create_fingerprint(id, description, location, board = None, fw_configs = []
         hardware_feature = hw_features,
     )
 
+def _create_poe(id, description, present = False, fw_configs = []):
+    """Builds a Topology proto for PoE."""
+    hw_features = topo_pb.HardwareFeatures()
+
+    hw_features.poe.present = _bool_to_present(present)
+
+    _accumulate_fw_configs(hw_features, fw_configs)
+
+    return topo_pb.Topology(
+        id = id,
+        type = topo_pb.Topology.POE,
+        description = {"EN": description},
+        hardware_feature = hw_features,
+    )
+
 def _create_proximity_sensor(id, description, fw_configs = []):
     """Builds a Topology proto for a proximity sensor."""
     hw_features = topo_pb.HardwareFeatures()
@@ -826,7 +841,8 @@ def _create_hardware_topology(
         touch = None,
         tpm = None,
         microphone_mute_switch = None,
-        hdmi = None):
+        hdmi = None,
+        poe = None):
     """Builds a HardwareTopology proto from Topology protos."""
 
     # Only allow form_factor topologies for form factors
@@ -905,6 +921,9 @@ def _create_hardware_topology(
     if hdmi and hdmi.type != topo_pb.Topology.HDMI:
         fail("Invalid hdmi topology")
 
+    if poe and poe.type != topo_pb.Topology.POE:
+        fail("Invalid PoE topology")
+
     return hw_topo_pb.HardwareTopology(
         screen = screen,
         form_factor = form_factor,
@@ -931,6 +950,7 @@ def _create_hardware_topology(
         tpm = tpm,
         microphone_mute_switch = microphone_mute_switch,
         hdmi = hdmi,
+        poe = poe,
     )
 
 def _accumulate_presence(existing_present, new_present):
@@ -1024,6 +1044,12 @@ def _convert_to_hw_features(hardware_topology):
 
     if copy.fingerprint.hardware_feature.fingerprint != topo_pb.HardwareFeatures.Fingerprint():
         result.fingerprint = copy.fingerprint.hardware_feature.fingerprint
+
+    # Handle all possible poe hardware features attributes
+    _accumulate_fw_config(result.fw_config, copy.poe.hardware_feature.fw_config)
+
+    if copy.poe.hardware_feature.poe != topo_pb.HardwareFeatures.PoE():
+        result.poe = copy.poe.hardware_feature.poe
 
     # Handle all possible proximity sensor hardware features attributes
     _accumulate_fw_config(result.fw_config, copy.proximity_sensor.hardware_feature.fw_config)
@@ -1132,6 +1158,7 @@ hw_topo = struct(
     create_touch = _create_touch,
     create_microphone_mute_switch = _create_microphone_mute_switch,
     create_hdmi = _create_hdmi,
+    create_poe = _create_poe,
     convert_to_hw_features = _convert_to_hw_features,
     make_camera_device = _make_camera_device,
     make_fw_config = _make_fw_config,
