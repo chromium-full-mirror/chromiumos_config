@@ -259,3 +259,9 @@ Changes that require new topology
 Changes that require new topology
 
 * HDMI port
+
+## PoE Peripheral support
+
+Changes that require new topology
+
+* Presence of hardware for PoE peripheral support

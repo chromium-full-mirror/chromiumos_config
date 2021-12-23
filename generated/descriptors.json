@@ -2055,6 +2055,10 @@
                 {
                   "name": "SOC",
                   "number": 28
+                },
+                {
+                  "name": "POE",
+                  "number": 31
                 }
               ]
             }
@@ -2453,6 +2457,14 @@
               "number": 33,
               "type": "TYPE_MESSAGE",
               "typeName": ".chromiumos.config.api.HardwareFeatures.DisplayPortConverter"
+            },
+            {
+              "jsonName": "poe",
+              "label": "LABEL_OPTIONAL",
+              "name": "poe",
+              "number": 35,
+              "type": "TYPE_MESSAGE",
+              "typeName": ".chromiumos.config.api.HardwareFeatures.PoE"
             }
           ],
           "name": "HardwareFeatures",
@@ -3658,6 +3670,19 @@
                 }
               ],
               "name": "DisplayPortConverter"
+            },
+            {
+              "field": [
+                {
+                  "jsonName": "present",
+                  "label": "LABEL_OPTIONAL",
+                  "name": "present",
+                  "number": 1,
+                  "type": "TYPE_ENUM",
+                  "typeName": ".chromiumos.config.api.HardwareFeatures.Present"
+                }
+              ],
+              "name": "PoE"
             }
           ]
         }
@@ -3885,6 +3910,14 @@
               "label": "LABEL_OPTIONAL",
               "name": "hdmi",
               "number": 26,
+              "type": "TYPE_MESSAGE",
+              "typeName": ".chromiumos.config.api.Topology"
+            },
+            {
+              "jsonName": "poe",
+              "label": "LABEL_OPTIONAL",
+              "name": "poe",
+              "number": 29,
               "type": "TYPE_MESSAGE",
               "typeName": ".chromiumos.config.api.Topology"
             }

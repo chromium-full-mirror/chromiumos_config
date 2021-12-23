@@ -123,4 +123,8 @@ message HardwareTopology {
   // Specify the HDMI topology.
   // See ./hardware_topology.md#hdmi for more information.
   Topology hdmi = 26;
+
+  // Specify the PoE peripheral support topology.
+  // See ./hardware_topology.md#poe_peripheral_support for more information.
+  Topology poe = 29;
 }
