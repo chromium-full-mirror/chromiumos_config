@@ -45,6 +45,10 @@
           }
         },
         "brand-code": "AAAA",
+        "branding": {
+          "marketing-name": "Fake ChromeOS Device Brandname",
+          "oem-name": "FAKE_OEM"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -198,6 +202,10 @@
           }
         },
         "brand-code": "AAAA",
+        "branding": {
+          "marketing-name": "Fake ChromeOS Device Brandname",
+          "oem-name": "FAKE_OEM"
+        },
         "camera": {
           "count": 2,
           "devices": [
@@ -382,6 +390,10 @@
           }
         },
         "brand-code": "FDAA",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname A",
+          "oem-name": "FAKE_OEMA"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -511,6 +523,10 @@
           }
         },
         "brand-code": "FDBB",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname B",
+          "oem-name": "FAKE_OEMB"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -664,6 +680,10 @@
           }
         },
         "brand-code": "FDCC",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname C",
+          "oem-name": "FAKE_OEMC"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -783,6 +803,9 @@
           }
         },
         "brand-code": "WLZZ",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname WL"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -903,6 +926,10 @@
           }
         },
         "brand-code": "WLAA",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname WL-A",
+          "oem-name": "FAKE_LOEMA"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -1024,6 +1051,10 @@
           }
         },
         "brand-code": "WLBB",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname WL-B",
+          "oem-name": "FAKE_LOEMB"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -1145,6 +1176,10 @@
           }
         },
         "brand-code": "WLCC",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname WL-C",
+          "oem-name": "FAKE_LOEMC"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -1266,6 +1301,10 @@
           }
         },
         "brand-code": "RBDD",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname REBRAND-D",
+          "oem-name": "FAKE_OEMD"
+        },
         "camera": {
           "count": 1,
           "devices": [
@@ -1379,6 +1418,10 @@
           }
         },
         "brand-code": "FDBX",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname Box",
+          "oem-name": "FAKE_OEM"
+        },
         "camera": {
           "count": 0
         },
@@ -1477,6 +1520,10 @@
           }
         },
         "brand-code": "FDBX",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname Box",
+          "oem-name": "FAKE_OEM"
+        },
         "camera": {
           "count": 0
         },
@@ -1575,6 +1622,10 @@
           }
         },
         "brand-code": "FDBX",
+        "branding": {
+          "marketing-name": "ChromeOS Device Brandname Box",
+          "oem-name": "FAKE_OEM"
+        },
         "camera": {
           "count": 0
         },

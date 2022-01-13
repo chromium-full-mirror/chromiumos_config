@@ -881,6 +881,7 @@ _DEVICE_BRAND = device_brand.create(
     design_id = _DESIGN_ID,
     oem_id = _FAKE_OEM.id,
     brand_code = "AAAA",
+    export_oem_info = True,
 )
 
 _DEVICE_BRAND_A = device_brand.create(
@@ -888,6 +889,7 @@ _DEVICE_BRAND_A = device_brand.create(
     design_id = _DESIGN_ID_A,
     oem_id = _FAKE_OEMA.id,
     brand_code = "FDAA",
+    export_oem_info = True,
 )
 
 _DEVICE_BRAND_B = device_brand.create(
@@ -895,6 +897,7 @@ _DEVICE_BRAND_B = device_brand.create(
     design_id = _DESIGN_ID_B,
     oem_id = _FAKE_OEMB.id,
     brand_code = "FDBB",
+    export_oem_info = True,
 )
 
 _DEVICE_BRAND_C = device_brand.create(
@@ -902,6 +905,7 @@ _DEVICE_BRAND_C = device_brand.create(
     design_id = _DESIGN_ID_C,
     oem_id = _FAKE_OEMC.id,
     brand_code = "FDCC",
+    export_oem_info = True,
 )
 
 _WL_DEVICE_BRAND = device_brand.create(
@@ -909,6 +913,7 @@ _WL_DEVICE_BRAND = device_brand.create(
     design_id = _DESIGN_ID_WL,
     oem_id = None,
     brand_code = "WLZZ",
+    export_oem_info = True,
 )
 
 _WL_DEVICE_BRAND_A = device_brand.create(
@@ -916,6 +921,7 @@ _WL_DEVICE_BRAND_A = device_brand.create(
     design_id = _DESIGN_ID_WL,
     oem_id = _FAKE_LOEMA.id,
     brand_code = "WLAA",
+    export_oem_info = True,
 )
 
 _WL_DEVICE_BRAND_B = device_brand.create(
@@ -923,6 +929,7 @@ _WL_DEVICE_BRAND_B = device_brand.create(
     design_id = _DESIGN_ID_WL,
     oem_id = _FAKE_LOEMB.id,
     brand_code = "WLBB",
+    export_oem_info = True,
 )
 
 _WL_DEVICE_BRAND_C = device_brand.create(
@@ -930,6 +937,7 @@ _WL_DEVICE_BRAND_C = device_brand.create(
     design_id = _DESIGN_ID_WL,
     oem_id = _FAKE_LOEMC.id,
     brand_code = "WLCC",
+    export_oem_info = True,
 )
 
 _REBRAND_DEVICE_BRAND_D = device_brand.create(
@@ -937,6 +945,7 @@ _REBRAND_DEVICE_BRAND_D = device_brand.create(
     design_id = _DESIGN_ID_REBRAND,
     oem_id = _FAKE_OEMD.id,
     brand_code = "RBDD",
+    export_oem_info = True,
 )
 
 _DEVICE_BRAND_BOX = device_brand.create(
@@ -944,6 +953,7 @@ _DEVICE_BRAND_BOX = device_brand.create(
     design_id = _DESIGN_ID_BOX,
     oem_id = _FAKE_OEM.id,
     brand_code = "FDBX",
+    export_oem_info = True,
 )
 
 _BRAND_CONFIGS = [
