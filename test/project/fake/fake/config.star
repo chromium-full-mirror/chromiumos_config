@@ -86,9 +86,9 @@ _AUDIO_WITH_INIT = hw_topo.create_audio(
     ],
 )
 
-_AUDIO_WITHOUT_MIC_SUFFIX = hw_topo.override_audio(
+_AUDIO_WITH_CUSTOM_MIC_SUFFIX = hw_topo.override_audio(
     _AUDIO_WITH_INIT,
-    ucm_suffix = "{design}",
+    ucm_suffix = "{speaker_amp}.{headset_codec}.{camera_count}pos.{user_facing_mic_count}uf{world_facing_mic_count}wf{total_mic_count}total.{design}",
     ucm_config = hw_topo.audio_config_structure.COMMON,
     cras_config = hw_topo.audio_config_structure.COMMON,
 )
@@ -102,6 +102,12 @@ _AUDIO_WITH_FIXED_SUFFIX = hw_topo.override_audio(
 _STYLUS = hw_topo.create_stylus("STYLUS", "Default stylus", stylus_type = hw_topo.stylus.INTERNAL)
 _KEYBOARD = hw_topo.create_keyboard(backlight = True, pwr_btn_present = False, kb_type = hw_topo.kb_type.DETACHABLE, numpad_present = True)
 _THERMAL = hw_topo.create_thermal("THERMAL", "Default thermal")
+_CAMERA0 = hw_topo.create_camera(
+    "CAMERA0",
+    "No cameras",
+    fw_configs = [hw_topo.make_fw_config(program.fw_masks.CAMERA, 1)],
+    camera_devices = [],
+)
 _CAMERA1 = hw_topo.create_camera(
     "CAMERA1",
     "1 USB camera",
@@ -113,6 +119,7 @@ _CAMERA1 = hw_topo.create_camera(
             orientation = 0,
             flags = 0,
             ids = ["0123:abcd"],
+            microphone_count = 2,
         ),
     ],
 )
@@ -127,6 +134,7 @@ _CAMERA2 = hw_topo.create_camera(
             orientation = 0,
             flags = hw_topo.camera_flags.SUPPORT_AUTOFOCUS,
             ids = ["0123:abcd"],
+            microphone_count = 1,
         ),
         hw_topo.make_camera_device(
             interface = "mipi",
@@ -134,6 +142,7 @@ _CAMERA2 = hw_topo.create_camera(
             orientation = 180,
             flags = hw_topo.camera_flags.SUPPORT_1080P | hw_topo.camera_flags.SUPPORT_AUTOFOCUS,
             ids = ["mipi-cam"],
+            microphone_count = 2,
         ),
     ],
 )
@@ -512,7 +521,8 @@ design.append_configs(
     config_id = 128,
     hardware_topology = create_hardware_topology(
         form_factor = _FORM_FACTOR_CHROMEBOX,
-        audio = _AUDIO_WITHOUT_MIC_SUFFIX,
+        audio = _AUDIO_WITH_CUSTOM_MIC_SUFFIX,
+        camera = _CAMERA0,
     ),
     firmware = sc.create_fw_payloads_by_names(
         "Fake",
