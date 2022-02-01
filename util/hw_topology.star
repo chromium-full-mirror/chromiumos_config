@@ -231,6 +231,8 @@ def _create_form_factor(form_factor, recovery_input = None, fw_configs = [], id 
             _FF.CONVERTIBLE: "CONVERTIBLE",
             _FF.CHROMEBASE: "CHROMEBASE",
             _FF.CHROMEBOX: "CHROMEBOX",
+            _FF.DETACHABLE: "DETACHABLE",
+            _FF.CHROMESLATE: "CHROMESLATE",
         }[form_factor]
 
     if not description:
@@ -239,6 +241,8 @@ def _create_form_factor(form_factor, recovery_input = None, fw_configs = [], id 
             _FF.CONVERTIBLE: "Device can rotate 360 degrees",
             _FF.CHROMEBASE: "Desktop chrome all-in-one.",
             _FF.CHROMEBOX: "Desktop chrome device.",
+            _FF.DETACHABLE: "Device can detach from its keyboard.",
+            _FF.CHROMESLATE: "Tablet chrome device.",
         }[form_factor]
 
     if not recovery_input:
