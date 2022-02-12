@@ -111,6 +111,12 @@ partner = struct(
             vendor_id = "2A94",
             symlink_file_format = "g2touch_{product_id}.bin",
         ),
+        HIMAX = _create_touch_partner(
+            name = "himax",
+            vendor_id = "4858",
+            symlink_file_format = "himax_i2chid_{product_id}.bin",
+            destination_file_format = "{product_id}_{fw_version}.bin",
+        ),
         PIXART = _create_touch_partner(
             name = "pixart",
             vendor_id = "093A",
