@@ -440,7 +440,6 @@ def add_hwid_components(config_bundle, hwid_db):
           'storage': create_storage_components,
           'touchpad': create_touchpad_components,
           'tpm': create_tpm_components,
-          'touchscreen': create_touchscreen_components,
           'stylus': create_stylus_components,
           'usb_hosts': create_usb_host_components,
           'video': create_video_components,
