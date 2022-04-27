@@ -1422,6 +1422,15 @@ sw_config.create_ui()
 
 
 
+### sw_config.create_usb {#sw_config.create_usb}
+
+
+```python
+sw_config.create_usb()
+```
+
+
+
 ### sw_config.make_resolution {#sw_config.make_resolution}
 
 
