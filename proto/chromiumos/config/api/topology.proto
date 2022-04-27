@@ -54,6 +54,7 @@ message Topology {
     VOLUME_BUTTON = 21;
     EC = 22;
     HDMI = 23;
+    RECOVERY_INPUT = 33;
   }
 
   // Map of human readable descriptions in various languages. Maps language
@@ -292,6 +293,15 @@ message HardwareFeatures {
       CHROMEBOX = 5;
       CHROMEBIT = 6;
       CHROMESLATE = 7;
+    }
+
+    // Input to enter recovery
+    RecoveryInputType recovery_input = 2;
+    enum RecoveryInputType {
+      RECOVERY_INPUT_UNKNOWN = 0;
+      KEYBOARD = 1;
+      POWER_BUTTON = 2;
+      RECOVERY_BUTTON = 3;
     }
   }
 
