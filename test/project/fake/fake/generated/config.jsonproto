@@ -182,7 +182,8 @@
               "location": 2
             },
             "formFactor": {
-              "formFactor": 1
+              "formFactor": 1,
+              "recoveryInput": 1
             },
             "fwConfig": {
               "mask": 65535,
@@ -388,7 +389,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 1
+                  "formFactor": 1,
+                  "recoveryInput": 1
                 }
               },
               "id": "CLAMSHELL",
@@ -597,7 +599,8 @@
               "location": 5
             },
             "formFactor": {
-              "formFactor": 1
+              "formFactor": 1,
+              "recoveryInput": 2
             },
             "fwConfig": {
               "mask": 65535,
@@ -775,7 +778,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 1
+                  "formFactor": 1,
+                  "recoveryInput": 2
                 }
               },
               "id": "CLAMSHELL",
@@ -990,7 +994,8 @@
               "location": 2
             },
             "formFactor": {
-              "formFactor": 2
+              "formFactor": 2,
+              "recoveryInput": 1
             },
             "fwConfig": {
               "mask": 65535,
@@ -1178,7 +1183,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 2
+                  "formFactor": 2,
+                  "recoveryInput": 1
                 }
               },
               "id": "CONVERTIBLE",
@@ -1391,7 +1397,8 @@
               "location": 5
             },
             "formFactor": {
-              "formFactor": 2
+              "formFactor": 3,
+              "recoveryInput": 2
             },
             "fwConfig": {
               "mask": 65535,
@@ -1579,7 +1586,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 2
+                  "formFactor": 3,
+                  "recoveryInput": 2
                 }
               },
               "id": "CONVERTIBLE",
@@ -1780,7 +1788,8 @@
               "location": 5
             },
             "formFactor": {
-              "formFactor": 1
+              "formFactor": 7,
+              "recoveryInput": 2
             },
             "fwConfig": {
               "mask": 65535,
@@ -1967,7 +1976,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 1
+                  "formFactor": 7,
+                  "recoveryInput": 2
                 }
               },
               "id": "CLAMSHELL",
@@ -2159,7 +2169,8 @@
               "location": 5
             },
             "formFactor": {
-              "formFactor": 1
+              "formFactor": 1,
+              "recoveryInput": 1
             },
             "fwConfig": {
               "mask": 65535,
@@ -2325,7 +2336,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 1
+                  "formFactor": 1,
+                  "recoveryInput": 1
                 }
               },
               "id": "CLAMSHELL",
@@ -2505,7 +2517,8 @@
               "location": 5
             },
             "formFactor": {
-              "formFactor": 5
+              "formFactor": 1,
+              "recoveryInput": 1
             },
             "fwConfig": {
               "mask": 65535,
@@ -2671,7 +2684,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 5
+                  "formFactor": 1,
+                  "recoveryInput": 1
                 }
               },
               "id": "CHROMEBOX",

@@ -90,8 +90,10 @@
           "signature-id": "fake_ref_design"
         },
         "hardware-properties": {
+          "form-factor": "CLAMSHELL",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -231,8 +233,10 @@
           "signature-id": "fake_ref_design"
         },
         "hardware-properties": {
+          "form-factor": "CLAMSHELL",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "POWER_BUTTON"
         },
         "identity": {
           "platform-name": "fake",
@@ -392,8 +396,10 @@
           "signature-id": "project_a"
         },
         "hardware-properties": {
+          "form-factor": "CONVERTIBLE",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -512,8 +518,10 @@
           "signature-id": "project_b"
         },
         "hardware-properties": {
+          "form-factor": "DETACHABLE",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "POWER_BUTTON"
         },
         "identity": {
           "platform-name": "fake",
@@ -626,8 +634,10 @@
           "signature-id": "project_c"
         },
         "hardware-properties": {
+          "form-factor": "CHROMESLATE",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "POWER_BUTTON"
         },
         "identity": {
           "platform-name": "fake",
@@ -744,8 +754,10 @@
           "signature-id": "project_wl"
         },
         "hardware-properties": {
+          "form-factor": "CLAMSHELL",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -862,8 +874,10 @@
           "signature-id": "project_wl-loema"
         },
         "hardware-properties": {
+          "form-factor": "CLAMSHELL",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -981,8 +995,10 @@
           "signature-id": "project_wl-loemb"
         },
         "hardware-properties": {
+          "form-factor": "CLAMSHELL",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -1100,8 +1116,10 @@
           "signature-id": "project_wl-loemc"
         },
         "hardware-properties": {
+          "form-factor": "CLAMSHELL",
           "has-backlight": true,
-          "psu-type": "battery"
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -1210,8 +1228,10 @@
           "signature-id": "project_box"
         },
         "hardware-properties": {
-          "has-backlight": false,
-          "psu-type": "AC_only"
+          "form-factor": "CLAMSHELL",
+          "has-backlight": true,
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
