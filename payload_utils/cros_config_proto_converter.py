@@ -301,15 +301,31 @@ def _build_ash_flags(config: Config) -> List[str]:
   Ash is the window manager and system UI for ChromeOS, see
   https://chromium.googlesource.com/chromium/src/+/HEAD/ash/.
   """
-  # pylint: disable=too-many-branches
+  # pylint: disable=too-many-branches,too-many-locals,too-many-statements
 
   # A map from flag name -> value. Value may be None for boolean flags.
   flags = {}
+
+  # Sets of ash features to enable and disable, respectively.
+  enabled_features = set()
+  disabled_features = set()
 
   # Adds a flag name -> value pair to flags map. |value| may be None for boolean
   # flags.
   def _add_flag(name, value=None):
     flags[name] = value
+
+  # Adds a feature name to the set of enabled features, removing it from the
+  # set of disabled features if present.
+  def _enable_feature(name):
+    enabled_features.add(name)
+    disabled_features.discard(name)
+
+  # Adds a feature name to the set of disabled features, removing it from the
+  # set of enabled features if present.
+  def _disable_feature(name):
+    disabled_features.add(name)
+    enabled_features.discard(name)
 
   hw_features = config.hw_design_config.hardware_features
   if hw_features.stylus.stylus == topology_pb2.HardwareFeatures.Stylus.INTERNAL:
@@ -341,6 +357,9 @@ def _build_ash_flags(config: Config) -> List[str]:
   regulatory_label = config.brand_config.regulatory_label
   if regulatory_label:
     _add_flag('regulatory-label-dir', regulatory_label)
+
+  if config.brand_config.cloud_gaming_device:
+    _enable_feature('CloudGamingDevice')
 
   _add_flag('arc-build-properties', {
       'device': "%s_cheets" % config.program.name.lower(),
@@ -393,6 +412,11 @@ def _build_ash_flags(config: Config) -> List[str]:
       form_factor == topology_pb2.HardwareFeatures.FormFactor.CHROMEBASE):
     _add_flag('oobe-large-screen-special-scaling')
     _add_flag('enable-virtual-keyboard')
+
+  if enabled_features:
+    _add_flag('enable-features', ','.join(sorted(enabled_features)))
+  if disabled_features:
+    _add_flag('disable-features', ','.join(sorted(disabled_features)))
 
   return sorted([f'--{k}={v}' if v else f'--{k}' for k, v in flags.items()])
 
