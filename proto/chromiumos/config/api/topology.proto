@@ -7,6 +7,7 @@ syntax = "proto3";
 package chromiumos.config.api;
 
 import "chromiumos/config/api/component.proto";
+import "google/protobuf/wrappers.proto";
 
 option go_package = "go.chromium.org/chromiumos/config/go/api";
 
@@ -594,4 +595,13 @@ message HardwareFeatures {
     // If PoE peripheral support is present on system
     Present present = 1;
   };
+
+  // Touch screen properties
+  Touch touch = 38;
+  message Touch {
+     // Configures touch slop distance in Chrome.
+     // This is the number of pixels a touch event can wander before being
+     // recognized as a scroll rather than a tap.
+     google.protobuf.UInt32Value touch_slop_distance = 1;
+  }
 }

@@ -168,6 +168,7 @@ def _build_ash_flags(config: Config) -> List[str]:
   https://chromium.googlesource.com/chromium/src/+/HEAD/ash/.
   """
   # pylint: disable=too-many-branches
+  # pylint: disable=too-many-locals
 
   # A map from flag name -> value. Value may be None for boolean flags.
   flags = {}
@@ -259,6 +260,10 @@ def _build_ash_flags(config: Config) -> List[str]:
       form_factor == topology_pb2.HardwareFeatures.FormFactor.CHROMEBASE):
     _add_flag('oobe-large-screen-special-scaling')
     _add_flag('enable-virtual-keyboard')
+
+  touch = config.hw_design_config.hardware_topology.touch.hardware_feature.touch
+  if touch.HasField('touch_slop_distance'):
+    _add_flag('touch-slop-distance', touch.touch_slop_distance.value)
 
   return sorted([f'--{k}={v}' if v else f'--{k}' for k, v in flags.items()])
 

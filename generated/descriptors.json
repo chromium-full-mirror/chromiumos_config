@@ -1932,7 +1932,8 @@
         "isSyntaxUnspecified": false
       },
       "dependency": [
-        "chromiumos/config/api/component.proto"
+        "chromiumos/config/api/component.proto",
+        "google/protobuf/wrappers.proto"
       ],
       "messageType": [
         {
@@ -2465,6 +2466,14 @@
               "number": 35,
               "type": "TYPE_MESSAGE",
               "typeName": ".chromiumos.config.api.HardwareFeatures.PoE"
+            },
+            {
+              "jsonName": "touch",
+              "label": "LABEL_OPTIONAL",
+              "name": "touch",
+              "number": 38,
+              "type": "TYPE_MESSAGE",
+              "typeName": ".chromiumos.config.api.HardwareFeatures.Touch"
             }
           ],
           "name": "HardwareFeatures",
@@ -3683,6 +3692,19 @@
                 }
               ],
               "name": "PoE"
+            },
+            {
+              "field": [
+                {
+                  "jsonName": "touchSlopDistance",
+                  "label": "LABEL_OPTIONAL",
+                  "name": "touch_slop_distance",
+                  "number": 1,
+                  "type": "TYPE_MESSAGE",
+                  "typeName": ".google.protobuf.UInt32Value"
+                }
+              ],
+              "name": "Touch"
             }
           ]
         }
