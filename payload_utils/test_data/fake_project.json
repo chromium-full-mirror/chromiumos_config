@@ -518,10 +518,10 @@
           "signature-id": "project_b"
         },
         "hardware-properties": {
-          "form-factor": "DETACHABLE",
+          "form-factor": "CONVERTIBLE",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "POWER_BUTTON"
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -634,10 +634,10 @@
           "signature-id": "project_c"
         },
         "hardware-properties": {
-          "form-factor": "CHROMESLATE",
+          "form-factor": "CLAMSHELL",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "POWER_BUTTON"
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -1228,10 +1228,10 @@
           "signature-id": "project_box"
         },
         "hardware-properties": {
-          "form-factor": "CLAMSHELL",
-          "has-backlight": true,
-          "psu-type": "battery",
-          "recovery-input": "KEYBOARD"
+          "form-factor": "CHROMEBOX",
+          "has-backlight": false,
+          "psu-type": "AC_only",
+          "recovery-input": "RECOVERY_BUTTON"
         },
         "identity": {
           "platform-name": "fake",

@@ -241,24 +241,15 @@ def _create_form_factor(form_factor, recovery_input = None, fw_configs = [], id 
         }[form_factor]
 
     if not recovery_input:
-        # TODO(b/232022558) remove this workaround and generate recovery-input for
-        # all form factors
-        generate_recovery_input_for = [
-            _FF.CLAMSHELL,
-            _FF.CONVERTIBLE,
-            _FF.DETACHABLE,
-            _FF.CHROMESLATE,
-        ]
-        if form_factor in generate_recovery_input_for:
-            recovery_input = {
-                _FF.CLAMSHELL: topo_pb.HardwareFeatures.FormFactor.KEYBOARD,
-                _FF.CONVERTIBLE: topo_pb.HardwareFeatures.FormFactor.KEYBOARD,
-                _FF.DETACHABLE: topo_pb.HardwareFeatures.FormFactor.POWER_BUTTON,
-                _FF.CHROMEBASE: topo_pb.HardwareFeatures.FormFactor.RECOVERY_BUTTON,
-                _FF.CHROMEBOX: topo_pb.HardwareFeatures.FormFactor.RECOVERY_BUTTON,
-                _FF.CHROMEBIT: topo_pb.HardwareFeatures.FormFactor.RECOVERY_BUTTON,
-                _FF.CHROMESLATE: topo_pb.HardwareFeatures.FormFactor.POWER_BUTTON,
-            }[form_factor]
+        recovery_input = {
+            _FF.CLAMSHELL: topo_pb.HardwareFeatures.FormFactor.KEYBOARD,
+            _FF.CONVERTIBLE: topo_pb.HardwareFeatures.FormFactor.KEYBOARD,
+            _FF.DETACHABLE: topo_pb.HardwareFeatures.FormFactor.POWER_BUTTON,
+            _FF.CHROMEBASE: topo_pb.HardwareFeatures.FormFactor.RECOVERY_BUTTON,
+            _FF.CHROMEBOX: topo_pb.HardwareFeatures.FormFactor.RECOVERY_BUTTON,
+            _FF.CHROMEBIT: topo_pb.HardwareFeatures.FormFactor.RECOVERY_BUTTON,
+            _FF.CHROMESLATE: topo_pb.HardwareFeatures.FormFactor.POWER_BUTTON,
+        }[form_factor]
 
     hw_features = topo_pb.HardwareFeatures()
 
