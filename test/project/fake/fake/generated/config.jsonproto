@@ -2517,7 +2517,8 @@
               "location": 5
             },
             "formFactor": {
-              "formFactor": 5
+              "formFactor": 5,
+              "recoveryInput": 3
             },
             "fwConfig": {
               "mask": 65295,
@@ -2659,7 +2660,8 @@
               },
               "hardwareFeature": {
                 "formFactor": {
-                  "formFactor": 5
+                  "formFactor": 5,
+                  "recoveryInput": 3
                 }
               },
               "id": "CHROMEBOX",
