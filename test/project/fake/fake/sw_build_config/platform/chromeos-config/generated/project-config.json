@@ -178,6 +178,9 @@
           ]
         },
         "ui": {
+          "ash-enabled-features": [
+            "CloudGamingDevice"
+          ],
           "extra-ash-flags": [
             "--arc-build-properties={'device': 'fake_program_cheets', 'firstApiLevel': '28'}",
             "--ash-power-button-position={\"edge\": \"left\", \"position\": 0.9}",
@@ -187,7 +190,6 @@
             "--default-wallpaper-is-oem",
             "--default-wallpaper-large=/usr/share/chromeos-assets/wallpaper/fake_wallpaper_large.jpg",
             "--default-wallpaper-small=/usr/share/chromeos-assets/wallpaper/fake_wallpaper_small.jpg",
-            "--enable-features=CloudGamingDevice",
             "--enable-microphone-mute-switch-device",
             "--extra-web-apps-dir=apps1",
             "--fingerprint-sensor-location=keyboard-bottom-left",
@@ -388,6 +390,9 @@
           ]
         },
         "ui": {
+          "ash-enabled-features": [
+            "CloudGamingDevice"
+          ],
           "extra-ash-flags": [
             "--arc-build-properties={'device': 'fake_program_cheets', 'firstApiLevel': '28'}",
             "--ash-power-button-position={\"edge\": \"left\", \"position\": 0.9}",
@@ -397,7 +402,6 @@
             "--default-wallpaper-is-oem",
             "--default-wallpaper-large=/usr/share/chromeos-assets/wallpaper/fake_wallpaper_large.jpg",
             "--default-wallpaper-small=/usr/share/chromeos-assets/wallpaper/fake_wallpaper_small.jpg",
-            "--enable-features=CloudGamingDevice",
             "--enable-microphone-mute-switch-device",
             "--extra-web-apps-dir=apps2",
             "--guest-wallpaper-large=/usr/share/chromeos-assets/wallpaper/guest_large.jpg",
@@ -1807,6 +1811,9 @@
           ]
         },
         "ui": {
+          "ash-enabled-features": [
+            "CloudGamingDevice"
+          ],
           "extra-ash-flags": [
             "--arc-build-properties={'device': 'fake_program_cheets', 'firstApiLevel': '28'}",
             "--ash-power-button-position={\"edge\": \"left\", \"position\": 0.9}",
@@ -1815,7 +1822,6 @@
             "--child-wallpaper-small=/usr/share/chromeos-assets/wallpaper/child_small.jpg",
             "--default-wallpaper-large=/usr/share/chromeos-assets/wallpaper/default_large.jpg",
             "--default-wallpaper-small=/usr/share/chromeos-assets/wallpaper/default_small.jpg",
-            "--enable-features=CloudGamingDevice",
             "--guest-wallpaper-large=/usr/share/chromeos-assets/wallpaper/guest_large.jpg",
             "--guest-wallpaper-small=/usr/share/chromeos-assets/wallpaper/guest_small.jpg"
           ]
