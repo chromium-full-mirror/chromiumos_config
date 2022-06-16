@@ -7004,6 +7004,9 @@
       },
       "publicReplication": {
         "publicFields": "designConfigId,idScanConfig"
+      },
+      "uiConfig": {
+        "cloudGamingDevice": true
       }
     }
   ]
