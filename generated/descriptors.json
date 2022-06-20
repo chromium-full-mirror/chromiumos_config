@@ -2854,6 +2854,14 @@
                     {
                       "name": "MAX98390",
                       "number": 12
+                    },
+                    {
+                      "name": "MAX98396",
+                      "number": 13
+                    },
+                    {
+                      "name": "CS35L41",
+                      "number": 14
                     }
                   ]
                 },
