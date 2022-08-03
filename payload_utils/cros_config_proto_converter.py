@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Copyright 2020 The Chromium OS Authors. All rights reserved.
+# Copyright 2020 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """Transforms config from /config/proto/api proto format to platform JSON."""
@@ -461,6 +461,7 @@ def _file_v2(build_path, system_path):
 
 
 def _build_audio(config):
+  # pylint: disable=too-many-branches
   if not config.sw_config.audio_configs:
     return {}
   alsa_path = '/usr/share/alsa/ucm'
@@ -472,6 +473,10 @@ def _build_audio(config):
   for audio in config.sw_config.audio_configs:
     card = audio.card_name
     card_with_suffix = audio.card_name
+
+    if audio.cras_custom_name:
+      design_name = audio.cras_custom_name
+
     if audio.ucm_suffix:
       # TODO: last ucm_suffix wins.
       ucm_suffix = audio.ucm_suffix
