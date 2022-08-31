@@ -528,10 +528,10 @@
           "signature-id": "project_b"
         },
         "hardware-properties": {
-          "form-factor": "CONVERTIBLE",
+          "form-factor": "DETACHABLE",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "KEYBOARD"
+          "recovery-input": "POWER_BUTTON"
         },
         "identity": {
           "platform-name": "fake",
@@ -648,10 +648,10 @@
           "signature-id": "project_c"
         },
         "hardware-properties": {
-          "form-factor": "CLAMSHELL",
+          "form-factor": "CHROMESLATE",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "KEYBOARD"
+          "recovery-input": "POWER_BUTTON"
         },
         "identity": {
           "platform-name": "fake",
