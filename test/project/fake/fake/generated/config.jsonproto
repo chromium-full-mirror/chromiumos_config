@@ -1461,6 +1461,62 @@
               "barreljack": 2,
               "usbMinAcWatts": 20
             },
+            "proximity": {
+              "configs": [
+                {
+                  "location": [
+                    {
+                      "modifier": "left",
+                      "radioType": 1
+                    },
+                    {
+                      "radioType": 2
+                    }
+                  ],
+                  "semtechConfig": {
+                    "channelConfig": [
+                      {
+                        "channel": "0",
+                        "hardwaregain": 4
+                      },
+                      {
+                        "channel": "1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "location": [
+                    {
+                      "modifier": "right",
+                      "radioType": 1
+                    }
+                  ],
+                  "semtechConfig": {
+                    "channelConfig": [
+                      {
+                        "channel": "0",
+                        "hardwaregain": 2
+                      },
+                      {
+                        "channel": "1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "activityConfig": {},
+                  "location": [
+                    {
+                      "radioType": 1
+                    },
+                    {
+                      "radioType": 2
+                    }
+                  ]
+                }
+              ]
+            },
             "screen": {
               "panelProperties": {
                 "alsSteps": [
@@ -1792,6 +1848,71 @@
               "id": "POWER_SUPPLY",
               "type": 32
             },
+            "proximitySensor": {
+              "description": {
+                "EN": "Default proximity_sensor"
+              },
+              "hardwareFeature": {
+                "proximity": {
+                  "configs": [
+                    {
+                      "location": [
+                        {
+                          "modifier": "left",
+                          "radioType": 1
+                        },
+                        {
+                          "radioType": 2
+                        }
+                      ],
+                      "semtechConfig": {
+                        "channelConfig": [
+                          {
+                            "channel": "0",
+                            "hardwaregain": 4
+                          },
+                          {
+                            "channel": "1"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": [
+                        {
+                          "modifier": "right",
+                          "radioType": 1
+                        }
+                      ],
+                      "semtechConfig": {
+                        "channelConfig": [
+                          {
+                            "channel": "0",
+                            "hardwaregain": 2
+                          },
+                          {
+                            "channel": "1"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "activityConfig": {},
+                      "location": [
+                        {
+                          "radioType": 1
+                        },
+                        {
+                          "radioType": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "id": "PROXIMITY_SENSOR",
+              "type": 10
+            },
             "screen": {
               "description": {
                 "EN": "Touchscreen"
@@ -2019,6 +2140,18 @@
             "powerSupply": {
               "barreljack": 2,
               "usbMinAcWatts": 20
+            },
+            "proximity": {
+              "configs": [
+                {
+                  "activityConfig": {},
+                  "location": [
+                    {
+                      "radioType": 2
+                    }
+                  ]
+                }
+              ]
             },
             "screen": {
               "panelProperties": {
@@ -2343,6 +2476,27 @@
               },
               "id": "POWER_SUPPLY",
               "type": 32
+            },
+            "proximitySensor": {
+              "description": {
+                "EN": "Default proximity_sensor"
+              },
+              "hardwareFeature": {
+                "proximity": {
+                  "configs": [
+                    {
+                      "activityConfig": {},
+                      "location": [
+                        {
+                          "radioType": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "id": "PROXIMITY_SENSOR",
+              "type": 10
             },
             "screen": {
               "description": {
@@ -4909,7 +5063,62 @@
               "barreljack": 2,
               "usbMinAcWatts": 20
             },
-            "proximity": {},
+            "proximity": {
+              "configs": [
+                {
+                  "location": [
+                    {
+                      "modifier": "left",
+                      "radioType": 1
+                    },
+                    {
+                      "radioType": 2
+                    }
+                  ],
+                  "semtechConfig": {
+                    "channelConfig": [
+                      {
+                        "channel": "0",
+                        "hardwaregain": 4
+                      },
+                      {
+                        "channel": "1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "location": [
+                    {
+                      "modifier": "right",
+                      "radioType": 1
+                    }
+                  ],
+                  "semtechConfig": {
+                    "channelConfig": [
+                      {
+                        "channel": "0",
+                        "hardwaregain": 2
+                      },
+                      {
+                        "channel": "1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "activityConfig": {},
+                  "location": [
+                    {
+                      "radioType": 1
+                    },
+                    {
+                      "radioType": 2
+                    }
+                  ]
+                }
+              ]
+            },
             "screen": {
               "panelProperties": {
                 "alsSteps": [
@@ -5396,7 +5605,62 @@
                 "EN": "Default proximity_sensor"
               },
               "hardwareFeature": {
-                "proximity": {}
+                "proximity": {
+                  "configs": [
+                    {
+                      "location": [
+                        {
+                          "modifier": "left",
+                          "radioType": 1
+                        },
+                        {
+                          "radioType": 2
+                        }
+                      ],
+                      "semtechConfig": {
+                        "channelConfig": [
+                          {
+                            "channel": "0",
+                            "hardwaregain": 4
+                          },
+                          {
+                            "channel": "1"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "location": [
+                        {
+                          "modifier": "right",
+                          "radioType": 1
+                        }
+                      ],
+                      "semtechConfig": {
+                        "channelConfig": [
+                          {
+                            "channel": "0",
+                            "hardwaregain": 2
+                          },
+                          {
+                            "channel": "1"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "activityConfig": {},
+                      "location": [
+                        {
+                          "radioType": 1
+                        },
+                        {
+                          "radioType": 2
+                        }
+                      ]
+                    }
+                  ]
+                }
               },
               "id": "PROXIMITY_SENSOR",
               "type": 10
