@@ -401,6 +401,7 @@ def _create_audio_card_config(
         card_name,
         ucm_suffix = None,
         cras_config = _AUDIO_CONFIG_STRUCTURE.DESIGN,
+        cras_suffix = None,
         ucm_config = _AUDIO_CONFIG_STRUCTURE.DESIGN,
         sound_card_init_config = _AUDIO_CONFIG_STRUCTURE.NONE):
     """Builds a CardConfig proto for an audio card config.
@@ -431,6 +432,8 @@ def _create_audio_card_config(
             should instead be included as part of card_name.
         cras_config: An AudioConfigStructure enum specifying how cras config
             files are structured for this card. If unset, defaults to DESIGN.
+        cras_suffix: Similar to ucm_suffix, using same placeholders. If unset, the
+            default cras config path will be used.
         ucm_config: An AudioConfigStructure enum specifying how ALSA UCM config
             files are structured for this card. If unset, defaults to DESIGN.
         sound_card_init_config: An AudioConfigStructure enum specifying how
@@ -448,6 +451,8 @@ def _create_audio_card_config(
     )
     if ucm_suffix != None:
         config.ucm_suffix.value = ucm_suffix
+    if cras_suffix != None:
+        config.cras_suffix.value = cras_suffix
     return config
 
 def _create_audio(
@@ -504,6 +509,7 @@ def _override_audio(
         fw_configs = None,
         ucm_suffix = None,
         cras_config = None,
+        cras_suffix = None,
         ucm_config = None,
         sound_card_init_config = None):
     if source_topo.type != topo_pb.Topology.AUDIO:
@@ -525,6 +531,8 @@ def _override_audio(
             card_config.cras_config = cras_config
         if sound_card_init_config != None:
             card_config.sound_card_init_config = sound_card_init_config
+        if cras_suffix != None:
+            card_config.cras_suffix.value = cras_suffix
     if cras_config != None:
         hw_features.audio.cras_config = cras_config
     return topo
