@@ -294,3 +294,9 @@ Changes that require new topology
 Changes that require new topology
 
 * Presence of the detachable base
+
+## Battery
+
+Changes that require new topology
+
+* Supports booting with no battery

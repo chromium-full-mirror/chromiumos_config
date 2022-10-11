@@ -140,6 +140,10 @@ message HardwareTopology {
   // See ./hardware_topology.md#power-supply for more information.
   Topology power_supply = 30;
 
+  // Specify the battery topology
+  // See ./hardware_topology.md#battery for more information.
+  Topology battery = 31;
+
   // Specify the  topology
   // See ./hardware_topology.md#detachable_base for more information.
   Topology detachable_base = 34;
