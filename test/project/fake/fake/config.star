@@ -498,6 +498,8 @@ _DETACHABLE_BASE_WITH_TP = hw_topo.create_detachable_base(
     fw_configs = [hw_topo.make_fw_config(program.fw_masks.DETACHABLE_BASE, 1)],
 )
 
+_BATTERY = hw_topo.create_battery(no_battery_boot_supported = True)
+
 def create_hardware_topology(
         screen = None,
         form_factor = None,
@@ -519,7 +521,8 @@ def create_hardware_topology(
         power_supply = None,
         proximity_sensor = None,
         wifi = None,
-        detachable_base = None):
+        detachable_base = None,
+        battery = None):
     return hw_topo.create_hardware_topology(
         bluetooth = bluetooth if bluetooth else None,
         barreljack = barreljack if barreljack else None,
@@ -549,6 +552,7 @@ def create_hardware_topology(
         hps = hps,
         power_supply = power_supply if power_supply else _POWER_SUPPLY,
         detachable_base = detachable_base,
+        battery = battery,
     )
 
 # Create empty arrays that we will continually append new configurations to
@@ -574,6 +578,7 @@ design.append_configs(
         microphone_mute_switch = _MICROPHONE_MUTE_SWITCH,
         hdmi = _HDMI,
         hps = _HPS,
+        battery = _BATTERY,
     ),
     bluetooth = _SC_BLUETOOTH,
     health = _SC_HEALTH,
@@ -612,6 +617,7 @@ design.append_configs(
         )]),
         microphone_mute_switch = _MICROPHONE_MUTE_SWITCH,
         keyboard = _BL_KEYBOARD,
+        battery = _BATTERY,
     ),
     firmware = sc.create_fw_payloads_by_names(
         "Fake",

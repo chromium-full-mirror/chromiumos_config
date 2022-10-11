@@ -1321,6 +1321,22 @@ def _create_microphone_mute_switch(present = False):
         hardware_feature = hw_features,
     )
 
+def _create_battery(no_battery_boot_supported = False):
+    """Builds a Topology proto for a battery.
+
+    Args:
+        no_battery_boot_supported: flag indicating whether the device
+            supports booting with no battery.
+    """
+    hw_features = _HW_FEAT()
+    hw_features.battery.no_battery_boot_supported = no_battery_boot_supported
+
+    return topo_pb.Topology(
+        id = "Default",
+        type = topo_pb.Topology.BATTERY,
+        hardware_feature = hw_features,
+    )
+
 # enumerate the common cases
 _TPM_THIRD_PARTY = _create_tpm(tpm_type = _TPM_TYPE.THIRD_PARTY)
 _TPM_GSC_H1B = _create_tpm(tpm_type = _TPM_TYPE.GSC_H1B)
@@ -1356,7 +1372,8 @@ def _create_hardware_topology(
         hps = None,
         dp_converter = None,
         poe = None,
-        detachable_base = None):
+        detachable_base = None,
+        battery = None):
     """Builds a HardwareTopology proto from Topology protos."""
 
     # Only allow form_factor topologies for form factors
@@ -1450,6 +1467,9 @@ def _create_hardware_topology(
     if detachable_base and detachable_base.type != topo_pb.Topology.DETACHABLE_BASE:
         fail("Invalid detachable base type")
 
+    if battery and battery.type != topo_pb.Topology.BATTERY:
+        fail("Invalid battery type")
+
     return hw_topo_pb.HardwareTopology(
         screen = screen,
         form_factor = form_factor,
@@ -1481,6 +1501,7 @@ def _create_hardware_topology(
         poe = poe,
         power_supply = power_supply,
         detachable_base = detachable_base,
+        battery = battery,
     )
 
 def _accumulate_presence(existing_present, new_present):
@@ -1677,6 +1698,9 @@ def _convert_to_hw_features(hardware_topology):
     if copy.microphone_mute_switch.hardware_feature.microphone_mute_switch != _HW_FEAT.MicrophoneMuteSwitch():
         result.microphone_mute_switch = copy.microphone_mute_switch.hardware_feature.microphone_mute_switch
 
+    if copy.battery.hardware_feature.battery != _HW_FEAT.Battery():
+        result.battery = copy.battery.hardware_feature.battery
+
     # Handle all possible touch hardware features
     _accumulate_fw_config(result.fw_config, copy.touch.hardware_feature.fw_config)
 
@@ -1724,6 +1748,7 @@ hw_topo = struct(
     create_dp_converter = _create_dp_converter,
     create_poe = _create_poe,
     create_detachable_base = _create_detachable_base,
+    create_battery = _create_battery,
     convert_to_hw_features = _convert_to_hw_features,
     make_camera_device = _make_camera_device,
     make_cellular_dynamic_power_reduction_config = _make_cellular_dynamic_power_reduction_config,
