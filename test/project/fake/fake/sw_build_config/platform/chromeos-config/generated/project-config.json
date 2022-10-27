@@ -147,9 +147,9 @@
           "has-hps": true
         },
         "identity": {
+          "frid": "Google_FAKE_REF_DESIGN",
           "platform-name": "fake",
-          "sku-id": 2147483647,
-          "smbios-name-match": "FAKE_REF_DESIGN"
+          "sku-id": 2147483647
         },
         "modem": {
           "firmware-variant": "fake_ref_design"
@@ -619,9 +619,9 @@
           "recovery-input": "KEYBOARD"
         },
         "identity": {
+          "frid": "Google_PROJECT_A",
           "platform-name": "fake",
-          "sku-id": 32,
-          "smbios-name-match": "PROJECT_A"
+          "sku-id": 32
         },
         "modem": {
           "firmware-variant": "project_a"
@@ -909,9 +909,9 @@
           "recovery-input": "POWER_BUTTON"
         },
         "identity": {
+          "frid": "Google_PROJECT_B",
           "platform-name": "fake",
-          "sku-id": 33,
-          "smbios-name-match": "PROJECT_B"
+          "sku-id": 33
         },
         "modem": {
           "firmware-variant": "fakemodem"
@@ -1132,9 +1132,9 @@
           "recovery-input": "POWER_BUTTON"
         },
         "identity": {
+          "frid": "Google_PROJECT_B",
           "platform-name": "fake",
-          "sku-id": 34,
-          "smbios-name-match": "PROJECT_B"
+          "sku-id": 34
         },
         "modem": {
           "firmware-variant": "fakemodem"
@@ -1379,9 +1379,9 @@
           "recovery-input": "POWER_BUTTON"
         },
         "identity": {
+          "frid": "Google_PROJECT_B",
           "platform-name": "fake",
-          "sku-id": 35,
-          "smbios-name-match": "PROJECT_B"
+          "sku-id": 35
         },
         "modem": {
           "firmware-variant": "fakemodem"
@@ -1612,9 +1612,9 @@
           "recovery-input": "POWER_BUTTON"
         },
         "identity": {
+          "frid": "Google_PROJECT_C",
           "platform-name": "fake",
-          "sku-id": 34,
-          "smbios-name-match": "PROJECT_C"
+          "sku-id": 34
         },
         "name": "project_c",
         "power": {
@@ -1822,9 +1822,9 @@
           "recovery-input": "KEYBOARD"
         },
         "identity": {
+          "frid": "Google_PROJECT_WL",
           "platform-name": "fake",
-          "sku-id": 64,
-          "smbios-name-match": "PROJECT_WL"
+          "sku-id": 64
         },
         "modem": {
           "firmware-variant": "project_wl"
@@ -2021,9 +2021,9 @@
           "recovery-input": "KEYBOARD"
         },
         "identity": {
+          "frid": "Google_PROJECT_WL",
           "platform-name": "fake",
           "sku-id": 64,
-          "smbios-name-match": "PROJECT_WL",
           "whitelabel-tag": "loema"
         },
         "modem": {
@@ -2221,9 +2221,9 @@
           "recovery-input": "KEYBOARD"
         },
         "identity": {
+          "frid": "Google_PROJECT_WL",
           "platform-name": "fake",
           "sku-id": 64,
-          "smbios-name-match": "PROJECT_WL",
           "whitelabel-tag": "loemb"
         },
         "modem": {
@@ -2421,9 +2421,9 @@
           "recovery-input": "KEYBOARD"
         },
         "identity": {
+          "frid": "Google_PROJECT_WL",
           "platform-name": "fake",
           "sku-id": 64,
-          "smbios-name-match": "PROJECT_WL",
           "whitelabel-tag": "loemc"
         },
         "modem": {
@@ -2634,9 +2634,9 @@
           "recovery-input": "KEYBOARD"
         },
         "identity": {
+          "frid": "Google_PROJECT_REBRAND",
           "platform-name": "fake",
           "sku-id": 65,
-          "smbios-name-match": "PROJECT_REBRAND",
           "whitelabel-tag": "branda"
         },
         "modem": {
@@ -2826,9 +2826,9 @@
           "recovery-input": "RECOVERY_BUTTON"
         },
         "identity": {
+          "frid": "Google_PROJECT_BOX",
           "platform-name": "fake",
-          "sku-id": 128,
-          "smbios-name-match": "PROJECT_BOX"
+          "sku-id": 128
         },
         "modem": {
           "firmware-variant": "fakemodem"
@@ -3017,9 +3017,9 @@
           "recovery-input": "RECOVERY_BUTTON"
         },
         "identity": {
+          "frid": "Google_PROJECT_BOX",
           "platform-name": "fake",
-          "sku-id": 129,
-          "smbios-name-match": "PROJECT_BOX"
+          "sku-id": 129
         },
         "name": "project_box",
         "power": {
@@ -3204,9 +3204,9 @@
           "recovery-input": "RECOVERY_BUTTON"
         },
         "identity": {
+          "frid": "Google_PROJECT_BOX",
           "platform-name": "fake",
-          "sku-id": 130,
-          "smbios-name-match": "PROJECT_BOX"
+          "sku-id": 130
         },
         "name": "project_box",
         "power": {
