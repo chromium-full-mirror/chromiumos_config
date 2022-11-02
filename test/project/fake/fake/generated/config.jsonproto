@@ -232,7 +232,19 @@
             },
             "cellular": {
               "dynamicPowerReductionConfig": {
-                "modemManager": true
+                "enableDefaultProximityStateFar": true,
+                "enableMultiPowerLevelSar": true,
+                "modemManager": true,
+                "powerLevelMapping": {
+                  "HIGH": 1,
+                  "LOW": 2
+                },
+                "regulatoryDomainMapping": {
+                  "CE": 4,
+                  "ISED": 2,
+                  "MIC": 4
+                },
+                "tabletMode": true
               },
               "present": 1,
               "type": 1
@@ -457,7 +469,19 @@
               "hardwareFeature": {
                 "cellular": {
                   "dynamicPowerReductionConfig": {
-                    "modemManager": true
+                    "enableDefaultProximityStateFar": true,
+                    "enableMultiPowerLevelSar": true,
+                    "modemManager": true,
+                    "powerLevelMapping": {
+                      "HIGH": 1,
+                      "LOW": 2
+                    },
+                    "regulatoryDomainMapping": {
+                      "CE": 4,
+                      "ISED": 2,
+                      "MIC": 4
+                    },
+                    "tabletMode": true
                   },
                   "present": 1,
                   "type": 1
@@ -1384,7 +1408,19 @@
             },
             "cellular": {
               "dynamicPowerReductionConfig": {
-                "modemManager": true
+                "enableDefaultProximityStateFar": true,
+                "enableMultiPowerLevelSar": true,
+                "modemManager": true,
+                "powerLevelMapping": {
+                  "HIGH": 1,
+                  "LOW": 2
+                },
+                "regulatoryDomainMapping": {
+                  "CE": 4,
+                  "ISED": 2,
+                  "MIC": 4
+                },
+                "tabletMode": true
               },
               "present": 1,
               "type": 1
@@ -1585,7 +1621,19 @@
               "hardwareFeature": {
                 "cellular": {
                   "dynamicPowerReductionConfig": {
-                    "modemManager": true
+                    "enableDefaultProximityStateFar": true,
+                    "enableMultiPowerLevelSar": true,
+                    "modemManager": true,
+                    "powerLevelMapping": {
+                      "HIGH": 1,
+                      "LOW": 2
+                    },
+                    "regulatoryDomainMapping": {
+                      "CE": 4,
+                      "ISED": 2,
+                      "MIC": 4
+                    },
+                    "tabletMode": true
                   },
                   "present": 1,
                   "type": 1

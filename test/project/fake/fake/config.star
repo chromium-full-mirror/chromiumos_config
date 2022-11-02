@@ -205,6 +205,54 @@ _WIFI = hw_topo.create_wifi("WIFI", "Default wifi", fw_configs = [hw_topo.make_f
 _LTE_BOARD = hw_topo.create_cellular_board("LTE_BOARD", "Default cellular_board", present = True, type = hw_topo.cellular.CELLULAR_LTE, dynamic_power_reduction_config = hw_topo.make_cellular_dynamic_power_reduction_config(modem_manager = True))
 _LTE_BOARD_WITH_MODEL = hw_topo.create_cellular_board("LTE_BOARD_MODEL", "Default cellular_board w/ model", present = True, type = hw_topo.cellular.CELLULAR_LTE, model = "FakeModem", dynamic_power_reduction_config = hw_topo.make_cellular_dynamic_power_reduction_config(gpio = 0, tablet_mode = True))
 _LTE_BOARD_WITH_NO_DPR = hw_topo.create_cellular_board("LTE_BOARD_NO_DPR", "Default cellular_board without dynamic power reduction config", present = True, type = hw_topo.cellular.CELLULAR_LTE, dynamic_power_reduction_config = None)
+_NON_VOLATILE_STORAGE = hw_topo.create_non_volatile_storage(
+    "NON_VOLATILE_STORAGE",
+    "Default non_volatile_storage",
+    storage_type = hw_topo.storage.EMMC,
+)
+_WIFI = hw_topo.create_wifi(
+    "WIFI",
+    "Default wifi",
+    fw_configs = [hw_topo.make_fw_config(program.fw_masks.WIFI_SAR_ID, 6)],
+)
+_REGULATORY_DOMAIN_MAPPING = {
+    "ISED": 2,
+    "CE": 4,
+    "MIC": 4,
+}
+_POWER_LEVEL_MAPPING = {
+    "HIGH": 1,
+    "LOW": 2,
+}
+_LTE_BOARD = hw_topo.create_cellular_board(
+    "LTE_BOARD",
+    "Default cellular_board",
+    present = True,
+    type = hw_topo.cellular.CELLULAR_LTE,
+    dynamic_power_reduction_config = hw_topo.make_cellular_dynamic_power_reduction_config(
+        modem_manager = True,
+        multi_power_level_sar = True,
+        default_proximity_state_far = True,
+        tablet_mode = True,
+        regulatory_domain_mapping = _REGULATORY_DOMAIN_MAPPING,
+        power_level_mapping = _POWER_LEVEL_MAPPING,
+    ),
+)
+_LTE_BOARD_WITH_MODEL = hw_topo.create_cellular_board(
+    "LTE_BOARD_MODEL",
+    "Default cellular_board w/ model",
+    present = True,
+    type = hw_topo.cellular.CELLULAR_LTE,
+    model = "FakeModem",
+    dynamic_power_reduction_config = hw_topo.make_cellular_dynamic_power_reduction_config(gpio = 0, tablet_mode = True),
+)
+_LTE_BOARD_WITH_NO_DPR = hw_topo.create_cellular_board(
+    "LTE_BOARD_NO_DPR",
+    "Default cellular_board without dynamic power reduction config",
+    present = True,
+    type = hw_topo.cellular.CELLULAR_LTE,
+    dynamic_power_reduction_config = None,
+)
 _SD_READER = hw_topo.create_sd_reader("SD_READER", "Default sd_reader")
 _MOTHERBOARD_USB = hw_topo.create_motherboard_usb(
     "MOTHERBOARD_USB",
