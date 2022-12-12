@@ -1761,9 +1761,7 @@
               ]
             },
             "cellular": {
-              "model": "FakeModemB",
-              "present": 1,
-              "type": 1
+              "present": 2
             },
             "fingerprint": {
               "location": 5
@@ -1934,13 +1932,11 @@
             },
             "daughterBoard": {
               "description": {
-                "EN": "Non-default daughter_board with LTE"
+                "EN": "Non-default daughter_board"
               },
               "hardwareFeature": {
                 "cellular": {
-                  "model": "FakeModemB",
-                  "present": 1,
-                  "type": 1
+                  "present": 2
                 },
                 "fwConfig": {
                   "mask": 15
@@ -1955,7 +1951,7 @@
                   "count": {}
                 }
               },
-              "id": "DB with LTE",
+              "id": "DB",
               "type": 11
             },
             "ec": {

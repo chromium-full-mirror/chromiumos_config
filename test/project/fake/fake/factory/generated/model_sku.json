@@ -87,7 +87,7 @@
       "component.has_lid_accelerometer": null,
       "component.has_lid_gyroscope": null,
       "component.has_lid_magnetometer": null,
-      "component.has_lte": true,
+      "component.has_lte": false,
       "component.has_mother_board_usb_a": 0,
       "component.has_mother_board_usb_c": 0,
       "component.has_proximity_sensor": true,

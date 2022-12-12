@@ -654,9 +654,6 @@
           "sku-id": 33,
           "smbios-name-match": "PROJECT_B"
         },
-        "modem": {
-          "firmware-variant": "fakemodemb"
-        },
         "name": "project_b",
         "power": {
           "battery-poll-interval-initial-ms": "1000",
