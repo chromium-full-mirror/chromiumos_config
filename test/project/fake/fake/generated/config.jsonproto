@@ -317,6 +317,9 @@
             "stylus": {
               "stylus": 2
             },
+            "thermal": {
+              "configPathSuffix": "default"
+            },
             "usbA": {
               "count": {}
             },
@@ -915,6 +918,9 @@
             },
             "stylus": {
               "stylus": 2
+            },
+            "thermal": {
+              "configPathSuffix": "default"
             },
             "usbA": {
               "count": {}
@@ -1523,6 +1529,9 @@
             },
             "stylus": {
               "stylus": 2
+            },
+            "thermal": {
+              "configPathSuffix": "default"
             },
             "usbA": {
               "count": {}
@@ -2152,6 +2161,9 @@
             "stylus": {
               "stylus": 2
             },
+            "thermal": {
+              "configPathSuffix": "default"
+            },
             "usbA": {
               "count": {}
             },
@@ -2302,13 +2314,11 @@
             },
             "daughterBoard": {
               "description": {
-                "EN": "Non-default daughter_board with LTE"
+                "EN": "Non-default daughter_board"
               },
               "hardwareFeature": {
                 "cellular": {
-                  "model": "FakeModemB",
-                  "present": 1,
-                  "type": 1
+                  "present": 2
                 },
                 "fwConfig": {
                   "mask": 15
@@ -2323,7 +2333,7 @@
                   "count": {}
                 }
               },
-              "id": "DB with LTE",
+              "id": "DB",
               "type": 11
             },
             "ec": {
@@ -2722,6 +2732,9 @@
             "stylus": {
               "stylus": 2
             },
+            "thermal": {
+              "configPathSuffix": "default"
+            },
             "usbA": {
               "count": {}
             },
@@ -2896,13 +2909,11 @@
             },
             "daughterBoard": {
               "description": {
-                "EN": "Non-default daughter_board with LTE"
+                "EN": "Non-default daughter_board"
               },
               "hardwareFeature": {
                 "cellular": {
-                  "model": "FakeModemB",
-                  "present": 1,
-                  "type": 1
+                  "present": 2
                 },
                 "fwConfig": {
                   "mask": 15
@@ -2917,7 +2928,7 @@
                   "count": {}
                 }
               },
-              "id": "DB with LTE",
+              "id": "DB",
               "type": 11
             },
             "ec": {
@@ -3319,6 +3330,9 @@
             "stylus": {
               "stylus": 2
             },
+            "thermal": {
+              "configPathSuffix": "default"
+            },
             "usbA": {
               "count": {}
             },
@@ -3485,13 +3499,11 @@
             },
             "daughterBoard": {
               "description": {
-                "EN": "Non-default daughter_board with LTE"
+                "EN": "Non-default daughter_board"
               },
               "hardwareFeature": {
                 "cellular": {
-                  "model": "FakeModemB",
-                  "present": 1,
-                  "type": 1
+                  "present": 2
                 },
                 "fwConfig": {
                   "mask": 15
@@ -3506,7 +3518,7 @@
                   "count": {}
                 }
               },
-              "id": "DB with LTE",
+              "id": "DB",
               "type": 11
             },
             "ec": {
@@ -3908,6 +3920,9 @@
             },
             "stylus": {
               "stylus": 2
+            },
+            "thermal": {
+              "configPathSuffix": "default"
             },
             "usbA": {
               "count": {}
@@ -4494,6 +4509,9 @@
             },
             "stylus": {
               "stylus": 2
+            },
+            "thermal": {
+              "configPathSuffix": "default"
             },
             "usbA": {
               "count": {}
@@ -5132,6 +5150,9 @@
             },
             "storage": {
               "storageType": 1
+            },
+            "thermal": {
+              "configPathSuffix": "default"
             },
             "usbA": {
               "count": {}
@@ -6092,6 +6113,9 @@
             "storage": {
               "storageType": 1
             },
+            "thermal": {
+              "configPathSuffix": "default"
+            },
             "usbA": {
               "count": {}
             },
@@ -6593,6 +6617,9 @@
             "storage": {
               "storageType": 1
             },
+            "thermal": {
+              "configPathSuffix": "default"
+            },
             "usbA": {
               "count": {}
             },
@@ -7054,6 +7081,9 @@
             "storage": {
               "storageType": 1
             },
+            "thermal": {
+              "configPathSuffix": "default"
+            },
             "usbA": {
               "count": {}
             },
@@ -7493,6 +7523,9 @@
             },
             "storage": {
               "storageType": 1
+            },
+            "thermal": {
+              "configPathSuffix": "default"
             },
             "usbA": {
               "count": {}

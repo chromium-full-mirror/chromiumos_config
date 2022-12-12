@@ -756,12 +756,10 @@ design.append_configs(
     hardware_topology = create_hardware_topology(
         audio = _AUDIO_WITH_INIT,
         daughter_board = hw_topo.create_daughter_board(
-            "DB with LTE",
-            "Non-default daughter_board with LTE",
+            "DB",
+            "Non-default daughter_board",
             fw_configs = [hw_topo.make_fw_config(program.fw_masks.DB, 0)],
-            cellular_support = True,
-            cellular_model = "FakeModemB",
-            cellular_type = hw_topo.cellular.CELLULAR_LTE,
+            cellular_support = False,
         ),
         bluetooth = _BLUETOOTH,
         camera = _CAMERA1,
@@ -806,12 +804,10 @@ design.append_configs(
     hardware_topology = create_hardware_topology(
         audio = _AUDIO_WITH_INIT,
         daughter_board = hw_topo.create_daughter_board(
-            "DB with LTE",
-            "Non-default daughter_board with LTE",
+            "DB",
+            "Non-default daughter_board",
             fw_configs = [hw_topo.make_fw_config(program.fw_masks.DB, 0)],
-            cellular_support = True,
-            cellular_model = "FakeModemB",
-            cellular_type = hw_topo.cellular.CELLULAR_LTE,
+            cellular_support = False,
         ),
         bluetooth = _BLUETOOTH,
         camera = _CAMERA1,
@@ -884,12 +880,10 @@ design.append_configs(
     hardware_topology = create_hardware_topology(
         audio = _AUDIO_WITH_INIT,
         daughter_board = hw_topo.create_daughter_board(
-            "DB with LTE",
-            "Non-default daughter_board with LTE",
+            "DB",
+            "Non-default daughter_board",
             fw_configs = [hw_topo.make_fw_config(program.fw_masks.DB, 0)],
-            cellular_support = True,
-            cellular_model = "FakeModemB",
-            cellular_type = hw_topo.cellular.CELLULAR_LTE,
+            cellular_support = False,
         ),
         bluetooth = _BLUETOOTH,
         camera = _CAMERA1,
