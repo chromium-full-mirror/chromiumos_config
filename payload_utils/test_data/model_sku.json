@@ -187,31 +187,8 @@
       "component.has_sd_reader": true,
       "component.has_stylus": true,
       "component.has_tabletmode": false,
-      "component.has_touchscreen": true,
       "component.has_wifi": true,
       "component.headphone_codec": "ALC5682I",
-      "component.match_sku_components": [
-        [
-          "camera",
-          "==",
-          1
-        ],
-        [
-          "touchscreen",
-          "==",
-          1
-        ],
-        [
-          "usb_host",
-          "==",
-          3
-        ],
-        [
-          "stylus",
-          "==",
-          1
-        ]
-      ],
       "component.speaker_amp": "AMPLIFIER_UNKNOWN",
       "fw_config": 66337
     },
@@ -449,8 +426,56 @@
       }
     },
     "project_c": {
-      "34": {},
-      "40": {}
+      "34": {
+        "component.has_touchscreen": true,
+        "component.match_sku_components": [
+          [
+            "camera",
+            "==",
+            1
+          ],
+          [
+            "touchscreen",
+            "==",
+            1
+          ],
+          [
+            "usb_host",
+            "==",
+            3
+          ],
+          [
+            "stylus",
+            "==",
+            1
+          ]
+        ]
+      },
+      "40": {
+        "component.has_touchscreen": false,
+        "component.match_sku_components": [
+          [
+            "camera",
+            "==",
+            1
+          ],
+          [
+            "touchscreen",
+            "==",
+            0
+          ],
+          [
+            "usb_host",
+            "==",
+            3
+          ],
+          [
+            "stylus",
+            "==",
+            1
+          ]
+        ]
+      }
     },
     "project_rebrand": {
       "65": {}

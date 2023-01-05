@@ -617,9 +617,31 @@ def _create_keyboard(backlight, pwr_btn_present, kb_type, numpad_present = False
         hardware_feature = hw_features,
     )
 
-def _create_thermal(id, description, fw_configs = []):
-    """Builds a Topology proto for thermal."""
+def _create_thermal(
+        id,
+        description,
+        fw_configs = [],
+        config_path_suffix = None):
+    """Builds a Topology proto for thermal solution.
+
+    Args:
+        id: A string identifier for the Topology.
+        description: An English description for the Topology.
+        fw_configs: A list of FirmwareConfiguration protos for this audio
+            topology.
+        config_path_suffix: A suffix to append to the design name when
+        searching for thermal config files, e.g. dptf.dv. The following paths
+        with the thermal directory will be considered, in order:
+            * {suffix}
+            * {design}_{suffix}
+            * {design}_{suffix}/{config_id}.
+        If unset, suffix is treated as an empty string and the underscore after
+        the design name is omitted.
+    """
     hw_features = _HW_FEAT()
+
+    if config_path_suffix != None:
+        hw_features.thermal.config_path_suffix = config_path_suffix
 
     _accumulate_fw_configs(hw_features, fw_configs)
 
@@ -1791,6 +1813,7 @@ hw_topo = struct(
     create_hps = _create_hps,
     create_dp_converter = _create_dp_converter,
     create_poe = _create_poe,
+    create_battery = _create_battery,
     convert_to_hw_features = _convert_to_hw_features,
     make_camera_device = _make_camera_device,
     make_cellular_dynamic_power_reduction_config = _make_cellular_dynamic_power_reduction_config,

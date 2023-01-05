@@ -634,36 +634,14 @@
           "disable-dark-resume": "0",
           "internal-backlight-no-als-ac-brightness": "80.5",
           "internal-backlight-no-als-battery-brightness": "63.4",
-<<<<<<< PATCH SET (d4e4ed boxster: Add Proximity Sensor support)
           "set-cellular-transmit-power-for-activity-proximity": "1",
           "set-cellular-transmit-power-for-proximity": "1",
-=======
-<<<<<<< HEAD   (a753b7 Add a DesignId field to override the design to use as the mo)
-=======
-          "set-cellular-regulatory-domain-mapping": "CE 4\nISED 2\nMIC 4",
-          "set-cellular-transmit-power-for-activity-proximity": "1",
-          "set-cellular-transmit-power-for-proximity": "1",
->>>>>>> CHANGE (cfa72a Add support for LTE/5G dynamic SAR configurations)
->>>>>>> BASE      (e67054 Add support for LTE/5G dynamic SAR configurations)
-          "set-cellular-transmit-power-for-tablet-mode": "1",
-<<<<<<< PATCH SET (d4e4ed boxster: Add Proximity Sensor support)
           "set-wifi-transmit-power-for-activity-proximity": "1",
           "set-wifi-transmit-power-for-proximity": "1",
-=======
-<<<<<<< HEAD   (a753b7 Add a DesignId field to override the design to use as the mo)
-=======
-          "set-cellular-transmit-power-level-mapping": "HIGH 1\nLOW 2",
-          "set-default-proximity-state-high": "1",
-          "set-wifi-transmit-power-for-activity-proximity": "1",
-          "set-wifi-transmit-power-for-proximity": "1",
->>>>>>> CHANGE (cfa72a Add support for LTE/5G dynamic SAR configurations)
->>>>>>> BASE      (e67054 Add support for LTE/5G dynamic SAR configurations)
           "suspend-to-idle": "1",
           "turn-off-screen-timeout-ms": "3000",
           "usb-min-ac-watts": "20",
           "use-modemmanager-for-dynamic-sar": "1",
-          "use-multi-power-level-dynamic-sar": "1",
-          "use-regulatory-domain-for-dynamic-sar": "1",
           "wake-on-dp": "1"
         },
         "proximity-sensor": {
@@ -816,8 +794,8 @@
         },
         "wifi": {
           "sar-file": {
-            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/wifi_sar_6.hex",
-            "system-path": "/firmware/cbfs-rw-raw/project_a/wifi_sar_6.hex"
+            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/fake/wifi_sar_6.hex",
+            "system-path": "/firmware/cbfs-rw-raw/fake/wifi_sar_6.hex"
           }
         }
       },
@@ -983,11 +961,11 @@
           "input-boost": 15
         },
         "thermal": {
-          "dptf-dv": "fake/project_b/33/dptf.dv",
+          "dptf-dv": "fake/dptf.dv",
           "files": [
             {
-              "destination": "/etc/dptf/fake/project_b/33/dptf.dv",
-              "source": "fake/sw_build_config/platform/chromeos-config/thermal/project_b/33/dptf.dv"
+              "destination": "/etc/dptf/fake/dptf.dv",
+              "source": "fake/sw_build_config/platform/chromeos-config/thermal/dptf.dv"
             }
           ]
         },
@@ -1206,11 +1184,11 @@
           "input-boost": 15
         },
         "thermal": {
-          "dptf-dv": "fake/project_b/dptf.dv",
+          "dptf-dv": "fake/dptf.dv",
           "files": [
             {
-              "destination": "/etc/dptf/fake/project_b/dptf.dv",
-              "source": "fake/sw_build_config/platform/chromeos-config/thermal/project_b/dptf.dv"
+              "destination": "/etc/dptf/fake/dptf.dv",
+              "source": "fake/sw_build_config/platform/chromeos-config/thermal/dptf.dv"
             }
           ]
         },
@@ -1453,11 +1431,11 @@
           "input-boost": 15
         },
         "thermal": {
-          "dptf-dv": "fake/project_b/dptf.dv",
+          "dptf-dv": "fake/dptf.dv",
           "files": [
             {
-              "destination": "/etc/dptf/fake/project_b/dptf.dv",
-              "source": "fake/sw_build_config/platform/chromeos-config/thermal/project_b/dptf.dv"
+              "destination": "/etc/dptf/fake/dptf.dv",
+              "source": "fake/sw_build_config/platform/chromeos-config/thermal/dptf.dv"
             }
           ]
         },
@@ -1681,11 +1659,11 @@
           "input-boost": 15
         },
         "thermal": {
-          "dptf-dv": "fake/project_b/dptf.dv",
+          "dptf-dv": "fake/dptf.dv",
           "files": [
             {
-              "destination": "/etc/dptf/fake/project_b/dptf.dv",
-              "source": "fake/sw_build_config/platform/chromeos-config/thermal/project_b/dptf.dv"
+              "destination": "/etc/dptf/fake/dptf.dv",
+              "source": "fake/sw_build_config/platform/chromeos-config/thermal/dptf.dv"
             }
           ]
         },
@@ -1719,9 +1697,6 @@
           ]
         },
         "ui": {
-          "ash-enabled-features": [
-            "SeamlessRefreshRateSwitching"
-          ],
           "extra-ash-flags": [
             "--arc-build-properties={'device': 'fake_program_cheets', 'firstApiLevel': '28'}",
             "--ash-power-button-position={\"edge\": \"left\", \"position\": 0.9}",
@@ -1871,7 +1846,6 @@
             "libpayload": "fake",
             "zephyr-ec": "projects/fake/fake"
           },
-          "detachable-ui": true,
           "ec-ro-image": "bcs://Fake_EC.11111.2.0.tbz2",
           "firmware-config": 66337,
           "image-name": "project_d",
@@ -1886,7 +1860,6 @@
         "hardware-properties": {
           "form-factor": "CHROMESLATE",
           "has-backlight": true,
-          "has-privacy-screen": true,
           "psu-type": "battery",
           "recovery-input": "POWER_BUTTON"
         },
@@ -1954,6 +1927,9 @@
           ]
         },
         "ui": {
+          "ash-enabled-features": [
+            "SeamlessRefreshRateSwitching"
+          ],
           "extra-ash-flags": [
             "--arc-build-properties={'device': 'fake_program_cheets', 'firstApiLevel': '28'}",
             "--ash-power-button-position={\"edge\": \"left\", \"position\": 0.9}",
@@ -2208,8 +2184,8 @@
         },
         "wifi": {
           "sar-file": {
-            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/wifi_sar_6.hex",
-            "system-path": "/firmware/cbfs-rw-raw/project_wl/wifi_sar_6.hex"
+            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/fake/wifi_sar_6.hex",
+            "system-path": "/firmware/cbfs-rw-raw/fake/wifi_sar_6.hex"
           }
         }
       },
@@ -2429,8 +2405,8 @@
         },
         "wifi": {
           "sar-file": {
-            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/wifi_sar_6.hex",
-            "system-path": "/firmware/cbfs-rw-raw/project_wl/wifi_sar_6.hex"
+            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/fake/wifi_sar_6.hex",
+            "system-path": "/firmware/cbfs-rw-raw/fake/wifi_sar_6.hex"
           }
         }
       },
@@ -2650,8 +2626,8 @@
         },
         "wifi": {
           "sar-file": {
-            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/wifi_sar_6.hex",
-            "system-path": "/firmware/cbfs-rw-raw/project_wl/wifi_sar_6.hex"
+            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/fake/wifi_sar_6.hex",
+            "system-path": "/firmware/cbfs-rw-raw/fake/wifi_sar_6.hex"
           }
         }
       },
@@ -2871,8 +2847,8 @@
         },
         "wifi": {
           "sar-file": {
-            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/wifi_sar_6.hex",
-            "system-path": "/firmware/cbfs-rw-raw/project_wl/wifi_sar_6.hex"
+            "build-path": "fake/sw_build_config/platform/chromeos-config/generated/wifi/fake/wifi_sar_6.hex",
+            "system-path": "/firmware/cbfs-rw-raw/fake/wifi_sar_6.hex"
           }
         }
       },

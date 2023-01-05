@@ -232,19 +232,7 @@
             },
             "cellular": {
               "dynamicPowerReductionConfig": {
-                "enableDefaultProximityStateFar": true,
-                "enableMultiPowerLevelSar": true,
-                "modemManager": true,
-                "powerLevelMapping": {
-                  "HIGH": 1,
-                  "LOW": 2
-                },
-                "regulatoryDomainMapping": {
-                  "CE": 4,
-                  "ISED": 2,
-                  "MIC": 4
-                },
-                "tabletMode": true
+                "modemManager": true
               },
               "present": 1,
               "type": 1
@@ -469,19 +457,7 @@
               "hardwareFeature": {
                 "cellular": {
                   "dynamicPowerReductionConfig": {
-                    "enableDefaultProximityStateFar": true,
-                    "enableMultiPowerLevelSar": true,
-                    "modemManager": true,
-                    "powerLevelMapping": {
-                      "HIGH": 1,
-                      "LOW": 2
-                    },
-                    "regulatoryDomainMapping": {
-                      "CE": 4,
-                      "ISED": 2,
-                      "MIC": 4
-                    },
-                    "tabletMode": true
+                    "modemManager": true
                   },
                   "present": 1,
                   "type": 1
@@ -735,7 +711,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -1286,7 +1266,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -1408,19 +1392,7 @@
             },
             "cellular": {
               "dynamicPowerReductionConfig": {
-                "enableDefaultProximityStateFar": true,
-                "enableMultiPowerLevelSar": true,
-                "modemManager": true,
-                "powerLevelMapping": {
-                  "HIGH": 1,
-                  "LOW": 2
-                },
-                "regulatoryDomainMapping": {
-                  "CE": 4,
-                  "ISED": 2,
-                  "MIC": 4
-                },
-                "tabletMode": true
+                "modemManager": true
               },
               "present": 1,
               "type": 1
@@ -1677,19 +1649,7 @@
               "hardwareFeature": {
                 "cellular": {
                   "dynamicPowerReductionConfig": {
-                    "enableDefaultProximityStateFar": true,
-                    "enableMultiPowerLevelSar": true,
-                    "modemManager": true,
-                    "powerLevelMapping": {
-                      "HIGH": 1,
-                      "LOW": 2
-                    },
-                    "regulatoryDomainMapping": {
-                      "CE": 4,
-                      "ISED": 2,
-                      "MIC": 4
-                    },
-                    "tabletMode": true
+                    "modemManager": true
                   },
                   "present": 1,
                   "type": 1
@@ -1975,7 +1935,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -2560,7 +2524,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -3129,7 +3097,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -3714,7 +3686,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -4292,7 +4268,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -4817,9 +4797,6 @@
                 "EN": "Privacy screen"
               },
               "hardwareFeature": {
-                "privacyScreen": {
-                  "present": 1
-                },
                 "screen": {
                   "panelProperties": {
                     "alsSteps": [
@@ -4878,7 +4855,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -5716,7 +5697,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -6424,7 +6409,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -6909,7 +6898,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -7349,7 +7342,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
@@ -7763,7 +7760,11 @@
               "description": {
                 "EN": "Default thermal"
               },
-              "hardwareFeature": {},
+              "hardwareFeature": {
+                "thermal": {
+                  "configPathSuffix": "default"
+                }
+              },
               "id": "THERMAL",
               "type": 6
             },
