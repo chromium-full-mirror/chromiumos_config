@@ -180,6 +180,17 @@ _VOLUME_BUTTON = hw_topo.create_volume_button(
     position = 0.75,
 )
 
+_DGPU = hw_topo.create_dgpu(
+    "NV3050",
+    "Default dGPU",
+    dgpu_type = hw_topo.dgpu.DGPU_NV3050,
+)
+
+_UWB = hw_topo.create_uwb(
+    "UWB",
+    "Default UWB",
+)
+
 _SC_HEALTH = sc.create_health(
     vpd_has_sku_number = True,
     battery_has_smart_battery_info = True,
@@ -218,7 +229,9 @@ def create_hardware_topology(
         hdmi = None,
         hps = None,
         audio = None,
-        power_supply = None):
+        power_supply = None,
+        dgpu = None,
+        uwb = None):
     return hw_topo.create_hardware_topology(
         bluetooth = bluetooth if bluetooth else None,
         barreljack = barreljack if barreljack else None,
@@ -247,6 +260,8 @@ def create_hardware_topology(
         hdmi = hdmi,
         hps = hps,
         power_supply = power_supply if power_supply else _POWER_SUPPLY,
+        dgpu = dgpu,
+        uwb = uwb,
     )
 
 # Create empty arrays that we will continually append new configurations to
@@ -272,6 +287,8 @@ design.append_configs(
         microphone_mute_switch = _MICROPHONE_MUTE_SWITCH,
         hdmi = _HDMI,
         hps = _HPS,
+        dgpu = _DGPU,
+        uwb = _UWB,
     ),
     bluetooth = _SC_BLUETOOTH,
     health = _SC_HEALTH,

@@ -53,6 +53,12 @@ _CELLULAR = struct(
     CELLULAR_5G = topo_pb.HardwareFeatures.Cellular.CELLULAR_5G,
 )
 
+_DGPU = struct(
+    DGPU_UNKNOWN = topo_pb.HardwareFeatures.Dgpu.DGPU_UNKNOWN,
+    DGPU_NV3050 = topo_pb.HardwareFeatures.Dgpu.DGPU_NV3050,
+    DGPU_NV4050 = topo_pb.HardwareFeatures.Dgpu.DGPU_NV4050,
+)
+
 _FP_LOC = struct(
     NOT_PRESENT = topo_pb.HardwareFeatures.Fingerprint.NOT_PRESENT,
     POWER_BUTTON_TOP_LEFT = topo_pb.HardwareFeatures.Fingerprint.POWER_BUTTON_TOP_LEFT,
@@ -1031,6 +1037,36 @@ def _create_tpm(tpm_type = _TPM_TYPE.GSC_H1B, id = None, fw_configs = []):
         hardware_feature = hw_features,
     )
 
+def _create_dgpu(id, description, fw_configs = [], dgpu_type = _DGPU.DGPU_UNKNOWN):
+    """Builds a Topology proto for dgpu."""
+    hw_features = topo_pb.HardwareFeatures()
+
+    hw_features.dgpu_config.present = _bool_to_present(True)
+    hw_features.dgpu_config.dgpu_type = dgpu_type
+    _accumulate_fw_configs(hw_features, fw_configs)
+
+    return topo_pb.Topology(
+        id = id,
+        type = topo_pb.Topology.DGPU,
+        description = {"EN": description},
+        hardware_feature = hw_features,
+    )
+
+def _create_uwb(id, description, fw_configs = []):
+    """Builds a Topology proto for uwb."""
+    hw_features = topo_pb.HardwareFeatures()
+
+    hw_features.uwb_config.present = _bool_to_present(True)
+
+    _accumulate_fw_configs(hw_features, fw_configs)
+
+    return topo_pb.Topology(
+        id = id,
+        type = topo_pb.Topology.UWB,
+        description = {"EN": description},
+        hardware_feature = hw_features,
+    )
+
 def _create_microphone_mute_switch(present = False):
     """Builds a Topology proto for an microphone mute switch.
 
@@ -1081,7 +1117,9 @@ def _create_hardware_topology(
         hdmi = None,
         hps = None,
         dp_converter = None,
-        poe = None):
+        poe = None,
+        dgpu = None,
+        uwb = None):
     """Builds a HardwareTopology proto from Topology protos."""
 
     # Only allow form_factor topologies for form factors
@@ -1172,6 +1210,12 @@ def _create_hardware_topology(
     if power_supply and power_supply.type != topo_pb.Topology.POWER_SUPPLY:
         fail("Invalid power supply topology")
 
+    if dgpu and dgpu.type != topo_pb.Topology.DGPU:
+        fail("Invalid dGPU type")
+
+    if uwb and uwb.type != topo_pb.Topology.UWB:
+        fail("Invalid UWB type")
+
     return hw_topo_pb.HardwareTopology(
         screen = screen,
         form_factor = form_factor,
@@ -1202,6 +1246,8 @@ def _create_hardware_topology(
         dp_converter = dp_converter,
         poe = poe,
         power_supply = power_supply,
+        dgpu = dgpu,
+        uwb = uwb,
     )
 
 def _accumulate_presence(existing_present, new_present):
@@ -1432,6 +1478,8 @@ hw_topo = struct(
     create_hps = _create_hps,
     create_dp_converter = _create_dp_converter,
     create_poe = _create_poe,
+    create_dgpu = _create_dgpu,
+    create_uwb = _create_uwb,
     convert_to_hw_features = _convert_to_hw_features,
     make_camera_device = _make_camera_device,
     make_fw_config = _make_fw_config,
@@ -1439,6 +1487,7 @@ hw_topo = struct(
     amplifier = _AMPLIFIER,
     audio_codec = _AUDIO_CODEC,
     cellular = _CELLULAR,
+    dgpu = _DGPU,
     fp_loc = _FP_LOC,
     storage = _STORAGE,
     kb_type = _KB_TYPE,

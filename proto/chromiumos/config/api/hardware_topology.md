@@ -288,3 +288,17 @@ Changes that require new topology
 
 * Presence or absence of barrel jack
 * Preferred input power
+
+* Supports booting with no battery
+
+## dGPU
+
+Changes that require new topology
+
+* Supports discrete GPU
+
+## UWB
+
+Changes that require new topology
+
+* Supports UWB (Ultra Wideband)
