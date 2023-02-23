@@ -1225,7 +1225,9 @@ def _accumulate_cellular(existing_cellular, new_cellular):
         existing_cellular.attach_apn_required = new_cellular.attach_apn_required
 
 def _accumulate_hdmi(existing_hdmi, new_hdmi):
-    existing_hdmi.present = _accumulate_presence(existing_hdmi.present, new_hdmi.present)
+    if existing_hdmi.present != _PRESENT.PRESENT:
+        if new_hdmi.present != _PRESENT.UNKNOWN:
+            existing_hdmi.present = new_hdmi.present
 
 def _convert_to_hw_features(hardware_topology):
     """Converts a HardwareTopology proto to a HardwareFeatures proto."""

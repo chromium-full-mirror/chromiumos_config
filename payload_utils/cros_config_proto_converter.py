@@ -501,7 +501,10 @@ def _build_intel_config(config, config_files):
     wifi configuration for the intel driver.
   """
   design_name = config.hw_design.name.lower()
-  return config_files.wifi_sar_map.get(design_name)
+  wifi_sar_id = _extract_fw_config_value(
+      config.hw_design_config, config.hw_design_config.hardware_topology.wifi)
+
+  return config_files.wifi_sar_map.get((design_name, wifi_sar_id))
 
 
 def _build_wifi(config, config_files):
@@ -1754,7 +1757,10 @@ def _wifi_sar_map(configs, project_name, output_dir, build_root_dir):
             f.write(sar_file_content)
         system_path = '/firmware/cbfs-rw-raw/{}/{}'.format(
             design_name, filename)
-        result[design_name] = {'sar-file': _file_v2(build_path, system_path)}
+        result[(design_name, wifi_sar_id)] = {
+            'sar-file': _file_v2(build_path, system_path)
+        }
+
   return result
 
 
