@@ -466,7 +466,7 @@ def _build_audio(config):
     return {}
   alsa_path = '/usr/share/alsa/ucm'
   cras_path = '/etc/cras'
-  project_name = config.hw_design.name.lower()
+  design_name = config.hw_design.name.lower()
   program_name = config.program.name.lower()
   files = []
   ucm_suffix = None
@@ -493,10 +493,10 @@ def _build_audio(config):
     if audio.card_config_file:
       files.append(
           _file(audio.card_config_file,
-                '%s/%s/%s' % (cras_path, project_name, card)))
+                '%s/%s/%s' % (cras_path, design_name, card)))
     if audio.dsp_file:
       files.append(
-          _file(audio.dsp_file, '%s/%s/dsp.ini' % (cras_path, project_name)))
+          _file(audio.dsp_file, '%s/%s/dsp.ini' % (cras_path, design_name)))
     if audio.module_file:
       files.append(
           _file(audio.module_file,
@@ -504,11 +504,11 @@ def _build_audio(config):
     if audio.board_file:
       files.append(
           _file(audio.board_file,
-                '%s/%s/board.ini' % (cras_path, project_name)))
+                '%s/%s/board.ini' % (cras_path, design_name)))
 
   result = {
       'main': {
-          'cras-config-dir': project_name,
+          'cras-config-dir': design_name,
           'files': files,
       }
   }
