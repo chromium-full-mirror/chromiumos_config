@@ -1768,6 +1768,9 @@ def _convert_to_hw_features(hardware_topology):
     if copy.microphone_mute_switch.hardware_feature.microphone_mute_switch != _HW_FEAT.MicrophoneMuteSwitch():
         result.microphone_mute_switch = copy.microphone_mute_switch.hardware_feature.microphone_mute_switch
 
+    if copy.thermal.hardware_feature.thermal != _HW_FEAT.Thermal():
+        result.thermal = copy.thermal.hardware_feature.thermal
+
     # Handle all possible touch hardware features
     _accumulate_fw_config(result.fw_config, copy.touch.hardware_feature.fw_config)
 
