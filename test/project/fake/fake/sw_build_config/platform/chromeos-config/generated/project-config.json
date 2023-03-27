@@ -902,7 +902,7 @@
           "form-factor": "DETACHABLE",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "POWER_BUTTON"
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -1137,7 +1137,7 @@
           "form-factor": "DETACHABLE",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "POWER_BUTTON"
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -1402,7 +1402,7 @@
           "form-factor": "DETACHABLE",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "POWER_BUTTON"
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
@@ -1634,7 +1634,7 @@
           "form-factor": "CHROMESLATE",
           "has-backlight": true,
           "psu-type": "battery",
-          "recovery-input": "POWER_BUTTON"
+          "recovery-input": "KEYBOARD"
         },
         "identity": {
           "platform-name": "fake",
