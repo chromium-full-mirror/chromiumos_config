@@ -3587,6 +3587,10 @@
                 {
                   "name": "RECOVERY_INPUT",
                   "number": 33
+                },
+                {
+                  "name": "DETACHABLE_BASE",
+                  "number": 37
                 }
               ]
             }
@@ -4074,6 +4078,14 @@
               "number": 38,
               "type": "TYPE_MESSAGE",
               "typeName": ".chromiumos.config.api.HardwareFeatures.Touch"
+            },
+            {
+              "jsonName": "detachableBase",
+              "label": "LABEL_OPTIONAL",
+              "name": "detachable_base",
+              "number": 44,
+              "type": "TYPE_MESSAGE",
+              "typeName": ".chromiumos.config.api.HardwareFeatures.DetachableBase"
             }
           ],
           "name": "HardwareFeatures",
@@ -5753,6 +5765,46 @@
                 }
               ],
               "name": "Touch"
+            },
+            {
+              "field": [
+                {
+                  "jsonName": "ecImageName",
+                  "label": "LABEL_OPTIONAL",
+                  "name": "ec_image_name",
+                  "number": 1,
+                  "type": "TYPE_STRING"
+                },
+                {
+                  "jsonName": "productId",
+                  "label": "LABEL_OPTIONAL",
+                  "name": "product_id",
+                  "number": 2,
+                  "type": "TYPE_UINT32"
+                },
+                {
+                  "jsonName": "touchImageName",
+                  "label": "LABEL_OPTIONAL",
+                  "name": "touch_image_name",
+                  "number": 3,
+                  "type": "TYPE_STRING"
+                },
+                {
+                  "jsonName": "usbPath",
+                  "label": "LABEL_OPTIONAL",
+                  "name": "usb_path",
+                  "number": 4,
+                  "type": "TYPE_STRING"
+                },
+                {
+                  "jsonName": "vendorId",
+                  "label": "LABEL_OPTIONAL",
+                  "name": "vendor_id",
+                  "number": 5,
+                  "type": "TYPE_UINT32"
+                }
+              ],
+              "name": "DetachableBase"
             }
           ]
         }
@@ -6012,6 +6064,14 @@
               "label": "LABEL_OPTIONAL",
               "name": "power_supply",
               "number": 30,
+              "type": "TYPE_MESSAGE",
+              "typeName": ".chromiumos.config.api.Topology"
+            },
+            {
+              "jsonName": "detachableBase",
+              "label": "LABEL_OPTIONAL",
+              "name": "detachable_base",
+              "number": 34,
               "type": "TYPE_MESSAGE",
               "typeName": ".chromiumos.config.api.Topology"
             }
