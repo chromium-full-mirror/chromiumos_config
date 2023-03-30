@@ -119,8 +119,7 @@
           1
         ]
       ],
-      "component.speaker_amp": "MAX98373",
-      "fw_config": 66336
+      "component.speaker_amp": "MAX98373"
     },
     "project_box": {
       "component.audio_card_name": "fakeaudiocard",
@@ -412,9 +411,15 @@
       "32": {}
     },
     "PROJECT_B": {
-      "33": {},
-      "34": {},
-      "35": {}
+      "33": {
+        "fw_config": 66336
+      },
+      "34": {
+        "fw_config": 66336
+      },
+      "35": {
+        "fw_config": 1114912
+      }
     },
     "PROJECT_BOX": {
       "128": {

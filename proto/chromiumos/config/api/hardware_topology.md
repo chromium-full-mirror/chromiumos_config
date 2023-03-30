@@ -288,3 +288,9 @@ Changes that require new topology
 
 * Presence or absence of barrel jack
 * Preferred input power
+
+## Detachable Base
+
+Changes that require new topology
+
+* Presence of the detachable base

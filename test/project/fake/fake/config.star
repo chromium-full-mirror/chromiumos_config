@@ -481,6 +481,23 @@ _MICROPHONE_MUTE_SWITCH = hw_topo.create_microphone_mute_switch(present = True)
 
 _POWER_SUPPLY = hw_topo.create_power_supply("POWER_SUPPLY", "Default power supply", usb_min_ac_watts = 20)
 
+_DETACHABLE_BASE = hw_topo.create_detachable_base(
+    ec_image_name = "Fake_Detachable",
+    product_id = 1000,
+    usb_path = "1-1.1",
+    vendor_id = 0x18d1,
+    fw_configs = [hw_topo.make_fw_config(program.fw_masks.DETACHABLE_BASE, 0)],
+)
+
+_DETACHABLE_BASE_WITH_TP = hw_topo.create_detachable_base(
+    ec_image_name = "Fake_Detachable",
+    touch_image_name = "Fake_Tp_Version",
+    product_id = 1000,
+    usb_path = "1-1.1",
+    vendor_id = 0x18d1,
+    fw_configs = [hw_topo.make_fw_config(program.fw_masks.DETACHABLE_BASE, 1)],
+)
+
 def create_hardware_topology(
         screen = None,
         form_factor = None,
@@ -501,7 +518,8 @@ def create_hardware_topology(
         audio = None,
         power_supply = None,
         proximity_sensor = None,
-        wifi = None):
+        wifi = None,
+        detachable_base = None):
     return hw_topo.create_hardware_topology(
         bluetooth = bluetooth if bluetooth else None,
         barreljack = barreljack if barreljack else None,
@@ -530,6 +548,7 @@ def create_hardware_topology(
         hdmi = hdmi,
         hps = hps,
         power_supply = power_supply if power_supply else _POWER_SUPPLY,
+        detachable_base = detachable_base,
     )
 
 # Create empty arrays that we will continually append new configurations to
@@ -776,6 +795,7 @@ design.append_configs(
                 ),
             ),
         ),
+        detachable_base = _DETACHABLE_BASE,
     ),
     bluetooth = _SC_BLUETOOTH,
     firmware = sc.create_fw_payloads_by_names(
@@ -847,6 +867,7 @@ design.append_configs(
                 ),
             ),
         ),
+        detachable_base = _DETACHABLE_BASE_WITH_TP,
     ),
     bluetooth = _SC_BLUETOOTH,
     firmware = sc.create_fw_payloads_by_names(

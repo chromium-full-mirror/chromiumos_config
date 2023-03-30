@@ -1253,6 +1253,58 @@ def _create_tpm(tpm_type = _TPM_TYPE.GSC_H1B, id = None, fw_configs = []):
         hardware_feature = hw_features,
     )
 
+def _create_detachable_base(
+        ec_image_name,
+        product_id,
+        usb_path,
+        vendor_id,
+        fw_configs = [],
+        touch_image_name = None,
+        id = None,
+        description = None):
+    """Builds a Topology proto for detachable.
+
+    Args:
+        ec_image_name: The target EC binary name.
+        product_id: The Product ID of the detachable base.
+        usb_path: Searches and finds the idVendor and idProduct under sysfs
+            /sys/bus/usb/devices/* which matches the vendor-id and product-id.
+        vendor_id: The Vendor ID of the detachable base.
+        fw_configs: A list of FirmwareConfiguration protos for the detachable
+            base topology.
+        touch_image_name: The touchpad binary name. This is only needed if the
+            detachable base contains touchpad.
+        id: A string identifier for the Topology. If not passed, a default is
+            provided.
+        description: An English description for the Topology. There will be a
+            default string provided based on touch_image_name exist or not.
+    """
+    hw_features = _HW_FEAT()
+
+    if not id:
+        id = "DB_{touchpad_str}".format(
+            touchpad_str = "TP" if touch_image_name else "NO_TP",
+        )
+
+    if not description:
+        description = "Detachable Base {touchpad_str}".format(
+            touchpad_str = "With Touchpad" if touch_image_name else "Without Touchpad",
+        )
+
+    hw_features.detachable_base.ec_image_name = ec_image_name
+    hw_features.detachable_base.product_id = product_id
+    hw_features.detachable_base.usb_path = usb_path
+    hw_features.detachable_base.vendor_id = vendor_id
+    hw_features.detachable_base.touch_image_name = touch_image_name
+    _accumulate_fw_configs(hw_features, fw_configs)
+
+    return topo_pb.Topology(
+        id = id,
+        type = topo_pb.Topology.DETACHABLE_BASE,
+        description = {"EN": description},
+        hardware_feature = hw_features,
+    )
+
 def _create_microphone_mute_switch(present = False):
     """Builds a Topology proto for an microphone mute switch.
 
@@ -1303,7 +1355,8 @@ def _create_hardware_topology(
         hdmi = None,
         hps = None,
         dp_converter = None,
-        poe = None):
+        poe = None,
+        detachable_base = None):
     """Builds a HardwareTopology proto from Topology protos."""
 
     # Only allow form_factor topologies for form factors
@@ -1394,6 +1447,9 @@ def _create_hardware_topology(
     if power_supply and power_supply.type != topo_pb.Topology.POWER_SUPPLY:
         fail("Invalid power supply topology")
 
+    if detachable_base and detachable_base.type != topo_pb.Topology.DETACHABLE_BASE:
+        fail("Invalid detachable base type")
+
     return hw_topo_pb.HardwareTopology(
         screen = screen,
         form_factor = form_factor,
@@ -1424,6 +1480,7 @@ def _create_hardware_topology(
         dp_converter = dp_converter,
         poe = poe,
         power_supply = power_supply,
+        detachable_base = detachable_base,
     )
 
 def _accumulate_presence(existing_present, new_present):
@@ -1459,7 +1516,7 @@ def _convert_to_hw_features(hardware_topology):
     result = _HW_FEAT()
 
     # Need to make deep-copy otherwise we change the has_ message serialization
-    copy = proto.from_textpb(hw_topo_pb.HardwareTopology, proto.to_textpb(hardware_topology))
+    copy = proto.clone(hardware_topology)
 
     # Handle all possible screen hardware features attributes
     _accumulate_fw_config(result.fw_config, copy.screen.hardware_feature.fw_config)
@@ -1623,6 +1680,12 @@ def _convert_to_hw_features(hardware_topology):
     # Handle all possible touch hardware features
     _accumulate_fw_config(result.fw_config, copy.touch.hardware_feature.fw_config)
 
+    # Handle all possible detachable base attributes
+    _accumulate_fw_config(result.fw_config, copy.detachable_base.hardware_feature.fw_config)
+
+    if copy.detachable_base.hardware_feature.detachable_base != _HW_FEAT.DetachableBase():
+        result.detachable_base = copy.detachable_base.hardware_feature.detachable_base
+
     return result
 
 hw_topo = struct(
@@ -1660,6 +1723,7 @@ hw_topo = struct(
     create_hps = _create_hps,
     create_dp_converter = _create_dp_converter,
     create_poe = _create_poe,
+    create_detachable_base = _create_detachable_base,
     convert_to_hw_features = _convert_to_hw_features,
     make_camera_device = _make_camera_device,
     make_cellular_dynamic_power_reduction_config = _make_cellular_dynamic_power_reduction_config,
