@@ -899,7 +899,9 @@ def _create_mtk_geo_power_chain(
         limit_2g,
         limit_5g,
         offset_2g,
-        offset_5g):
+        offset_5g,
+        limit_6g = None,
+        offset_6g = None):
     """Builds a GeoTransmitPowerChain for mtk drivers.
 
     Args:
@@ -907,12 +909,16 @@ def _create_mtk_geo_power_chain(
         limit_5g: 5G band geo power limit. (0.25 dBm). Required.
         offset_2g: Value to be added to the 2.4GHz WiFi band. (0.25 dBm). Required.
         offset_5g: Value to be added to all 5GHz WiFi bands. (0.25 dBm). Required.
+        limit_6g: 6G band geo power limit. (0.25 dBm).
+        offset_6g: Value to be added to all 6GHz WiFi bands. (0.25 dBm).
     """
     return wf_pb.WifiConfig.MtkConfig.GeoTransmitPowerChain(
         limit_2g = limit_2g,
         limit_5g = limit_5g,
         offset_2g = offset_2g,
         offset_5g = offset_5g,
+        limit_6g = limit_6g,
+        offset_6g = offset_6g,
     )
 
 def _create_mtk_power_chain(
@@ -920,7 +926,13 @@ def _create_mtk_power_chain(
         limit_5g_1,
         limit_5g_2,
         limit_5g_3,
-        limit_5g_4):
+        limit_5g_4,
+        limit_6g_1 = None,
+        limit_6g_2 = None,
+        limit_6g_3 = None,
+        limit_6g_4 = None,
+        limit_6g_5 = None,
+        limit_6g_6 = None):
     """Builds a TransmitPowerChain for mtk drivers.
 
     Args:
@@ -929,6 +941,12 @@ def _create_mtk_power_chain(
         limit_5g_2: 5G band 2 power limit: 5.35G-5.47G frequency. (0.25 dBm). Required.
         limit_5g_3: 5G band 3 power limit: 5.47G-5.725G frequency. (0.25 dBm). Required.
         limit_5g_4: 5G band 4 power limit: 5.725G-5.95G frequency. (0.25 dBm). Required.
+        limit_6g_1: 6G band 1 power limit: 5.945G-6.165G frequency. (0.25 dBm).
+        limit_6g_2: 6G band 2 power limit: 6.165G-6.405G frequency. (0.25 dBm).
+        limit_6g_3: 6G band 3 power limit: 6.405G-6.525G frequency. (0.25 dBm).
+        limit_6g_4: 6G band 4 power limit: 6.525G-6.705G frequency. (0.25 dBm).
+        limit_6g_5: 6G band 5 power limit: 6.705G-6.865G frequency. (0.25 dBm).
+        limit_6g_6: 6G band 6 power limit: 6.865G-7.125G frequency. (0.25 dBm).
     """
     return wf_pb.WifiConfig.MtkConfig.TransmitPowerChain(
         limit_2g = limit_2g,
@@ -936,6 +954,12 @@ def _create_mtk_power_chain(
         limit_5g_2 = limit_5g_2,
         limit_5g_3 = limit_5g_3,
         limit_5g_4 = limit_5g_4,
+        limit_6g_1 = limit_6g_1,
+        limit_6g_2 = limit_6g_2,
+        limit_6g_3 = limit_6g_3,
+        limit_6g_4 = limit_6g_4,
+        limit_6g_5 = limit_6g_5,
+        limit_6g_6 = limit_6g_6,
     )
 
 def _create_mtk_wifi(
