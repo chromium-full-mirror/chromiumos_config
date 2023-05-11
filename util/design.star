@@ -206,6 +206,7 @@ def _create_design(
         public_fields = ["id", "name", "program_id"],
         configs = None,
         board_id_phases = None,
+        spi_flash_transform = None,
         custom_type = _CUSTOMTYPE.NO_CUSTOM):
     """Builds a Design proto."""
     return design_pb.Design(
@@ -217,6 +218,7 @@ def _create_design(
         configs = configs,
         board_id_phase = board_id_phases,
         custom_type = custom_type,
+        spi_flash_transform = spi_flash_transform,
     )
 
 design = struct(
