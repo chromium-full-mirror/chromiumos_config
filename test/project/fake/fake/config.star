@@ -879,7 +879,13 @@ design.append_configs(
         ec_version = sc.create_fw_version(11111, 2),
         pd_version = sc.create_fw_version(11111),
     ),
-    firmware_build_config = sc.create_fw_build_config_by_names("fake", ec_name = "fake", ec_extras = ["fake_ec_extra1", "fake_ec_extra2"], zephyr_ec_name = "projects/fake/fake"),
+    firmware_build_config = sc.create_fw_build_config_by_names(
+        "fake",
+        ec_name = "fake",
+        ec_extras = ["fake_ec_extra1", "fake_ec_extra2"],
+        zephyr_ec_name = "projects/fake/fake",
+        zephyr_detachable_base_name = "fake_zephyr_detachable_base",
+    ),
     power = _SC_POWER,
     camera = sc.create_camera(
         generate_media_profiles = True,
@@ -950,7 +956,13 @@ design.append_configs(
         ec_version = sc.create_fw_version(11111, 2),
         pd_version = sc.create_fw_version(11111),
     ),
-    firmware_build_config = sc.create_fw_build_config_by_names("fake", ec_name = "fake", ec_extras = ["fake_ec_extra1", "fake_ec_extra2"], zephyr_ec_name = "projects/fake/fake"),
+    firmware_build_config = sc.create_fw_build_config_by_names(
+        "fake",
+        ec_name = "fake",
+        ec_extras = ["fake_ec_extra1", "fake_ec_extra2"],
+        zephyr_ec_name = "projects/fake/fake",
+        zephyr_detachable_base_name = "fake_zephyr_detachable_base",
+    ),
     power = _SC_POWER,
     camera = sc.create_camera(
         generate_media_profiles = True,

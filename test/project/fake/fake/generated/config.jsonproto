@@ -8316,6 +8316,7 @@
             "fake_ec_extra2"
           ],
           "libpayload": "fake",
+          "zephyrDetachableBase": "fake_zephyr_detachable_base",
           "zephyrEc": "projects/fake/fake"
         }
       },
@@ -8393,6 +8394,7 @@
             "fake_ec_extra2"
           ],
           "libpayload": "fake",
+          "zephyrDetachableBase": "fake_zephyr_detachable_base",
           "zephyrEc": "projects/fake/fake"
         }
       },
