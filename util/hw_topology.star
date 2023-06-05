@@ -42,6 +42,7 @@ _AUDIO_CODEC = struct(
     NAU88L25B = topo_pb.HardwareFeatures.Audio.NAU88L25B,
     CS42L42 = topo_pb.HardwareFeatures.Audio.CS42L42,
     ALC5682IVS = topo_pb.HardwareFeatures.Audio.ALC5682IVS,
+    ALC5650 = topo_pb.HardwareFeatures.Audio.AUDIO_CODEC_ALC5650,
 )
 
 _AMPLIFIER = struct(
@@ -52,6 +53,7 @@ _AMPLIFIER = struct(
     ALC1011 = topo_pb.HardwareFeatures.Audio.ALC1011,
     RT1015P = topo_pb.HardwareFeatures.Audio.RT1015P,
     ALC1019 = topo_pb.HardwareFeatures.Audio.ALC1019,
+    ALC5650 = topo_pb.HardwareFeatures.Audio.AMPLIFIER_ALC5650,
 )
 
 _FP_LOC = struct(
