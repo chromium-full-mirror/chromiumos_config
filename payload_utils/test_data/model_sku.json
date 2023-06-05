@@ -96,7 +96,6 @@
       "component.has_tabletmode": false,
       "component.has_touchscreen": true,
       "component.has_wifi": true,
-      "component.headphone_codec": "ALC5682I",
       "component.match_sku_components": [
         [
           "camera",
@@ -121,6 +120,7 @@
       ],
       "component.speaker_amp": "MAX98373",
       "fw_config": 66336
+      ]
     },
     "project_box": {
       "component.audio_card_name": "fakeaudiocard",
@@ -414,9 +414,24 @@
       "32": {}
     },
     "project_b": {
-      "33": {},
-      "34": {},
-      "35": {}
+      "33": {
+        "component.has_proximity_sensor": true,
+        "component.headphone_codec": "ALC5682I",
+        "component.speaker_amp": "MAX98373",
+        "fw_config": 66336
+      },
+      "34": {
+        "component.has_proximity_sensor": null,
+        "component.headphone_codec": "ALC5650",
+        "component.speaker_amp": "ALC5650",
+        "fw_config": 66336
+      },
+      "35": {
+        "component.has_proximity_sensor": null,
+        "component.headphone_codec": "ALC5682I",
+        "component.speaker_amp": "MAX98373",
+        "fw_config": 1114912
+      }
     },
     "project_box": {
       "128": {

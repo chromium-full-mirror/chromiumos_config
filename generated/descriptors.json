@@ -4156,6 +4156,10 @@
                     {
                       "name": "WCD9385",
                       "number": 13
+                    },
+                    {
+                      "name": "AUDIO_CODEC_ALC5650",
+                      "number": 17
                     }
                   ]
                 },
@@ -4215,6 +4219,18 @@
                     {
                       "name": "CS35L41",
                       "number": 14
+                    },
+                    {
+                      "name": "MAX98363",
+                      "number": 15
+                    },
+                    {
+                      "name": "NAU8318",
+                      "number": 16
+                    },
+                    {
+                      "name": "AMPLIFIER_ALC5650",
+                      "number": 17
                     }
                   ]
                 },
