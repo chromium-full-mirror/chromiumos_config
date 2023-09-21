@@ -258,7 +258,8 @@
                 "tabletMode": true
               },
               "present": 1,
-              "type": 1
+              "type": 1,
+              "wedgeTimeoutInMs": 120000
             },
             "fingerprint": {
               "board": "fake_fingerprint_board",
@@ -494,7 +495,8 @@
                     "tabletMode": true
                   },
                   "present": 1,
-                  "type": 1
+                  "type": 1,
+                  "wedgeTimeoutInMs": 120000
                 }
               },
               "id": "LTE_BOARD",
@@ -1432,7 +1434,8 @@
                 "tabletMode": true
               },
               "present": 1,
-              "type": 1
+              "type": 1,
+              "wedgeTimeoutInMs": 120000
             },
             "fingerprint": {
               "board": "fake_fingerprint_board",
@@ -1700,7 +1703,8 @@
                     "tabletMode": true
                   },
                   "present": 1,
-                  "type": 1
+                  "type": 1,
+                  "wedgeTimeoutInMs": 120000
                 }
               },
               "id": "LTE_BOARD",
@@ -4487,7 +4491,8 @@
                 "tabletMode": true
               },
               "present": 1,
-              "type": 1
+              "type": 1,
+              "wedgeTimeoutInMs": 210000
             },
             "fingerprint": {
               "location": 5
@@ -4926,7 +4931,8 @@
                     "tabletMode": true
                   },
                   "present": 1,
-                  "type": 1
+                  "type": 1,
+                  "wedgeTimeoutInMs": 210000
                 },
                 "fwConfig": {
                   "mask": 15,
@@ -5676,7 +5682,8 @@
               "hardwareFeature": {
                 "cellular": {
                   "present": 1,
-                  "type": 1
+                  "type": 1,
+                  "wedgeTimeoutInMs": 180000
                 }
               },
               "id": "LTE_BOARD_NO_DPR",

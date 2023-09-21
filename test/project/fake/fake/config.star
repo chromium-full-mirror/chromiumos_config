@@ -209,9 +209,10 @@ _LTE_BOARD = hw_topo.create_cellular_board(
         regulatory_domain_mapping = _REGULATORY_DOMAIN_MAPPING,
         power_level_mapping = _POWER_LEVEL_MAPPING,
     ),
+    wedge_timeout_in_ms = 120000,
 )
 _LTE_BOARD_WITH_MODEL = hw_topo.create_cellular_board("LTE_BOARD_MODEL", "Default cellular_board w/ model", present = True, type = hw_topo.cellular.CELLULAR_LTE, model = "FakeModem", dynamic_power_reduction_config = hw_topo.make_cellular_dynamic_power_reduction_config(gpio = 0, tablet_mode = True))
-_LTE_BOARD_WITH_NO_DPR = hw_topo.create_cellular_board("LTE_BOARD_NO_DPR", "Default cellular_board without dynamic power reduction config", present = True, type = hw_topo.cellular.CELLULAR_LTE, dynamic_power_reduction_config = None)
+_LTE_BOARD_WITH_NO_DPR = hw_topo.create_cellular_board("LTE_BOARD_NO_DPR", "Default cellular_board without dynamic power reduction config", present = True, type = hw_topo.cellular.CELLULAR_LTE, dynamic_power_reduction_config = None, wedge_timeout_in_ms = 180000)
 _SD_READER = hw_topo.create_sd_reader("SD_READER", "Default sd_reader")
 _MOTHERBOARD_USB = hw_topo.create_motherboard_usb(
     "MOTHERBOARD_USB",
@@ -1020,6 +1021,7 @@ design.append_configs(
             cellular_support = True,
             cellular_type = hw_topo.cellular.CELLULAR_LTE,
             cellular_dynamic_power_reduction_config = hw_topo.make_cellular_dynamic_power_reduction_config(gpio = 20, tablet_mode = True),
+            cellular_wedge_timeout_in_ms = 210000,
         ),
         proximity_sensor = hw_topo.create_proximity_sensor(
             "PROXIMITY_SENSOR",
