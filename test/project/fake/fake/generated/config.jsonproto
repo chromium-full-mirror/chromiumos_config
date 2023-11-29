@@ -1023,6 +1023,7 @@
                 "tabletMode": true
               },
               "model": "FakeModem",
+              "modemType": 3,
               "present": 1,
               "type": 1
             },
@@ -1273,6 +1274,7 @@
                     "tabletMode": true
                   },
                   "model": "FakeModem",
+                  "modemType": 3,
                   "present": 1,
                   "type": 1
                 }
@@ -1670,6 +1672,7 @@
                 "tabletMode": true
               },
               "model": "FakeModem",
+              "modemType": 3,
               "present": 1,
               "type": 1
             },
@@ -1927,6 +1930,7 @@
                     "tabletMode": true
                   },
                   "model": "FakeModem",
+                  "modemType": 3,
                   "present": 1,
                   "type": 1
                 }
@@ -3116,6 +3120,7 @@
                 "tabletMode": true
               },
               "model": "FakeModem",
+              "modemType": 3,
               "present": 1,
               "type": 1
             },
@@ -3375,6 +3380,7 @@
                     "tabletMode": true
                   },
                   "model": "FakeModem",
+                  "modemType": 3,
                   "present": 1,
                   "type": 1
                 }
@@ -3778,6 +3784,7 @@
                 "tabletMode": true
               },
               "model": "FakeModem",
+              "modemType": 3,
               "present": 1,
               "type": 1
             },
@@ -4048,6 +4055,7 @@
                     "tabletMode": true
                   },
                   "model": "FakeModem",
+                  "modemType": 3,
                   "present": 1,
                   "type": 1
                 }
@@ -4467,6 +4475,7 @@
                 "tabletMode": true
               },
               "model": "FakeModem",
+              "modemType": 3,
               "present": 1,
               "type": 1
             },
@@ -4714,6 +4723,7 @@
                     "tabletMode": true
                   },
                   "model": "FakeModem",
+                  "modemType": 3,
                   "present": 1,
                   "type": 1
                 }
@@ -9122,6 +9132,7 @@
                 "gpio": 20,
                 "tabletMode": true
               },
+              "modemType": 2,
               "present": 1,
               "type": 1,
               "wedgeTimeoutInMs": 210000
@@ -9587,6 +9598,7 @@
                     "gpio": 20,
                     "tabletMode": true
                   },
+                  "modemType": 2,
                   "present": 1,
                   "type": 1,
                   "wedgeTimeoutInMs": 210000
@@ -10195,6 +10207,7 @@
               ]
             },
             "cellular": {
+              "modemType": 1,
               "present": 1,
               "type": 1,
               "wedgeTimeoutInMs": 180000
@@ -10401,6 +10414,7 @@
               },
               "hardwareFeature": {
                 "cellular": {
+                  "modemType": 1,
                   "present": 1,
                   "type": 1,
                   "wedgeTimeoutInMs": 180000
@@ -10754,6 +10768,7 @@
                 "tabletMode": true
               },
               "model": "FakeModem",
+              "modemType": 3,
               "present": 1,
               "type": 1
             },
@@ -10947,6 +10962,7 @@
                     "tabletMode": true
                   },
                   "model": "FakeModem",
+                  "modemType": 3,
                   "present": 1,
                   "type": 1
                 }
