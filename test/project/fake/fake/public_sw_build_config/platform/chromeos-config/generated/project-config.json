@@ -3019,7 +3019,7 @@
             "libpayload": "fake",
             "zephyr-ec": "projects/fake/fake"
           },
-          "firmware-config": 90914
+          "firmware-config": 95010
         },
         "hardware-properties": {
           "fan-count": 2,
@@ -3196,8 +3196,8 @@
         },
         "wifi": {
           "sar-file": {
-            "build-path": "fake/public_sw_build_config/platform/chromeos-config/generated/wifi/fake/wifi_sar_6.hex",
-            "system-path": "/firmware/cbfs-rw-raw/fake/wifi_sar_6.hex"
+            "build-path": "fake/public_sw_build_config/platform/chromeos-config/generated/wifi/fake/wifi_sar_7.hex",
+            "system-path": "/firmware/cbfs-rw-raw/fake/wifi_sar_7.hex"
           }
         }
       },
