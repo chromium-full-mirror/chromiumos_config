@@ -67,6 +67,8 @@ _FEATURE_CONSTRAINTS = design.create_constraints([
     hw_feat.create_form_factor(hw_feat.form_factor.CONVERTIBLE),
 ])
 
+# Signer config for program FAKE
+
 _SIGNER_BRAND_CONFIGS = program_util.create_signer_configs_by_brand(
     {
         "WLAA": "KEYD",  # White label A
@@ -90,6 +92,16 @@ _SIGNER_DESIGN_CONFIGS = program_util.create_signer_configs_by_design(
 
 _SIGNER_CONFIG = _SIGNER_BRAND_CONFIGS + _SIGNER_DESIGN_CONFIGS
 
+# signer config for program FAKE_A
+
+_SIGNER_DESIGN_CONFIGS_FAKE_A = program_util.create_signer_configs_by_design(
+    {
+        "FAKE_A_REF_DESIGN": "DEFAULT",
+    },
+)
+
+_SIGNER_CONFIG_FAKE_A = _SIGNER_DESIGN_CONFIGS_FAKE_A
+
 platform = program_util.platform
 _PLATFORM = program_util.create_platform(
     soc_family = "FAKE_INTEL_PLATFORM",
@@ -107,6 +119,14 @@ _PLATFORM = program_util.create_platform(
     boost_urgent = 20,
     cpuset_nonurgent = "0-5",
     input_boost = 15,
+)
+
+_PLATFORM_A = program_util.create_platform(
+    soc_family = "FAKE_INTEL_PLATFORM_A",
+    soc_arch = platform.X86_64,
+    gpu_family = "FAKE_INTEL_GPU_A",
+    suspend_to_idle = True,
+    dark_resume = True,
 )
 
 _HDMI_AUDIO_CARD = hw_topo.create_audio_card_config(
@@ -132,8 +152,27 @@ _FAKE = program_util.create(
     generate_camera_media_profiles = True,
 )
 
+# Define Program _FAKE_A, mapped to same overlay as Program _FAKE.
+_FAKE_A = program_util.create(
+    name = "FAKE_A_PROGRAM",
+    base_program = "FAKE_PROGRAM",
+    component_quals = _QUAL_CONSTRAINTS,
+    constraints = _FEATURE_CONSTRAINTS,
+    firmware_configuration_segments = _FIRMWARE_CONFIGURATION_SEGMENTS,
+    device_signer_configs = _SIGNER_CONFIG_FAKE_A,
+    mosys_platform_name = "fake_a",
+    platform = _PLATFORM_A,
+    audio_config = program_util.create_audio_config(
+        has_module_file = True,
+        default_ucm_suffix = "{speaker_amp}.{headset_codec}.{mic_description}.{design}",
+        card_configs = [_HDMI_AUDIO_CARD],
+    ),
+    generate_camera_media_profiles = True,
+)
+
 program = struct(
     fake = _FAKE,
+    fake_a = _FAKE_A,
     fw_masks = _FW_MASKS,
     components = _QUALIFIED_COMPS,
     bluetooth_component = _FAKE_BT_COMP,

@@ -5,6 +5,13 @@
         "value": "FAKE_PROGRAM"
       },
       "name": "FAKE_PROGRAM"
+    },
+    {
+      "baseProgram": "FAKE_PROGRAM",
+      "id": {
+        "value": "FAKE_A_PROGRAM"
+      },
+      "name": "FAKE_A_PROGRAM"
     }
   ]
 }
