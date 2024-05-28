@@ -154,7 +154,8 @@ def _create_audio_config(
 
 def _create(
         name,
-        public_fields = ["name", "id"],
+        public_fields = ["name", "id", "base_program"],
+        base_program = None,
         component_quals = None,
         constraints = None,
         firmware_configuration_segments = None,
@@ -171,6 +172,7 @@ def _create(
         public_replication = public_replication.create(public_fields = public_fields),
         id = program_id,
         name = name,
+        base_program = base_program,
         component_quals = component_quals,
         design_config_constraints = constraints,
         firmware_configuration_segments = firmware_configuration_segments,

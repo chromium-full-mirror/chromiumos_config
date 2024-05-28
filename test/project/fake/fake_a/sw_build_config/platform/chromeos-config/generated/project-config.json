@@ -1,0 +1,261 @@
+{
+  "chromeos": {
+    "configs": [
+      {
+        "arc": {
+          "build-properties": {
+            "device": "fake_program_cheets",
+            "first-api-level": "28",
+            "marketing-name": "Fake ChromeOS Device Brandname",
+            "metrics-tag": "fake_a_ref_design",
+            "oem": "FAKE_OEM",
+            "product": "fake_program"
+          },
+          "hardware-features": {
+            "build-path": "fake_a/sw_build_config/platform/chromeos-config/generated/arc/hardware_features_fake_a_ref_design.xml",
+            "system-path": "/etc/hardware_features_fake_a_ref_design.xml"
+          },
+          "media-profiles": {
+            "build-path": "fake_a/sw_build_config/platform/chromeos-config/generated/arc/media_profiles_fake_a_ref_design.xml",
+            "system-path": "/etc/media_profiles_fake_a_ref_design.xml"
+          }
+        },
+        "audio": {
+          "main": {
+            "cras-config-dir": "fake_a_ref_design",
+            "files": [
+              {
+                "destination": "/usr/share/alsa/ucm/fakeaudiocard.alc5682i.2uf.fake_a_ref_design/HiFi.conf",
+                "source": "fake_a_ref_design/audio/ucm-config/fakeaudiocard.alc5682i.2uf.fake_a_ref_design/HiFi.conf"
+              },
+              {
+                "destination": "/usr/share/alsa/ucm/fakeaudiocard.alc5682i.2uf.fake_a_ref_design/fakeaudiocard.alc5682i.2uf.fake_a_ref_design.conf",
+                "source": "fake_a_ref_design/audio/ucm-config/fakeaudiocard.alc5682i.2uf.fake_a_ref_design/fakeaudiocard.alc5682i.2uf.fake_a_ref_design.conf"
+              },
+              {
+                "destination": "/etc/cras/fake_a_ref_design/fakeaudiocard.card_settings",
+                "source": "fake_a_ref_design/audio/cras-config/fakeaudiocard.card_settings"
+              },
+              {
+                "destination": "/usr/share/alsa/ucm/HDA ATI HDMI/HiFi.conf",
+                "source": "common/audio/ucm-config/HDA ATI HDMI/HiFi.conf"
+              },
+              {
+                "destination": "/usr/share/alsa/ucm/HDA ATI HDMI/HDA ATI HDMI.conf",
+                "source": "common/audio/ucm-config/HDA ATI HDMI/HDA ATI HDMI.conf"
+              },
+              {
+                "destination": "/etc/cras/fake_a_ref_design/dsp.ini",
+                "source": "fake_a_ref_design/audio/cras-config/dsp.ini"
+              },
+              {
+                "destination": "/etc/cras/fake_a_ref_design/board.ini",
+                "source": "fake_a_ref_design/audio/cras-config/board.ini"
+              },
+              {
+                "destination": "/etc/cras/fake_a_ref_design/apm.ini",
+                "source": "fake_a_ref_design/audio/cras-config/apm.ini"
+              },
+              {
+                "destination": "/etc/modprobe.d/alsa-fake_program.conf",
+                "source": "common/audio/alsa-module-config/alsa-fake_program.conf"
+              }
+            ],
+            "ucm-suffix": "alc5682i.2uf.fake_a_ref_design"
+          }
+        },
+        "bluetooth": {
+          "flags": {
+            "enable-suspend-management": true
+          }
+        },
+        "brand-code": "AAAB",
+        "branding": {
+          "marketing-name": "Fake ChromeOS Device Brandname",
+          "oem-name": "FAKE_OEM"
+        },
+        "camera": {
+          "count": 1,
+          "devices": [
+            {
+              "facing": "front",
+              "flags": {
+                "support-1080p": false,
+                "support-autofocus": false
+              },
+              "ids": [
+                "0123:abcd"
+              ],
+              "interface": "usb",
+              "orientation": 0
+            }
+          ]
+        },
+        "cros-healthd": {
+          "battery": {
+            "has-smart-battery-info": true
+          },
+          "cached-vpd": {
+            "has-sku-number": true
+          },
+          "routines": {
+            "battery-health": {
+              "percent-battery-wear-allowed": 50
+            },
+            "fingerprint-diag": {
+              "detect-zones": [
+                {
+                  "x1": 10,
+                  "x2": 30,
+                  "y1": 20,
+                  "y2": 40
+                },
+                {
+                  "x1": 50,
+                  "x2": 70,
+                  "y1": 60,
+                  "y2": 80
+                }
+              ],
+              "max-dead-pixels": 5,
+              "max-dead-pixels-in-detect-zone": 0,
+              "max-error-reset-pixels": 5,
+              "max-pixel-dev": 5,
+              "max-reset-pixel-dev": 5,
+              "num-detect-zone": 2,
+              "pixel-median": {
+                "cb-type1-lower": 1,
+                "cb-type1-upper": 2,
+                "cb-type2-lower": 3,
+                "cb-type2-upper": 4,
+                "icb-type1-lower": 5,
+                "icb-type1-upper": 6,
+                "icb-type2-lower": 7,
+                "icb-type2-upper": 8
+              },
+              "routine-enable": true
+            },
+            "nvme-wear-level": {
+              "wear-level-threshold": 50
+            }
+          }
+        },
+        "fingerprint": {
+          "board": "fake_fingerprint_board",
+          "sensor-location": "keyboard-bottom-left"
+        },
+        "firmware": {
+          "bcs-overlay": "overlay-fake_program-private",
+          "build-targets": {
+            "coreboot": "fake",
+            "depthcharge": "fake",
+            "ec": "fake",
+            "ec_extras": [
+              "fake_ec_extra1",
+              "fake_ec_extra2"
+            ],
+            "ish": "fake",
+            "libpayload": "fake",
+            "zephyr-ec": "projects/fake/fake"
+          },
+          "ec-ro-image": "bcs://Fake_EC.0.0.0.tbz2",
+          "firmware-config": 90913,
+          "image-name": "fake_a_ref_design",
+          "main-ro-image": "bcs://Fake.11111.0.0.tbz2",
+          "main-rw-image": "bcs://Fake.11111.2.3.tbz2",
+          "pd-ro-image": "bcs://Fake_PD.11111.0.0.tbz2"
+        },
+        "firmware-signing": {
+          "key-id": "DEFAULT",
+          "signature-id": "fake_a_ref_design"
+        },
+        "hardware-properties": {
+          "form-factor": "CLAMSHELL",
+          "has-backlight": true,
+          "psu-type": "battery",
+          "recovery-input": "KEYBOARD"
+        },
+        "hps": {
+          "has-hps": true
+        },
+        "identity": {
+          "frid": "Google_Ref",
+          "platform-name": "fake_a",
+          "sku-id": 2147483647
+        },
+        "modem": {
+          "firmware-variant": "fake_a_ref_design"
+        },
+        "name": "fake_a_ref_design",
+        "nnpalm": {
+          "model": "alpha",
+          "radius-polynomial": "1,0",
+          "touch-compatible": true
+        },
+        "power": {
+          "battery-poll-interval-initial-ms": "1000",
+          "charging-ports": "CROS_USBPD_CHARGER0 LEFT_BACK\nCROS_USBPD_CHARGER1 RIGHT\nCROS_USBPD_CHARGER2 LEFT_FRONT",
+          "defer-external-display-timeout": "10",
+          "disable-dark-resume": "0",
+          "internal-backlight-no-als-ac-brightness": "80.5",
+          "internal-backlight-no-als-battery-brightness": "63.4",
+          "suspend-to-idle": "1",
+          "turn-off-screen-timeout-ms": "3000",
+          "usb-min-ac-watts": "20"
+        },
+        "regulatory-label": "fake_regulatory_label",
+        "touch": {
+          "files": [
+            {
+              "destination": "/opt/google/touch/firmware/01FF_1234.bin",
+              "source": "fake_a/sw_build_config/platform/chromeos-config/touch/elants/01FF_1234.bin",
+              "symlink": "/lib/firmware/elants_i2c_01FF.bin"
+            },
+            {
+              "destination": "/opt/google/touch/firmware/99.0_9.0.bin",
+              "source": "fake_a/sw_build_config/platform/chromeos-config/touch/elan/99.0_9.0.bin",
+              "symlink": "/lib/firmware/elan_i2c_99.0.bin"
+            }
+          ]
+        },
+        "typecd": {
+          "mode-entry-dp-only": true
+        },
+        "ui": {
+          "ash-enabled-features": [
+            "CloudGamingDevice"
+          ],
+          "extra-ash-flags": [
+            "--arc-build-properties={'device': 'fake_program_cheets', 'firstApiLevel': '28'}",
+            "--ash-power-button-position={\"edge\": \"left\", \"position\": 0.9}",
+            "--ash-side-volume-button-position={\"region\": \"screen\", \"side\": \"right\"}",
+            "--child-wallpaper-large=/usr/share/chromeos-assets/wallpaper/child_large.jpg",
+            "--child-wallpaper-small=/usr/share/chromeos-assets/wallpaper/child_small.jpg",
+            "--default-wallpaper-is-oem",
+            "--default-wallpaper-large=/usr/share/chromeos-assets/wallpaper/fake_wallpaper_large.jpg",
+            "--default-wallpaper-small=/usr/share/chromeos-assets/wallpaper/fake_wallpaper_small.jpg",
+            "--enable-microphone-mute-switch-device",
+            "--extra-web-apps-dir=apps1",
+            "--fingerprint-sensor-location=keyboard-bottom-left",
+            "--guest-wallpaper-large=/usr/share/chromeos-assets/wallpaper/guest_large.jpg",
+            "--guest-wallpaper-small=/usr/share/chromeos-assets/wallpaper/guest_small.jpg",
+            "--has-internal-stylus",
+            "--regulatory-label-dir=fake_regulatory_label"
+          ],
+          "help-content-id": "fake_help"
+        },
+        "wallpaper": "fake_wallpaper",
+        "wifi": {
+          "non-tablet-mode-power-table-ath10k": {
+            "limit-2g": 1,
+            "limit-5g": 2
+          },
+          "tablet-mode-power-table-ath10k": {
+            "limit-2g": 3,
+            "limit-5g": 4
+          }
+        }
+      }
+    ]
+  }
+}
