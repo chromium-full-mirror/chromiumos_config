@@ -4472,6 +4472,9 @@
                     "antModePpag": 3,
                     "antTableVersion": 2
                   },
+                  "bsar": {
+                    "revision": 1
+                  },
                   "dsm": {
                     "disableActiveSdrChannels": "1",
                     "enablement11ax": "6",
@@ -5007,6 +5010,9 @@
                         },
                         "antModePpag": 3,
                         "antTableVersion": 2
+                      },
+                      "bsar": {
+                        "revision": 1
                       },
                       "dsm": {
                         "disableActiveSdrChannels": "1",
