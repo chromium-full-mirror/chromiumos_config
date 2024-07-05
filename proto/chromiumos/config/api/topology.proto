@@ -372,6 +372,7 @@ message HardwareFeatures {
       NAU8318 = 16;
       AMPLIFIER_ALC5650 = 17;
       AMPLIFIER_ALC256 = 18;
+      TAS2563 = 21;
     }
 
     enum AudioConfigStructure {
