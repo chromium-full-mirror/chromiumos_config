@@ -5361,6 +5361,10 @@
                     {
                       "name": "MODEM_LCUK54",
                       "number": 10
+                    },
+                    {
+                      "name": "MODEM_RW350",
+                      "number": 11
                     }
                   ]
                 }

@@ -244,6 +244,7 @@ message HardwareFeatures {
       MODEM_RW101 = 8;
       MODEM_RW135 = 9;
       MODEM_LCUK54 = 10;
+      MODEM_RW350 = 11;
     }
   }
 
