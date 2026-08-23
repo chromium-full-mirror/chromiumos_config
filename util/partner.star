@@ -211,6 +211,12 @@ partner = struct(
             vendor_id = "1DA0",
             symlink_file_format = "paradetech_{product_id}.bin",
         ),
+        LXS = _create_touch_partner(
+            name = "lxs",
+            vendor_id = "1FD2",
+            symlink_file_format = "lxs_touch_{product_id}.img",
+            destination_file_format = "LXS_TouchFW_{product_id}_{fw_version}.img",
+        ),
     ),
     battery = struct(
         PANASONIC = _create_battery_partner(
