@@ -31650,6 +31650,14 @@
                 {
                   "name": "STATUS_PRE_PROVISION_USB_NOT_DETECTED",
                   "number": 26
+                },
+                {
+                  "name": "STATUS_OS_BOOT_FAILURE",
+                  "number": 27
+                },
+                {
+                  "name": "STATUS_OS_UNREACHABLE",
+                  "number": 28
                 }
               ]
             }

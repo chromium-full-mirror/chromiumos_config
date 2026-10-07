@@ -128,6 +128,12 @@ message InstallResponse {
     STATUS_PRE_PROVISION_OEM_LOCKED = 25;
     // The USB drive on servo is not detected or missing.
     STATUS_PRE_PROVISION_USB_NOT_DETECTED = 26;
+    // The target OS failed to boot after image installation (ADB timed out and
+    // AP UART console did not reach a responsive shell prompt).
+    STATUS_OS_BOOT_FAILURE = 27;
+    // The target OS booted to console after image installation, but the device
+    // did not become reachable over ADB/SSH.
+    STATUS_OS_UNREACHABLE = 28;
   }
   Status status = 1;
 
