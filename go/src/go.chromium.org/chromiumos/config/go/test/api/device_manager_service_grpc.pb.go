@@ -38,6 +38,11 @@ type DeviceLeaseServiceClient interface {
 	ListDevices(ctx context.Context, in *ListDevicesRequest, opts ...grpc.CallOption) (*ListDevicesResponse, error)
 	// List device leases for a given device.
 	ListDeviceLeases(ctx context.Context, in *ListDeviceLeasesRequest, opts ...grpc.CallOption) (*ListDeviceLeasesResponse, error)
+	// Validate whether a device lease is active and unexpired.
+	// Expired or released leases return gRPC OK with valid = false and
+	// error_string populated. Non-OK gRPC status codes are reserved for invalid
+	// arguments, missing lease records, or internal server errors.
+	ValidateDeviceLease(ctx context.Context, in *ValidateDeviceLeaseRequest, opts ...grpc.CallOption) (*ValidateDeviceLeaseResponse, error)
 }
 
 type deviceLeaseServiceClient struct {
@@ -111,6 +116,15 @@ func (c *deviceLeaseServiceClient) ListDeviceLeases(ctx context.Context, in *Lis
 	return out, nil
 }
 
+func (c *deviceLeaseServiceClient) ValidateDeviceLease(ctx context.Context, in *ValidateDeviceLeaseRequest, opts ...grpc.CallOption) (*ValidateDeviceLeaseResponse, error) {
+	out := new(ValidateDeviceLeaseResponse)
+	err := c.cc.Invoke(ctx, "/chromiumos.test.api.DeviceLeaseService/ValidateDeviceLease", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DeviceLeaseServiceServer is the server API for DeviceLeaseService service.
 // All implementations should embed UnimplementedDeviceLeaseServiceServer
 // for forward compatibility
@@ -131,6 +145,11 @@ type DeviceLeaseServiceServer interface {
 	ListDevices(context.Context, *ListDevicesRequest) (*ListDevicesResponse, error)
 	// List device leases for a given device.
 	ListDeviceLeases(context.Context, *ListDeviceLeasesRequest) (*ListDeviceLeasesResponse, error)
+	// Validate whether a device lease is active and unexpired.
+	// Expired or released leases return gRPC OK with valid = false and
+	// error_string populated. Non-OK gRPC status codes are reserved for invalid
+	// arguments, missing lease records, or internal server errors.
+	ValidateDeviceLease(context.Context, *ValidateDeviceLeaseRequest) (*ValidateDeviceLeaseResponse, error)
 }
 
 // UnimplementedDeviceLeaseServiceServer should be embedded to have forward compatible implementations.
@@ -157,6 +176,9 @@ func (UnimplementedDeviceLeaseServiceServer) ListDevices(context.Context, *ListD
 }
 func (UnimplementedDeviceLeaseServiceServer) ListDeviceLeases(context.Context, *ListDeviceLeasesRequest) (*ListDeviceLeasesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListDeviceLeases not implemented")
+}
+func (UnimplementedDeviceLeaseServiceServer) ValidateDeviceLease(context.Context, *ValidateDeviceLeaseRequest) (*ValidateDeviceLeaseResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ValidateDeviceLease not implemented")
 }
 
 // UnsafeDeviceLeaseServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -296,6 +318,24 @@ func _DeviceLeaseService_ListDeviceLeases_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DeviceLeaseService_ValidateDeviceLease_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ValidateDeviceLeaseRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DeviceLeaseServiceServer).ValidateDeviceLease(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/chromiumos.test.api.DeviceLeaseService/ValidateDeviceLease",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DeviceLeaseServiceServer).ValidateDeviceLease(ctx, req.(*ValidateDeviceLeaseRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DeviceLeaseService_ServiceDesc is the grpc.ServiceDesc for DeviceLeaseService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -330,6 +370,10 @@ var DeviceLeaseService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListDeviceLeases",
 			Handler:    _DeviceLeaseService_ListDeviceLeases_Handler,
+		},
+		{
+			MethodName: "ValidateDeviceLease",
+			Handler:    _DeviceLeaseService_ValidateDeviceLease_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

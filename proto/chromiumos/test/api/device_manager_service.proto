@@ -37,6 +37,13 @@ service DeviceLeaseService {
   // List device leases for a given device.
   rpc ListDeviceLeases(ListDeviceLeasesRequest)
       returns (ListDeviceLeasesResponse) {};
+
+  // Validate whether a device lease is active and unexpired.
+  // Expired or released leases return gRPC OK with valid = false and
+  // error_string populated. Non-OK gRPC status codes are reserved for invalid
+  // arguments, missing lease records, or internal server errors.
+  rpc ValidateDeviceLease(ValidateDeviceLeaseRequest)
+      returns (ValidateDeviceLeaseResponse) {};
 }
 
 message Device {
@@ -284,4 +291,33 @@ message ListDeviceLeasesResponse {
   // A token, which can be sent as `page_token` to retrieve the next page. If
   // this field is omitted, there are no subsequent pages.
   string next_page_token = 2;
+}
+
+message ValidateDeviceLeaseRequest {
+  // Original lease_id obtained when the lease was created.
+  string lease_id = 1;
+
+  // Optional hostname (device_id, e.g. chromeos8-rowX-rackY-hostZ) to
+  // cross-verify against the lease record. Providing either device_id or dut_id
+  // is sufficient.
+  string device_id = 2;
+
+  // Optional asset tag (dut_id, e.g. C1234567) to cross-verify against the
+  // lease record. Providing either device_id or dut_id is sufficient.
+  string dut_id = 3;
+}
+
+message ValidateDeviceLeaseResponse {
+  // True if and only if the lease exists, has not been released, and its
+  // expiration_time is in the future.
+  // Expired or released leases return gRPC OK with valid = false and
+  // error_string populated. Non-OK gRPC status codes are reserved for invalid
+  // arguments, missing lease records, or internal server errors.
+  bool valid = 1;
+
+  // Current lease expiration timestamp.
+  google.protobuf.Timestamp expiration_time = 2;
+
+  // Human-readable reason when valid is false.
+  string error_string = 3;
 }

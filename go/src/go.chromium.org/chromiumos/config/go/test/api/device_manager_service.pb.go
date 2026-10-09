@@ -1357,6 +1357,145 @@ func (x *ListDeviceLeasesResponse) GetNextPageToken() string {
 	return ""
 }
 
+type ValidateDeviceLeaseRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Original lease_id obtained when the lease was created.
+	LeaseId string `protobuf:"bytes,1,opt,name=lease_id,json=leaseId,proto3" json:"lease_id,omitempty"`
+	// Optional hostname (device_id, e.g. chromeos8-rowX-rackY-hostZ) to
+	// cross-verify against the lease record. Providing either device_id or dut_id
+	// is sufficient.
+	DeviceId string `protobuf:"bytes,2,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
+	// Optional asset tag (dut_id, e.g. C1234567) to cross-verify against the
+	// lease record. Providing either device_id or dut_id is sufficient.
+	DutId string `protobuf:"bytes,3,opt,name=dut_id,json=dutId,proto3" json:"dut_id,omitempty"`
+}
+
+func (x *ValidateDeviceLeaseRequest) Reset() {
+	*x = ValidateDeviceLeaseRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_chromiumos_test_api_device_manager_service_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ValidateDeviceLeaseRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateDeviceLeaseRequest) ProtoMessage() {}
+
+func (x *ValidateDeviceLeaseRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_chromiumos_test_api_device_manager_service_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateDeviceLeaseRequest.ProtoReflect.Descriptor instead.
+func (*ValidateDeviceLeaseRequest) Descriptor() ([]byte, []int) {
+	return file_chromiumos_test_api_device_manager_service_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *ValidateDeviceLeaseRequest) GetLeaseId() string {
+	if x != nil {
+		return x.LeaseId
+	}
+	return ""
+}
+
+func (x *ValidateDeviceLeaseRequest) GetDeviceId() string {
+	if x != nil {
+		return x.DeviceId
+	}
+	return ""
+}
+
+func (x *ValidateDeviceLeaseRequest) GetDutId() string {
+	if x != nil {
+		return x.DutId
+	}
+	return ""
+}
+
+type ValidateDeviceLeaseResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// True if and only if the lease exists, has not been released, and its
+	// expiration_time is in the future.
+	// Expired or released leases return gRPC OK with valid = false and
+	// error_string populated. Non-OK gRPC status codes are reserved for invalid
+	// arguments, missing lease records, or internal server errors.
+	Valid bool `protobuf:"varint,1,opt,name=valid,proto3" json:"valid,omitempty"`
+	// Current lease expiration timestamp.
+	ExpirationTime *timestamppb.Timestamp `protobuf:"bytes,2,opt,name=expiration_time,json=expirationTime,proto3" json:"expiration_time,omitempty"`
+	// Human-readable reason when valid is false.
+	ErrorString string `protobuf:"bytes,3,opt,name=error_string,json=errorString,proto3" json:"error_string,omitempty"`
+}
+
+func (x *ValidateDeviceLeaseResponse) Reset() {
+	*x = ValidateDeviceLeaseResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_chromiumos_test_api_device_manager_service_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ValidateDeviceLeaseResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateDeviceLeaseResponse) ProtoMessage() {}
+
+func (x *ValidateDeviceLeaseResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_chromiumos_test_api_device_manager_service_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateDeviceLeaseResponse.ProtoReflect.Descriptor instead.
+func (*ValidateDeviceLeaseResponse) Descriptor() ([]byte, []int) {
+	return file_chromiumos_test_api_device_manager_service_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *ValidateDeviceLeaseResponse) GetValid() bool {
+	if x != nil {
+		return x.Valid
+	}
+	return false
+}
+
+func (x *ValidateDeviceLeaseResponse) GetExpirationTime() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpirationTime
+	}
+	return nil
+}
+
+func (x *ValidateDeviceLeaseResponse) GetErrorString() string {
+	if x != nil {
+		return x.ErrorString
+	}
+	return ""
+}
+
 var File_chromiumos_test_api_device_manager_service_proto protoreflect.FileDescriptor
 
 var file_chromiumos_test_api_device_manager_service_proto_rawDesc = []byte{
@@ -1577,7 +1716,24 @@ var file_chromiumos_test_api_device_manager_service_proto_rawDesc = []byte{
 	0x65, 0x63, 0x6f, 0x72, 0x64, 0x52, 0x0c, 0x6c, 0x65, 0x61, 0x73, 0x65, 0x52, 0x65, 0x63, 0x6f,
 	0x72, 0x64, 0x73, 0x12, 0x26, 0x0a, 0x0f, 0x6e, 0x65, 0x78, 0x74, 0x5f, 0x70, 0x61, 0x67, 0x65,
 	0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x6e, 0x65,
-	0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x2a, 0x5c, 0x0a, 0x0a, 0x44,
+	0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x6b, 0x0a, 0x1a, 0x56,
+	0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x65, 0x61,
+	0x73, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x6c, 0x65, 0x61,
+	0x73, 0x65, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6c, 0x65, 0x61,
+	0x73, 0x65, 0x49, 0x64, 0x12, 0x1b, 0x0a, 0x09, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x69,
+	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x49,
+	0x64, 0x12, 0x15, 0x0a, 0x06, 0x64, 0x75, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x05, 0x64, 0x75, 0x74, 0x49, 0x64, 0x22, 0x9b, 0x01, 0x0a, 0x1b, 0x56, 0x61, 0x6c,
+	0x69, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x65, 0x61, 0x73, 0x65,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x12, 0x43,
+	0x0a, 0x0f, 0x65, 0x78, 0x70, 0x69, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x74, 0x69, 0x6d,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74,
+	0x61, 0x6d, 0x70, 0x52, 0x0e, 0x65, 0x78, 0x70, 0x69, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x54,
+	0x69, 0x6d, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x5f, 0x73, 0x74, 0x72,
+	0x69, 0x6e, 0x67, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x65, 0x72, 0x72, 0x6f, 0x72,
+	0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x2a, 0x5c, 0x0a, 0x0a, 0x44,
 	0x65, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x12, 0x1b, 0x0a, 0x17, 0x44, 0x45, 0x56,
 	0x49, 0x43, 0x45, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x55, 0x4e, 0x53, 0x50, 0x45, 0x43, 0x49,
 	0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x17, 0x0a, 0x13, 0x44, 0x45, 0x56, 0x49, 0x43, 0x45,
@@ -1615,7 +1771,7 @@ var file_chromiumos_test_api_device_manager_service_proto_rawDesc = []byte{
 	0x50, 0x45, 0x5f, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x26, 0x0a, 0x22, 0x45, 0x52, 0x52,
 	0x4f, 0x52, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x44, 0x45, 0x56, 0x49, 0x43, 0x45, 0x5f, 0x41,
 	0x4c, 0x52, 0x45, 0x41, 0x44, 0x59, 0x5f, 0x52, 0x45, 0x4c, 0x45, 0x41, 0x53, 0x45, 0x44, 0x10,
-	0x01, 0x32, 0xe3, 0x05, 0x0a, 0x12, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x65, 0x61, 0x73,
+	0x01, 0x32, 0xdf, 0x06, 0x0a, 0x12, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x65, 0x61, 0x73,
 	0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x62, 0x0a, 0x0b, 0x4c, 0x65, 0x61, 0x73,
 	0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x12, 0x27, 0x2e, 0x63, 0x68, 0x72, 0x6f, 0x6d, 0x69,
 	0x75, 0x6d, 0x6f, 0x73, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x4c, 0x65,
@@ -1661,7 +1817,15 @@ var file_chromiumos_test_api_device_manager_service_proto_rawDesc = []byte{
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2d, 0x2e, 0x63, 0x68, 0x72, 0x6f, 0x6d, 0x69, 0x75,
 	0x6d, 0x6f, 0x73, 0x2e, 0x74, 0x65, 0x73, 0x74, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x4c, 0x69, 0x73,
 	0x74, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x65, 0x61, 0x73, 0x65, 0x73, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x2f, 0x5a, 0x2d, 0x67, 0x6f, 0x2e, 0x63, 0x68,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x7a, 0x0a, 0x13, 0x56, 0x61, 0x6c, 0x69, 0x64,
+	0x61, 0x74, 0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x4c, 0x65, 0x61, 0x73, 0x65, 0x12, 0x2f,
+	0x2e, 0x63, 0x68, 0x72, 0x6f, 0x6d, 0x69, 0x75, 0x6d, 0x6f, 0x73, 0x2e, 0x74, 0x65, 0x73, 0x74,
+	0x2e, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65, 0x76,
+	0x69, 0x63, 0x65, 0x4c, 0x65, 0x61, 0x73, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x30, 0x2e, 0x63, 0x68, 0x72, 0x6f, 0x6d, 0x69, 0x75, 0x6d, 0x6f, 0x73, 0x2e, 0x74, 0x65, 0x73,
+	0x74, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x56, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65,
+	0x76, 0x69, 0x63, 0x65, 0x4c, 0x65, 0x61, 0x73, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x42, 0x2f, 0x5a, 0x2d, 0x67, 0x6f, 0x2e, 0x63, 0x68,
 	0x72, 0x6f, 0x6d, 0x69, 0x75, 0x6d, 0x2e, 0x6f, 0x72, 0x67, 0x2f, 0x63, 0x68, 0x72, 0x6f, 0x6d,
 	0x69, 0x75, 0x6d, 0x6f, 0x73, 0x2f, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2f, 0x67, 0x6f, 0x2f,
 	0x74, 0x65, 0x73, 0x74, 0x2f, 0x61, 0x70, 0x69, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
@@ -1680,7 +1844,7 @@ func file_chromiumos_test_api_device_manager_service_proto_rawDescGZIP() []byte 
 }
 
 var file_chromiumos_test_api_device_manager_service_proto_enumTypes = make([]protoimpl.EnumInfo, 5)
-var file_chromiumos_test_api_device_manager_service_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_chromiumos_test_api_device_manager_service_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_chromiumos_test_api_device_manager_service_proto_goTypes = []interface{}{
 	(DeviceType)(0),                        // 0: chromiumos.test.api.DeviceType
 	(DeviceState)(0),                       // 1: chromiumos.test.api.DeviceState
@@ -1701,63 +1865,68 @@ var file_chromiumos_test_api_device_manager_service_proto_goTypes = []interface{
 	(*ListDevicesResponse)(nil),            // 16: chromiumos.test.api.ListDevicesResponse
 	(*ListDeviceLeasesRequest)(nil),        // 17: chromiumos.test.api.ListDeviceLeasesRequest
 	(*ListDeviceLeasesResponse)(nil),       // 18: chromiumos.test.api.ListDeviceLeasesResponse
-	nil,                                    // 19: chromiumos.test.api.DeviceLeaseRecord.RequestParametersEntry
-	nil,                                    // 20: chromiumos.test.api.DeviceLeaseRecord.UserPayloadEntry
-	nil,                                    // 21: chromiumos.test.api.LeaseDeviceRequest.UserPayloadEntry
-	(*HardwareRequirements)(nil),           // 22: chromiumos.test.api.HardwareRequirements
-	(*timestamppb.Timestamp)(nil),          // 23: google.protobuf.Timestamp
-	(*durationpb.Duration)(nil),            // 24: google.protobuf.Duration
-	(*VMRequirements)(nil),                 // 25: chromiumos.test.api.VMRequirements
-	(DutState)(0),                          // 26: chromiumos.test.api.DutState
-	(*ExtendLeaseRequest)(nil),             // 27: chromiumos.test.api.ExtendLeaseRequest
-	(*ExtendLeaseResponse)(nil),            // 28: chromiumos.test.api.ExtendLeaseResponse
+	(*ValidateDeviceLeaseRequest)(nil),     // 19: chromiumos.test.api.ValidateDeviceLeaseRequest
+	(*ValidateDeviceLeaseResponse)(nil),    // 20: chromiumos.test.api.ValidateDeviceLeaseResponse
+	nil,                                    // 21: chromiumos.test.api.DeviceLeaseRecord.RequestParametersEntry
+	nil,                                    // 22: chromiumos.test.api.DeviceLeaseRecord.UserPayloadEntry
+	nil,                                    // 23: chromiumos.test.api.LeaseDeviceRequest.UserPayloadEntry
+	(*HardwareRequirements)(nil),           // 24: chromiumos.test.api.HardwareRequirements
+	(*timestamppb.Timestamp)(nil),          // 25: google.protobuf.Timestamp
+	(*durationpb.Duration)(nil),            // 26: google.protobuf.Duration
+	(*VMRequirements)(nil),                 // 27: chromiumos.test.api.VMRequirements
+	(DutState)(0),                          // 28: chromiumos.test.api.DutState
+	(*ExtendLeaseRequest)(nil),             // 29: chromiumos.test.api.ExtendLeaseRequest
+	(*ExtendLeaseResponse)(nil),            // 30: chromiumos.test.api.ExtendLeaseResponse
 }
 var file_chromiumos_test_api_device_manager_service_proto_depIdxs = []int32{
 	6,  // 0: chromiumos.test.api.Device.address:type_name -> chromiumos.test.api.DeviceAddress
 	0,  // 1: chromiumos.test.api.Device.type:type_name -> chromiumos.test.api.DeviceType
 	1,  // 2: chromiumos.test.api.Device.state:type_name -> chromiumos.test.api.DeviceState
-	22, // 3: chromiumos.test.api.Device.hardware_reqs:type_name -> chromiumos.test.api.HardwareRequirements
+	24, // 3: chromiumos.test.api.Device.hardware_reqs:type_name -> chromiumos.test.api.HardwareRequirements
 	6,  // 4: chromiumos.test.api.DeviceLeaseRecord.device_address:type_name -> chromiumos.test.api.DeviceAddress
 	0,  // 5: chromiumos.test.api.DeviceLeaseRecord.device_type:type_name -> chromiumos.test.api.DeviceType
-	23, // 6: chromiumos.test.api.DeviceLeaseRecord.leased_time:type_name -> google.protobuf.Timestamp
-	23, // 7: chromiumos.test.api.DeviceLeaseRecord.released_time:type_name -> google.protobuf.Timestamp
-	23, // 8: chromiumos.test.api.DeviceLeaseRecord.expiration_time:type_name -> google.protobuf.Timestamp
-	23, // 9: chromiumos.test.api.DeviceLeaseRecord.last_updated_time:type_name -> google.protobuf.Timestamp
-	19, // 10: chromiumos.test.api.DeviceLeaseRecord.request_parameters:type_name -> chromiumos.test.api.DeviceLeaseRecord.RequestParametersEntry
-	20, // 11: chromiumos.test.api.DeviceLeaseRecord.user_payload:type_name -> chromiumos.test.api.DeviceLeaseRecord.UserPayloadEntry
-	24, // 12: chromiumos.test.api.LeaseDeviceRequest.lease_duration:type_name -> google.protobuf.Duration
-	25, // 13: chromiumos.test.api.LeaseDeviceRequest.vm_host_reqs:type_name -> chromiumos.test.api.VMRequirements
-	22, // 14: chromiumos.test.api.LeaseDeviceRequest.hardware_device_reqs:type_name -> chromiumos.test.api.HardwareRequirements
-	21, // 15: chromiumos.test.api.LeaseDeviceRequest.user_payload:type_name -> chromiumos.test.api.LeaseDeviceRequest.UserPayloadEntry
-	26, // 16: chromiumos.test.api.LeaseDeviceRequest.on_expiration_dut_state:type_name -> chromiumos.test.api.DutState
+	25, // 6: chromiumos.test.api.DeviceLeaseRecord.leased_time:type_name -> google.protobuf.Timestamp
+	25, // 7: chromiumos.test.api.DeviceLeaseRecord.released_time:type_name -> google.protobuf.Timestamp
+	25, // 8: chromiumos.test.api.DeviceLeaseRecord.expiration_time:type_name -> google.protobuf.Timestamp
+	25, // 9: chromiumos.test.api.DeviceLeaseRecord.last_updated_time:type_name -> google.protobuf.Timestamp
+	21, // 10: chromiumos.test.api.DeviceLeaseRecord.request_parameters:type_name -> chromiumos.test.api.DeviceLeaseRecord.RequestParametersEntry
+	22, // 11: chromiumos.test.api.DeviceLeaseRecord.user_payload:type_name -> chromiumos.test.api.DeviceLeaseRecord.UserPayloadEntry
+	26, // 12: chromiumos.test.api.LeaseDeviceRequest.lease_duration:type_name -> google.protobuf.Duration
+	27, // 13: chromiumos.test.api.LeaseDeviceRequest.vm_host_reqs:type_name -> chromiumos.test.api.VMRequirements
+	24, // 14: chromiumos.test.api.LeaseDeviceRequest.hardware_device_reqs:type_name -> chromiumos.test.api.HardwareRequirements
+	23, // 15: chromiumos.test.api.LeaseDeviceRequest.user_payload:type_name -> chromiumos.test.api.LeaseDeviceRequest.UserPayloadEntry
+	28, // 16: chromiumos.test.api.LeaseDeviceRequest.on_expiration_dut_state:type_name -> chromiumos.test.api.DutState
 	7,  // 17: chromiumos.test.api.LeaseDeviceResponse.device_lease:type_name -> chromiumos.test.api.DeviceLeaseRecord
 	2,  // 18: chromiumos.test.api.LeaseDeviceResponse.error_type:type_name -> chromiumos.test.api.LeaseDeviceResponseErrorType
 	8,  // 19: chromiumos.test.api.BulkLeaseDevicesRequest.lease_device_requests:type_name -> chromiumos.test.api.LeaseDeviceRequest
 	9,  // 20: chromiumos.test.api.BulkLeaseDevicesResponse.lease_device_responses:type_name -> chromiumos.test.api.LeaseDeviceResponse
 	3,  // 21: chromiumos.test.api.BulkLeaseDevicesResponse.error_type:type_name -> chromiumos.test.api.BulkLeaseDevicesResponseErrorType
-	26, // 22: chromiumos.test.api.ReleaseDeviceRequest.dut_after_lease_state:type_name -> chromiumos.test.api.DutState
+	28, // 22: chromiumos.test.api.ReleaseDeviceRequest.dut_after_lease_state:type_name -> chromiumos.test.api.DutState
 	4,  // 23: chromiumos.test.api.ReleaseDeviceResponse.error_type:type_name -> chromiumos.test.api.ReleaseDeviceResponseErrorType
 	5,  // 24: chromiumos.test.api.ListDevicesResponse.devices:type_name -> chromiumos.test.api.Device
 	7,  // 25: chromiumos.test.api.ListDeviceLeasesResponse.lease_records:type_name -> chromiumos.test.api.DeviceLeaseRecord
-	8,  // 26: chromiumos.test.api.DeviceLeaseService.LeaseDevice:input_type -> chromiumos.test.api.LeaseDeviceRequest
-	10, // 27: chromiumos.test.api.DeviceLeaseService.BulkLeaseDevices:input_type -> chromiumos.test.api.BulkLeaseDevicesRequest
-	12, // 28: chromiumos.test.api.DeviceLeaseService.ReleaseDevice:input_type -> chromiumos.test.api.ReleaseDeviceRequest
-	27, // 29: chromiumos.test.api.DeviceLeaseService.ExtendLease:input_type -> chromiumos.test.api.ExtendLeaseRequest
-	14, // 30: chromiumos.test.api.DeviceLeaseService.GetDevice:input_type -> chromiumos.test.api.GetDeviceRequest
-	15, // 31: chromiumos.test.api.DeviceLeaseService.ListDevices:input_type -> chromiumos.test.api.ListDevicesRequest
-	17, // 32: chromiumos.test.api.DeviceLeaseService.ListDeviceLeases:input_type -> chromiumos.test.api.ListDeviceLeasesRequest
-	9,  // 33: chromiumos.test.api.DeviceLeaseService.LeaseDevice:output_type -> chromiumos.test.api.LeaseDeviceResponse
-	11, // 34: chromiumos.test.api.DeviceLeaseService.BulkLeaseDevices:output_type -> chromiumos.test.api.BulkLeaseDevicesResponse
-	13, // 35: chromiumos.test.api.DeviceLeaseService.ReleaseDevice:output_type -> chromiumos.test.api.ReleaseDeviceResponse
-	28, // 36: chromiumos.test.api.DeviceLeaseService.ExtendLease:output_type -> chromiumos.test.api.ExtendLeaseResponse
-	5,  // 37: chromiumos.test.api.DeviceLeaseService.GetDevice:output_type -> chromiumos.test.api.Device
-	16, // 38: chromiumos.test.api.DeviceLeaseService.ListDevices:output_type -> chromiumos.test.api.ListDevicesResponse
-	18, // 39: chromiumos.test.api.DeviceLeaseService.ListDeviceLeases:output_type -> chromiumos.test.api.ListDeviceLeasesResponse
-	33, // [33:40] is the sub-list for method output_type
-	26, // [26:33] is the sub-list for method input_type
-	26, // [26:26] is the sub-list for extension type_name
-	26, // [26:26] is the sub-list for extension extendee
-	0,  // [0:26] is the sub-list for field type_name
+	25, // 26: chromiumos.test.api.ValidateDeviceLeaseResponse.expiration_time:type_name -> google.protobuf.Timestamp
+	8,  // 27: chromiumos.test.api.DeviceLeaseService.LeaseDevice:input_type -> chromiumos.test.api.LeaseDeviceRequest
+	10, // 28: chromiumos.test.api.DeviceLeaseService.BulkLeaseDevices:input_type -> chromiumos.test.api.BulkLeaseDevicesRequest
+	12, // 29: chromiumos.test.api.DeviceLeaseService.ReleaseDevice:input_type -> chromiumos.test.api.ReleaseDeviceRequest
+	29, // 30: chromiumos.test.api.DeviceLeaseService.ExtendLease:input_type -> chromiumos.test.api.ExtendLeaseRequest
+	14, // 31: chromiumos.test.api.DeviceLeaseService.GetDevice:input_type -> chromiumos.test.api.GetDeviceRequest
+	15, // 32: chromiumos.test.api.DeviceLeaseService.ListDevices:input_type -> chromiumos.test.api.ListDevicesRequest
+	17, // 33: chromiumos.test.api.DeviceLeaseService.ListDeviceLeases:input_type -> chromiumos.test.api.ListDeviceLeasesRequest
+	19, // 34: chromiumos.test.api.DeviceLeaseService.ValidateDeviceLease:input_type -> chromiumos.test.api.ValidateDeviceLeaseRequest
+	9,  // 35: chromiumos.test.api.DeviceLeaseService.LeaseDevice:output_type -> chromiumos.test.api.LeaseDeviceResponse
+	11, // 36: chromiumos.test.api.DeviceLeaseService.BulkLeaseDevices:output_type -> chromiumos.test.api.BulkLeaseDevicesResponse
+	13, // 37: chromiumos.test.api.DeviceLeaseService.ReleaseDevice:output_type -> chromiumos.test.api.ReleaseDeviceResponse
+	30, // 38: chromiumos.test.api.DeviceLeaseService.ExtendLease:output_type -> chromiumos.test.api.ExtendLeaseResponse
+	5,  // 39: chromiumos.test.api.DeviceLeaseService.GetDevice:output_type -> chromiumos.test.api.Device
+	16, // 40: chromiumos.test.api.DeviceLeaseService.ListDevices:output_type -> chromiumos.test.api.ListDevicesResponse
+	18, // 41: chromiumos.test.api.DeviceLeaseService.ListDeviceLeases:output_type -> chromiumos.test.api.ListDeviceLeasesResponse
+	20, // 42: chromiumos.test.api.DeviceLeaseService.ValidateDeviceLease:output_type -> chromiumos.test.api.ValidateDeviceLeaseResponse
+	35, // [35:43] is the sub-list for method output_type
+	27, // [27:35] is the sub-list for method input_type
+	27, // [27:27] is the sub-list for extension type_name
+	27, // [27:27] is the sub-list for extension extendee
+	0,  // [0:27] is the sub-list for field type_name
 }
 
 func init() { file_chromiumos_test_api_device_manager_service_proto_init() }
@@ -1935,6 +2104,30 @@ func file_chromiumos_test_api_device_manager_service_proto_init() {
 				return nil
 			}
 		}
+		file_chromiumos_test_api_device_manager_service_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ValidateDeviceLeaseRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_chromiumos_test_api_device_manager_service_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ValidateDeviceLeaseResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_chromiumos_test_api_device_manager_service_proto_msgTypes[12].OneofWrappers = []interface{}{
 		(*ListDeviceLeasesRequest_DeviceId)(nil),
@@ -1946,7 +2139,7 @@ func file_chromiumos_test_api_device_manager_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_chromiumos_test_api_device_manager_service_proto_rawDesc,
 			NumEnums:      5,
-			NumMessages:   17,
+			NumMessages:   19,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
