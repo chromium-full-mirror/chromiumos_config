@@ -68,4 +68,6 @@ message FirmwareProvisionResponse {
 
   // PDC firmware. A map of port to cbfs filename and version.
   map<int32, PDCFirmwareVersion> pdc_firmware_versions = 6;
+  string csme_ro_version = 7;
+  string csme_rw_version = 8;
 }
