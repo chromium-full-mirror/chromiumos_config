@@ -23,7 +23,8 @@ service CameraService {
   // the specified HSV masks.
   rpc AnalyzeImageHSV(AnalyzeHSVRequest) returns (AnalyzeHSVResponse) {};
   // CaptureVideo captures a video of user defined length.
-  rpc CaptureVideo(CaptureVideoRequest) returns (stream CaptureVideoResponse) {};
+  rpc CaptureVideo(CaptureVideoRequest) returns (stream CaptureVideoResponse) {
+  };
 }
 
 message GetCamerasRequest {}
@@ -46,6 +47,12 @@ message GetAveragePixelRequest {
   // Optional, the exposure time in microseconds to use when capturing the
   // image. If not set, the camera's auto exposure setting will be used.
   int32 exposure_microseconds = 2;
+  // Optional, the width of the image to capture in pixels.
+  int32 width = 3;
+  // Optional, the height of the image to capture in pixels.
+  int32 height = 4;
+  // Optional, the white balance temperature in Kelvin (e.g. 6500).
+  int32 white_balance_temperature = 5;
 }
 
 message Pixel {
@@ -114,6 +121,12 @@ message AnalyzeHSVRequest {
   // Optional, the exposure time in microseconds to use when capturing the
   // image. If not set, the camera's auto exposure setting will be used.
   int32 exposure_microseconds = 3;
+  // Optional, the width of the image to capture in pixels.
+  int32 width = 4;
+  // Optional, the height of the image to capture in pixels.
+  int32 height = 5;
+  // Optional, the white balance temperature in Kelvin (e.g. 6500).
+  int32 white_balance_temperature = 6;
 }
 
 // Response containing the analysis results.
@@ -133,6 +146,16 @@ message CaptureVideoRequest {
 
   // The duration of the video to capture in seconds.
   int32 duration_seconds = 2;
+
+  // Optional, the exposure time in microseconds to use when capturing the
+  // video.
+  int32 exposure_microseconds = 3;
+  // Optional, the width of the video to capture in pixels.
+  int32 width = 4;
+  // Optional, the height of the video to capture in pixels.
+  int32 height = 5;
+  // Optional, the white balance temperature in Kelvin (e.g. 6500).
+  int32 white_balance_temperature = 6;
 }
 
 message CaptureVideoResponse {

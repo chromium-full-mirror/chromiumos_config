@@ -35719,6 +35719,59 @@
             }
           ],
           "name": "ListDeviceLeasesResponse"
+        },
+        {
+          "field": [
+            {
+              "jsonName": "leaseId",
+              "label": "LABEL_OPTIONAL",
+              "name": "lease_id",
+              "number": 1,
+              "type": "TYPE_STRING"
+            },
+            {
+              "jsonName": "deviceId",
+              "label": "LABEL_OPTIONAL",
+              "name": "device_id",
+              "number": 2,
+              "type": "TYPE_STRING"
+            },
+            {
+              "jsonName": "dutId",
+              "label": "LABEL_OPTIONAL",
+              "name": "dut_id",
+              "number": 3,
+              "type": "TYPE_STRING"
+            }
+          ],
+          "name": "ValidateDeviceLeaseRequest"
+        },
+        {
+          "field": [
+            {
+              "jsonName": "valid",
+              "label": "LABEL_OPTIONAL",
+              "name": "valid",
+              "number": 1,
+              "type": "TYPE_BOOL"
+            },
+            {
+              "jsonName": "expirationTime",
+              "label": "LABEL_OPTIONAL",
+              "name": "expiration_time",
+              "number": 2,
+              "type": "TYPE_MESSAGE",
+              "typeName": ".google.protobuf.Timestamp"
+            },
+            {
+              "jsonName": "errorString",
+              "label": "LABEL_OPTIONAL",
+              "name": "error_string",
+              "number": 3,
+              "type": "TYPE_STRING"
+            }
+          ],
+          "name": "ValidateDeviceLeaseResponse"
         }
       ],
       "name": "chromiumos/test/api/device_manager_service.proto",
@@ -35770,6 +35823,12 @@
               "name": "ListDeviceLeases",
               "options": {},
               "outputType": ".chromiumos.test.api.ListDeviceLeasesResponse"
+            },
+            {
+              "inputType": ".chromiumos.test.api.ValidateDeviceLeaseRequest",
+              "name": "ValidateDeviceLease",
+              "options": {},
+              "outputType": ".chromiumos.test.api.ValidateDeviceLeaseResponse"
             }
           ],
           "name": "DeviceLeaseService"
@@ -44618,6 +44677,27 @@
               "name": "exposure_microseconds",
               "number": 2,
               "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "width",
+              "label": "LABEL_OPTIONAL",
+              "name": "width",
+              "number": 3,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "height",
+              "label": "LABEL_OPTIONAL",
+              "name": "height",
+              "number": 4,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "whiteBalanceTemperature",
+              "label": "LABEL_OPTIONAL",
+              "name": "white_balance_temperature",
+              "number": 5,
+              "type": "TYPE_INT32"
             }
           ],
           "name": "GetAveragePixelRequest"
@@ -44745,6 +44825,27 @@
               "name": "exposure_microseconds",
               "number": 3,
               "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "width",
+              "label": "LABEL_OPTIONAL",
+              "name": "width",
+              "number": 4,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "height",
+              "label": "LABEL_OPTIONAL",
+              "name": "height",
+              "number": 5,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "whiteBalanceTemperature",
+              "label": "LABEL_OPTIONAL",
+              "name": "white_balance_temperature",
+              "number": 6,
+              "type": "TYPE_INT32"
             }
           ],
           "name": "AnalyzeHSVRequest",
@@ -44832,6 +44933,34 @@
               "label": "LABEL_OPTIONAL",
               "name": "duration_seconds",
               "number": 2,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "exposureMicroseconds",
+              "label": "LABEL_OPTIONAL",
+              "name": "exposure_microseconds",
+              "number": 3,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "width",
+              "label": "LABEL_OPTIONAL",
+              "name": "width",
+              "number": 4,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "height",
+              "label": "LABEL_OPTIONAL",
+              "name": "height",
+              "number": 5,
+              "type": "TYPE_INT32"
+            },
+            {
+              "jsonName": "whiteBalanceTemperature",
+              "label": "LABEL_OPTIONAL",
+              "name": "white_balance_temperature",
+              "number": 6,
               "type": "TYPE_INT32"
             }
           ],

@@ -50,6 +50,11 @@ class DeviceLeaseServiceStub(object):
                 request_serializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ListDeviceLeasesRequest.SerializeToString,
                 response_deserializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ListDeviceLeasesResponse.FromString,
                 )
+        self.ValidateDeviceLease = channel.unary_unary(
+                '/chromiumos.test.api.DeviceLeaseService/ValidateDeviceLease',
+                request_serializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ValidateDeviceLeaseRequest.SerializeToString,
+                response_deserializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ValidateDeviceLeaseResponse.FromString,
+                )
 
 
 class DeviceLeaseServiceServicer(object):
@@ -106,6 +111,16 @@ class DeviceLeaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ValidateDeviceLease(self, request, context):
+        """Validate whether a device lease is active and unexpired.
+        Expired or released leases return gRPC OK with valid = false and
+        error_string populated. Non-OK gRPC status codes are reserved for invalid
+        arguments, missing lease records, or internal server errors.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DeviceLeaseServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -143,6 +158,11 @@ def add_DeviceLeaseServiceServicer_to_server(servicer, server):
                     servicer.ListDeviceLeases,
                     request_deserializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ListDeviceLeasesRequest.FromString,
                     response_serializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ListDeviceLeasesResponse.SerializeToString,
+            ),
+            'ValidateDeviceLease': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidateDeviceLease,
+                    request_deserializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ValidateDeviceLeaseRequest.FromString,
+                    response_serializer=chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ValidateDeviceLeaseResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -270,5 +290,22 @@ class DeviceLeaseService(object):
         return grpc.experimental.unary_unary(request, target, '/chromiumos.test.api.DeviceLeaseService/ListDeviceLeases',
             chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ListDeviceLeasesRequest.SerializeToString,
             chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ListDeviceLeasesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ValidateDeviceLease(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/chromiumos.test.api.DeviceLeaseService/ValidateDeviceLease',
+            chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ValidateDeviceLeaseRequest.SerializeToString,
+            chromiumos_dot_test_dot_api_dot_device__manager__service__pb2.ValidateDeviceLeaseResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
