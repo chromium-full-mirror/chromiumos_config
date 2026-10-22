@@ -26390,6 +26390,21 @@
             }
           ],
           "name": "FindDolosUARTResponse"
+        },
+        {
+          "name": "GetBolsVersionRequest"
+        },
+        {
+          "field": [
+            {
+              "jsonName": "version",
+              "label": "LABEL_OPTIONAL",
+              "name": "version",
+              "number": 1,
+              "type": "TYPE_STRING"
+            }
+          ],
+          "name": "GetBolsVersionResponse"
         }
       ],
       "name": "chromiumos/test/api/bols/bols_service.proto",

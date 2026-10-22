@@ -163,6 +163,11 @@ service BolsService {
 
   // FindDolosUART finds the UART of the Dolos.
   rpc FindDolosUART(FindDolosUARTRequest) returns (FindDolosUARTResponse) {}
+
+  ///////// BOLS API /////////
+
+  // Kept commented out until BOLS servers roll out with GetBolsVersion support.
+  // rpc GetBolsVersion(GetBolsVersionRequest) returns (GetBolsVersionResponse) {}
 }
 
 /////// Labstation Global Identifiers ////////
@@ -764,3 +769,12 @@ message FindDolosUARTRequest {
 message FindDolosUARTResponse {
   string dolos_uart_name = 1;
 }
+
+////// BOLS API Messages //////
+
+message GetBolsVersionRequest {}
+
+message GetBolsVersionResponse {
+  string version = 1;
+}
+
