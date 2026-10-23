@@ -31506,6 +31506,13 @@
               "number": 6,
               "type": "TYPE_MESSAGE",
               "typeName": ".chromiumos.test.api.ExecutionMetadata"
+            },
+            {
+              "jsonName": "environment",
+              "label": "LABEL_OPTIONAL",
+              "name": "environment",
+              "number": 7,
+              "type": "TYPE_STRING"
             }
           ],
           "name": "ProvisionStartupRequest"

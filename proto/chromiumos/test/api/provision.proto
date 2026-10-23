@@ -50,6 +50,13 @@ message ProvisionStartupRequest {
   // K:Vs to be passed to the harness. Mostly will be used for args; but
   // technically can go for others.
   ExecutionMetadata execution_metadata = 6;
+  // CTPv2 execution environment running the provision container.
+  //
+  // Canonical values must be lowercase: "dev", "staging", or "prod".
+  // Note: in CTPv2, common.GetCTPEnvironment(...).String() returns uppercase
+  // ("DEV", "STAGING", "PROD"); callers must lowercase before populating this
+  // field.
+  string environment = 7;
 }
 
 // ProvisionStartupResponse provides a status message to signal
