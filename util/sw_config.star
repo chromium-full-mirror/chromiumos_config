@@ -428,7 +428,26 @@ def _create_rma(
         has_cbi = None,
         ssfc_config = None,
         use_legacy_custom_label = None):
-    """Builds an RmaConfig proto."""
+    """Builds an RmaConfig proto.
+
+    WARNING: Do not copy-paste `enabled = True` from reference/sibling designs
+    during initial bringup. `enabled = True` must only be set with review from
+    `cros-shimless-tpe-eng@google.com`
+    (`chromeos/owners:v1:/rma/OWNERS.rmad_config`) or an approved Partner-Led
+    ChromeOS Shimless RMA tracking bug
+    (https://docs.google.com/document/d/1kS-HejE8ZW_Wvv4kku72RBgwPjmGzQ1-bCElPbbC9gw/edit?tab=t.0).
+
+    Args:
+        enabled: A bool indicating whether Shimless RMA (rmad) is enabled. Must
+            only be set to True with review from
+            cros-shimless-tpe-eng@google.com
+            (chromeos/owners:v1:/rma/OWNERS.rmad_config) or an approved
+            Partner-Led ChromeOS Shimless RMA tracking bug.
+        has_cbi: A bool indicating whether the device has CBI.
+        ssfc_config: An SsfcConfig proto for Second Source Factory Cache (SSFC).
+        use_legacy_custom_label: A bool indicating whether to use legacy
+            whitelabel_tag instead of custom_label_tag.
+    """
     return rma_pb.RmaConfig(
         enabled = enabled,
         has_cbi = has_cbi,
