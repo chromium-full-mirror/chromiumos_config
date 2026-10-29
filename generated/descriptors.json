@@ -48292,6 +48292,15 @@
               "number": 23,
               "type": "TYPE_ENUM",
               "typeName": ".chromiumos.test.lab.api.passport.Dp810Bitrate"
+            },
+            {
+              "jsonName": "hdcpCapable",
+              "label": "LABEL_OPTIONAL",
+              "name": "hdcp_capable",
+              "number": 24,
+              "oneofIndex": 16,
+              "proto3Optional": true,
+              "type": "TYPE_BOOL"
             }
           ],
           "name": "SetLinkVideoTesterRequest",
@@ -48343,6 +48352,9 @@
             },
             {
               "name": "_dsc"
+            },
+            {
+              "name": "_hdcp_capable"
             }
           ]
         },

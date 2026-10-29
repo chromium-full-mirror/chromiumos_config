@@ -308,6 +308,11 @@ message SetLinkVideoTesterRequest {
 
   // Bitrates to use when in dp 1.4 or lower (8b/10b coding), empty otherwise.
   repeated Dp810Bitrate dp_810_bitrates = 23;
+
+  // Advertise HDCP 1.x and 2.x sink capability on the receiver. The tester
+  // defaults to HDCP off because it blanks captured frames while the link is
+  // encrypted. Takes effect on the next hotplug.
+  optional bool hdcp_capable = 24;
 }
 
 // Response message indicating the success of setting link parameters for a
